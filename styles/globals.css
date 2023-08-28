@@ -1,3 +1,21 @@
 /* styles/globals.css */
 @import 'tailwindcss/tailwind.css';
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --color-dark-gray: 33 34 36;
+        --color-light-gray: 224 224 224;
+        --color-brand-blue: 0 124 186;
+        --color-brand-gold: 223 189 133;
+    }
+}
+
+@layer components {
+    .wrapper {
+        @apply container mx-auto px-3 md:px-0;
+    }
+} 
