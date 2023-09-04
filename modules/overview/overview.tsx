@@ -60,7 +60,7 @@ export const Overview = ({
                                     <ProfileLink 
                                         preLabel={link?.preLabel}
                                         label={link?.label}
-                                        customLink={{href: '#', target: '_self'}}
+                                        customLink={{href: link?.customLink?.href, target: link?.customLink?.target}}
                                         key={id}
                                     />
                                 )
@@ -68,7 +68,7 @@ export const Overview = ({
                         </ul>
                     }
                     {profileDesc && 
-                        <div className="prose dark:text-white prose-a:text-brandGold prose-a:font-normal">
+                        <div className="prose dark:text-white prose-a:text-brandBlue dark:prose-a:text-brandGold prose-a:font-normal">
                             <ReactMarkdown>{profileDesc}</ReactMarkdown>
                         </div>
                     }

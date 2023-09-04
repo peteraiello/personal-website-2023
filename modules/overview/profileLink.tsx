@@ -1,8 +1,6 @@
 import React from "react";
 import Link, {LinkProps} from "next/link";
- import { externalLinkProps } from "../../components/externalLink/externalLink";
-
-
+import { externalLinkProps } from "../../components/externalLink/externalLink";
 
 export interface profileLinkProps {
     /**
@@ -26,7 +24,7 @@ export const ProfileLink = ({
 }:profileLinkProps) => {
     return (
         <li className="w-full lg:w-1/2">
-            <strong>{preLabel + ': '}</strong><a href={customLink?.href} target={customLink?.target} className="transition-all ease-in-out duration-150 text-brandGold border-brandGold border-b hover:opacity-90">{label}</a>
+            <strong>{preLabel + ': '}</strong><a href={customLink?.href} target={customLink?.target} className="transition-all ease-in-out duration-150 opacity-100 text-brandBlue border-brandBlue dark:text-brandGold dark:border-brandGold border-b hover:opacity-90">{label}</a>
         </li>
     )
 
