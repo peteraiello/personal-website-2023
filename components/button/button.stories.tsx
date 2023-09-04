@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from './button';
+import { DownloadButton } from './downloadButton';
 
 export default {
   title: 'Components/Button',
@@ -9,5 +10,16 @@ export default {
 export const Example = () => {
     return (
         <Button />
+    )
+}
+
+export const DownloadButtonExampleDark = () => {
+    return(
+      <div className='h-full w-full bg-black p-12 dark'>
+        <DownloadButton
+          label={'Download Resume'}
+          downloadLink={'#'}
+        />
+      </div>
     )
 }

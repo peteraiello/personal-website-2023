@@ -16,10 +16,6 @@ export const Heading = ({
     children
 }: headingProps) => {
 
-    const test = () => {
-        return 'text-3xl'
-    }
-
     const getHeadingClass = ({hTag}) => {
         let headingClass;
         switch (hTag) {
@@ -45,7 +41,7 @@ export const Heading = ({
         return headingClass;
     }
     
-    const baseClass = 'font-noto lowercase text-darkGray dark:text-white';
+    const baseClass = 'tracking-wider font-noto lowercase text-darkGray dark:text-white';
 
     const htmlTag = React.createElement(`h${hTag}`, {
         dangerouslySetInnerHTML: { __html: children },
