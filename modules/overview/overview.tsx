@@ -5,11 +5,10 @@ import {Heading} from '../../components/typography/heading';
 import { Text } from "../../components/typography/text";
 import { SectionWrapper } from "../../components/sectionWrapper";
 import { ProfileLink, profileLinkProps } from "./profileLink";
-import {externalLinkProps} from "../../components/externalLink/externalLink";
 import { v4 as uuidv4} from 'uuid';
-import ReactMarkdown from 'react-markdown';
-import { DownloadButton } from "../../components/button/downloadButton";
-
+import { DownloadButton, downloadButtonProps } from "../../components/button/downloadButton";
+import { TextContent } from "../../components/typography/textContent";
+import { Card, CardProps } from "../../components/card/card";
 
 interface OverviewProps {
     /**
@@ -31,7 +30,11 @@ interface OverviewProps {
     /**
      * Resume link
      */
-    resume?: string,
+    resumeLink?: downloadButtonProps,
+    /**
+     * Cards
+     */
+    cards?: CardProps[]
 }
 
 export const Overview = ({
@@ -39,63 +42,72 @@ export const Overview = ({
     jobTitle,
     profileDesc,
     links,
-    resume,
+    resumeLink,
+    cards
 }:OverviewProps) => {
     return (
-    <SectionWrapper>
-        <div className="grid gap-y-5 grid-cols-12 ">
-            <div className="col-span-12 md:col-span-6 lg:col-span-8">
-                <div className="flex flex-col gap-5">
-                    {name &&
-                        <Heading hTag="3">{name}</Heading>
-                    }
-                    {jobTitle && 
-                        <Text size={'strapline'} weight={'bold'}>{jobTitle}</Text>
-                    }
-                    {links &&
-                        <ul className="list-none flex flex-wrap gap-y-5">
-                            {links?.map((link) => {
-                                let id = uuidv4();
-                                return(
-                                    <ProfileLink 
-                                        preLabel={link?.preLabel}
-                                        label={link?.label}
-                                        customLink={{href: link?.customLink?.href, target: link?.customLink?.target}}
-                                        key={id}
-                                    />
-                                )
-                            })}
-                        </ul>
-                    }
-                    {profileDesc && 
-                        <div className="prose dark:text-white prose-a:text-brandBlue dark:prose-a:text-brandGold prose-a:font-normal">
-                            <ReactMarkdown>{profileDesc}</ReactMarkdown>
+        <SectionWrapper>
+            <div className="grid gap-y-5 grid-cols-12">
+                <div className="col-span-12 md:col-span-6 lg:col-span-8">
+                    <div className="flex flex-col gap-5">
+                        {name &&
+                            <Heading hTag="3">{name}</Heading>
+                        }
+                        {jobTitle && 
+                            <Text size={'strapline'} weight={'bold'}>{jobTitle}</Text>
+                        }
+                        {links &&
+                            <ul className="list-none flex flex-wrap gap-y-5">
+                                {links?.map((link) => {
+                                    let id = uuidv4();
+                                    return(
+                                        <ProfileLink 
+                                            preLabel={link?.preLabel}
+                                            label={link?.label}
+                                            customLink={{href: link?.customLink?.href, target: link?.customLink?.target}}
+                                            key={id}
+                                        />
+                                    )
+                                })}
+                            </ul>
+                        }
+                        {profileDesc && 
+                            <TextContent>
+                                {profileDesc}
+                            </TextContent>
+                        }
+                        {resumeLink &&
+                            <div className="lg:mt-5">
+                                <DownloadButton 
+                                    label={resumeLink?.label}
+                                    downloadLink={resumeLink?.downloadLink}
+                                />
+                            </div>
+                        }
+                    </div>
+                </div>
+                <div className="col-span-12 md:col-span-6 lg:col-span-4">
+                    <div className="flex justify-center md:justify-end w-full">
+                        <div className="rounded-full overflow-hidden w-[300px] h-[300px] relative">
+                            <Image 
+                                src={Profile.src}
+                                alt={'profile'}
+                                fill={true}
+                                style={{objectFit: "cover"}}	
+                            />
                         </div>
-                    }
-                    <div className="mt-5">
-                        <DownloadButton 
-                            label={'Download Resume'}
-                            downloadLink="/#"
-                        />
-                    </div>
-                </div>
-             
-            </div>
-            <div className="col-span-12 md:col-span-6 lg:col-span-4">
-                <div className="flex justify-center md:justify-end w-full">
-                    <div className="rounded-full overflow-hidden w-[300px] h-[300px] relative">
-                        <Image 
-                            src={Profile.src}
-                            alt={'profile'}
-                            fill={true}
-                            style={{objectFit: "cover"}}	
-                        />
                     </div>
                 </div>
             </div>
-        </div>
-
-    </SectionWrapper>
-
+            <div className="flex flex-col md:flex-row gap-5 mt-sm md:mt-md lg:mt-lg">
+                {(cards && cards.length > 0) && 
+                    cards?.map((card) => {
+                        return(
+                            <Card { ...card } />
+                        )
+                    })
+                }
+            </div>    
+        </SectionWrapper>
     )
 }

@@ -10,7 +10,6 @@ export default {
   },
 };
 
-
 const exampleProfile = {
     name: 'Peter Aiello',
     jobTitle: 'Developer / Creative Coder / Writer / Designer',
@@ -26,6 +25,16 @@ const exampleProfile = {
             {preLabel: 'EM', label: 'hello@peteraiello.dev', customLink: {href: 'hello@peteraiello.dev', target: "_blank"}},
             {preLabel: 'GIT', label: 'github.com/peteraiello', customLink: {href: 'https://github.com/peteraiello', target: "_blank"}},
             {preLabel: 'IN', label: 'linkedin.com/in/peter-aiello', customLink: {href: 'https://linkedin.com/in/peter-aiello', target: "_blank"}}
+        ],
+    resumeLink: {
+        label: 'Download Resume',
+        downloadLink: '/#'
+    },
+    cards: 
+        [   
+            {title: `Performance`, content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus gravida ante auctor feugiat hendrerit. In sollicitudin sollicitudin augue, nec aliquam ante interdum ac. Praesent at consequat nisi. Suspendisse facilisis faucibus scelerisque.`},
+            {title: `Performance`, content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus gravida ante auctor feugiat hendrerit. In sollicitudin sollicitudin augue, nec aliquam ante interdum ac. Praesent at consequat nisi. Suspendisse facilisis faucibus scelerisque.`},
+            {title: `Performance`, content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus gravida ante auctor feugiat hendrerit. In sollicitudin sollicitudin augue, nec aliquam ante interdum ac. Praesent at consequat nisi. Suspendisse facilisis faucibus scelerisque.`}
         ]
 }
 
@@ -36,6 +45,8 @@ export const Example = () => {
             jobTitle={exampleProfile.jobTitle}
             profileDesc={exampleProfile.profileDesc}
             links={exampleProfile.links}
+            resumeLink={exampleProfile.resumeLink}
+            cards={exampleProfile.cards}
         />
     )
 }
@@ -44,10 +55,13 @@ export const ExampleDarkTheme = () => {
     return (
         <div className="dark">
             <Overview
+            
                 name={exampleProfile.name}
                 jobTitle={exampleProfile.jobTitle}
                 profileDesc={exampleProfile.profileDesc}
                 links={exampleProfile.links}
+                resumeLink={exampleProfile.resumeLink}
+                cards={exampleProfile.cards}
             />
         </div>
     )

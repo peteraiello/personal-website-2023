@@ -4,11 +4,11 @@ interface TextProps {
     /**
      * font size
      */
-    size?: 'lead' | 'strapline' | 'body',
+    size?: 'lead' | 'strapline' | 'body' | 'award',
     /**
      * 
      */
-    weight?: 'bold' | 'medium' | 'normal',
+    weight?: 'bold' | 'medium' | 'normal' | 'semibold',
     /**
      * The text
      */
@@ -18,14 +18,16 @@ interface TextProps {
 export const getTextClass = ({size}) => {
     let textClass;
     switch (size) {
+        case 'award': 
+            textClass = 'text-award leading-body'
         case 'body': 
-            textClass = 'text-large leading-8';
+            textClass = 'text-large leading-body';
         break;
         case 'lead': 
-            textClass = 'text-[20px] leading-[35px]';
+            textClass = 'text-lead leading-body';
         break;
         case 'strapline':
-            textClass = 'text-[21px] leading-[30px]';
+            textClass = 'text-strapline leading-body';
         break;
         default:
             textClass = 'text-large leading-8';
@@ -39,6 +41,9 @@ export const getFontWeight = ({weight}) => {
     switch (weight) {
         case 'bold': 
             textClass = 'font-bold';
+        break;
+        case 'semibold': 
+            textClass = 'font-semibold';
         break;
         case 'medium': 
             textClass = 'font-medium';

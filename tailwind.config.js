@@ -14,17 +14,28 @@ module.exports = {
         noto: ['"Noto Serif"', ...defaultTheme.fontFamily.serif],
         open: ['"Open Sans"', ...defaultTheme.fontFamily.sans]
       },
-      fontSize: {
-        '6xl': '4.625rem',
-        '5xl': '3.688rem',
-        '4xl': '2.938rem',
-        '3xl': '2.313rem',
-        '2xl': '1.875rem',
-        'xl': '1.5rem',
-        'lead': '1.313rem',
-        'body': '1.125rem'
-      },
       extend: {
+        spacing: {
+          'sm': '20px',
+          'md': '40px',
+          'lg': '80px',
+          'xl': '120px'
+        },
+        fontSize: {
+          '6xl': '4.625rem',
+          '5xl': '3.688rem',
+          '4xl': '2.938rem',
+          '3xl': '2.313rem',
+          '2xl': '1.875rem',
+          'xl': '1.5rem',
+          'strapline': '1.313rem',
+          'lead': '1.25rem',
+          'body': '1.125rem',
+          'award': '1.5rem'
+        },
+        lineHeight: {
+          'body': '2rem'
+        },
         colors: {
           darkGray: 'rgb(var(--color-dark-gray) / <alpha-value>)',
           lightGray: 'rgb(var(--color-light-gray) / <alpha-value>)',

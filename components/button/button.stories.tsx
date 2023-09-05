@@ -13,6 +13,15 @@ export const Example = () => {
     )
 }
 
+export const DownloadButtonExampleLight = () => {
+  return(
+      <DownloadButton
+        label={'Download Resume'}
+        downloadLink={'#'}
+      />
+  )
+}
+
 export const DownloadButtonExampleDark = () => {
     return(
       <div className='h-full w-full bg-black p-12 dark'>
