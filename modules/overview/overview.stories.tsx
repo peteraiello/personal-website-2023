@@ -1,5 +1,6 @@
 import React from 'react';
 import { Overview } from './overview';
+import {buttonIconType}  from '../../components/button';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -28,7 +29,8 @@ const exampleProfile = {
         ],
     resumeLink: {
         label: 'Download Resume',
-        downloadLink: '/#'
+        downloadLink: '/#',
+        icon: 'download'
     },
     cards: 
         [   
@@ -45,7 +47,13 @@ export const Example = () => {
             jobTitle={exampleProfile.jobTitle}
             profileDesc={exampleProfile.profileDesc}
             links={exampleProfile.links}
-            resumeLink={exampleProfile.resumeLink}
+            resumeLink={
+                {
+                    label: exampleProfile.resumeLink.label,
+                    downloadLink: exampleProfile.resumeLink.downloadLink,
+                    icon: exampleProfile.resumeLink.icon as buttonIconType
+                }
+            }
             cards={exampleProfile.cards}
         />
     )
@@ -55,12 +63,17 @@ export const ExampleDarkTheme = () => {
     return (
         <div className="dark">
             <Overview
-            
                 name={exampleProfile.name}
                 jobTitle={exampleProfile.jobTitle}
                 profileDesc={exampleProfile.profileDesc}
                 links={exampleProfile.links}
-                resumeLink={exampleProfile.resumeLink}
+                resumeLink={
+                    {
+                        label: exampleProfile.resumeLink.label,
+                        downloadLink: exampleProfile.resumeLink.downloadLink,
+                        icon: exampleProfile.resumeLink.icon as buttonIconType
+                    }
+                }
                 cards={exampleProfile.cards}
             />
         </div>

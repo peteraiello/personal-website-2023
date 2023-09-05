@@ -1,34 +1,50 @@
 import React from 'react';
 import { Button } from './button';
-import { DownloadButton } from './downloadButton';
 
 export default {
   title: 'Components/Button',
   component: Button,
 };
 
-export const Example = () => {
-    return (
-        <Button />
-    )
-}
-
 export const DownloadButtonExampleLight = () => {
   return(
-      <DownloadButton
-        label={'Download Resume'}
-        downloadLink={'#'}
-      />
+    <div>
+      <div className='h-full w-full bg-white p-12'>
+          <Button
+            label={'Download Resume'}
+            downloadLink={'#'}
+            icon={'download'}
+          />
+      </div>
+      <div className='h-full w-full bg-black p-12 dark'>
+        <Button
+          label={'Download Resume'}
+          downloadLink={'#'}
+          icon={'download'}
+        />
+      </div>
+    </div>
   )
 }
 
-export const DownloadButtonExampleDark = () => {
-    return(
+export const NewWindowExample = () => {
+  return (
+    <div>
+      <div className='h-full w-full bg-white p-12'>
+          <Button
+            label={'View Project'}
+            downloadLink={'#'}
+            icon={'new-window'}
+          />
+      </div>
       <div className='h-full w-full bg-black p-12 dark'>
-        <DownloadButton
-          label={'Download Resume'}
+        <Button
+          label={'View Project'}
           downloadLink={'#'}
+          icon={'new-window'}
         />
       </div>
-    )
+
+    </div>
+  )
 }

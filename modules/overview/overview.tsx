@@ -6,7 +6,7 @@ import { Text } from "../../components/typography/text";
 import { SectionWrapper } from "../../components/sectionWrapper";
 import { ProfileLink, profileLinkProps } from "./profileLink";
 import { v4 as uuidv4} from 'uuid';
-import { DownloadButton, downloadButtonProps } from "../../components/button/downloadButton";
+import { Button, buttonProps } from "../../components/button/button";
 import { TextContent } from "../../components/typography/textContent";
 import { Card, CardProps } from "../../components/card/card";
 
@@ -30,7 +30,7 @@ interface OverviewProps {
     /**
      * Resume link
      */
-    resumeLink?: downloadButtonProps,
+    resumeLink?: buttonProps,
     /**
      * Cards
      */
@@ -78,9 +78,10 @@ export const Overview = ({
                         }
                         {resumeLink &&
                             <div className="lg:mt-5">
-                                <DownloadButton 
+                                <Button 
                                     label={resumeLink?.label}
                                     downloadLink={resumeLink?.downloadLink}
+                                    icon={resumeLink?.icon}
                                 />
                             </div>
                         }
