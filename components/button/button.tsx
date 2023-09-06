@@ -11,7 +11,7 @@ export interface buttonProps {
     /**
      * download link
      */
-    downloadLink?: string,
+    href?: string,
     /**
      * icon
      */
@@ -20,7 +20,7 @@ export interface buttonProps {
 
 export const Button = ({
     label,
-    downloadLink,
+    href,
     icon
 }: buttonProps) => {
 
@@ -36,7 +36,7 @@ export const Button = ({
     
     return (
         <div className="flex gap-3">
-            <a href={downloadLink} className={cx(base, typography, border, animationHover)}>
+            <a href={href} className={cx(base, typography, border, animationHover)}>
                 <div className="flex items-center gap-x-3">
                 {label}
                 {icon === 'download' &&

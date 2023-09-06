@@ -80,7 +80,7 @@ export const Overview = ({
                             <div className="lg:mt-5">
                                 <Button 
                                     label={resumeLink?.label}
-                                    downloadLink={resumeLink?.downloadLink}
+                                    href={resumeLink?.href}
                                     icon={resumeLink?.icon}
                                 />
                             </div>
@@ -103,8 +103,9 @@ export const Overview = ({
             <div className="flex flex-col md:flex-row gap-5 mt-sm md:mt-md lg:mt-lg">
                 {(cards && cards.length > 0) && 
                     cards?.map((card) => {
+                        let id = uuidv4();
                         return(
-                            <Card { ...card } />
+                            <Card { ...card } key={id} />
                         )
                     })
                 }

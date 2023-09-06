@@ -12,14 +12,14 @@ export const DownloadButtonExampleLight = () => {
       <div className='h-full w-full bg-white p-12'>
           <Button
             label={'Download Resume'}
-            downloadLink={'#'}
+            href={'#'}
             icon={'download'}
           />
       </div>
       <div className='h-full w-full bg-black p-12 dark'>
         <Button
           label={'Download Resume'}
-          downloadLink={'#'}
+          href={'#'}
           icon={'download'}
         />
       </div>
@@ -33,18 +33,17 @@ export const NewWindowExample = () => {
       <div className='h-full w-full bg-white p-12'>
           <Button
             label={'View Project'}
-            downloadLink={'#'}
+            href={'#'}
             icon={'new-window'}
           />
       </div>
       <div className='h-full w-full bg-black p-12 dark'>
         <Button
           label={'View Project'}
-          downloadLink={'#'}
+          href={'#'}
           icon={'new-window'}
         />
       </div>
-
     </div>
   )
 }

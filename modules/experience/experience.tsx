@@ -3,8 +3,7 @@ import { Text } from "../../components/typography/text";
 import { Heading } from "../../components/typography/heading";
 import { SectionWrapper } from "../../components/sectionWrapper";
 import { TextContent } from "../../components/typography/textContent";
-import classNames from "classnames";
-
+import {v4 as uuidv4} from 'uuid';
 
 interface workItem {
     /**
@@ -53,8 +52,9 @@ export const Experience = ({
                             {(experiences && experiences.length > 0) &&
                                 <div className="flex flex-col gap-5 md:gap-8 lg:gap-10">
                                     {experiences.map((experience) => {
+                                        let id = uuidv4();
                                         return(
-                                            <div className="grid grid-cols-12">
+                                            <div className="grid grid-cols-12" key={id}>
                                                 <div className="col-span-12 lg:col-span-4 flex flex-col gap-[10px]">
                                                     {experience.title &&
                                                         <Text weight={'bold'} size={'strapline'}>{experience.title}</Text>

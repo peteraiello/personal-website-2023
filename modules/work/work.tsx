@@ -51,10 +51,7 @@ export const Work = ({
                         </TextContent>
                     }
                     {clients && 
-                    <div className="flex items-center gap-2">
-                        <Text size={'lead'} weight={'bold'}>Notable Clients:</Text><Text weight={'normal'}>{clients}</Text>
-                    </div>
-
+                        <p className="text-lead text-darkGray dark:text-white"><span className="font-bold">Notable Clients: </span> {clients} </p>
                     }
                 </div>
                 <div className="col-span-12 md:col-span-4 lg:col-start-9 lg:col-span-4">

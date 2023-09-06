@@ -29,7 +29,7 @@ const exampleProfile = {
         ],
     resumeLink: {
         label: 'Download Resume',
-        downloadLink: '/#',
+        href: '/#',
         icon: 'download'
     },
     cards: 
@@ -50,7 +50,7 @@ export const Example = () => {
             resumeLink={
                 {
                     label: exampleProfile.resumeLink.label,
-                    downloadLink: exampleProfile.resumeLink.downloadLink,
+                    href: exampleProfile.resumeLink.href,
                     icon: exampleProfile.resumeLink.icon as buttonIconType
                 }
             }
@@ -70,7 +70,7 @@ export const ExampleDarkTheme = () => {
                 resumeLink={
                     {
                         label: exampleProfile.resumeLink.label,
-                        downloadLink: exampleProfile.resumeLink.downloadLink,
+                        href: exampleProfile.resumeLink.href,
                         icon: exampleProfile.resumeLink.icon as buttonIconType
                     }
                 }
