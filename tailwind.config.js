@@ -31,10 +31,12 @@ module.exports = {
           'strapline': '1.313rem',
           'lead': '1.25rem',
           'body': '1.125rem',
-          'award': '1.5rem'
+          'award': '1.5rem',
+          'subtitle': '1.5rem',
         },
         lineHeight: {
-          'body': '2rem'
+          'body': '2rem',
+          'subtitle': '2.188rem'
         },
         colors: {
           darkGray: 'rgb(var(--color-dark-gray) / <alpha-value>)',

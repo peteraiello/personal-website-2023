@@ -27,7 +27,7 @@ export const Projects = ({
                     }
                     {
                         (projects && projects?.length  > 0 ) &&
-                            <div className="projects">
+                            <div className="flex flex-col gap-[60px] lg:gap-lg">
                                 {projects?.map((project) => {
                                     let id = uuidv4();
                                     return(

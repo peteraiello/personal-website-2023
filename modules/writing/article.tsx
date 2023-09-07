@@ -6,66 +6,78 @@ import { Text } from '../../components/typography/text';
 import { TextContent} from '../../components/typography/textContent';
 import { CustomImage, customImageProps } from '../../components/image/image';
 import { v4 as uuidv4} from 'uuid';
+import { getTheDate } from '../../utils/getTheDate';
 
-export interface projectProps { 
+
+export interface ArticleProps { 
     /**
      * Featured
      */
     featured?: boolean,
     /**
-     * Client
+     * Date
      */
-    client?: string, 
+    date?: Date,
     /**
-     * Agency
+     * External (personal blog or external publication)
      */
-    agency?: string,
+    external?: boolean,
+    /**
+     * Title (post title)
+     */
+    title?: string,
     /**
      * Tags
      */
     tags?: string[],
     /**
-     * Description
+     * Excerpt
      */
-    description?: string,
+    excerpt?: string,
+    /**
+     * Post body
+     */
+    postBody?: string,
     /**
      * Image
      */
-    projectImage?: customImageProps,
+    articleImage?: customImageProps,
     /**
      * Button Link
      */
     buttonLink?: string
 }
 
-export const Project = ({
+export const BlogArticle = ({
     featured,
-    client,
-    agency,
+    date,
+    external,
+    title,
     tags,
-    projectImage,
-    description,
+    excerpt,
+    postBody,
+    articleImage,
     buttonLink
-}:projectProps) => {
+}:ArticleProps) => {
     return(
         <article className='grid grid-cols-12 gap-y-10 md:gap-5'>
-            <div className='col-span-12 md:col-span-6 lg:col-span-8'>
+            <div className={articleImage ? `col-span-12 md:col-span-6 lg:col-span-8` : `col-span-12 lg:col-span-10` }>
                 <div className='flex flex-col gap-10'>
                     <div className='flex flex-col gap-5'>
-                        {client &&
+                        {title &&
                             <div className='flex gap-x-5'>
                                 {featured &&
                                     <StarIcon />
                                 }
-                                <Text size={'strapline'} weight={'bold'}>{'Client: ' + client}</Text>
+                                <Text size={'strapline'} weight={'bold'}>{title}</Text>
                             </div>
                         }
-                        {agency &&
-                            <Text size={'strapline'} weight={'bold'}>{'Agency: ' + agency}</Text>
+                        {date &&
+                            <Text size={'strapline'} weight={'bold'}>{getTheDate(date)}</Text>
                         }
-                        {description &&
+                        {excerpt &&
                             <div className='mr-0 md:mr-[25px] lg:mr-[50px]'>
-                                <TextContent >{description}</TextContent>
+                                <TextContent >{excerpt}</TextContent>
                             </div>
                         }
                         {tags &&
@@ -74,18 +86,19 @@ export const Project = ({
                     </div>
                     {buttonLink &&
                         <Button 
-                            label={'View Project'} 
-                            icon={'new-window'}
+                            label={'Read Article'} 
+                            icon={external === true ? 'new-window' : 'none'}
                             href={buttonLink}
                         />
                     }       
+
                 </div>
             </div>
-            {projectImage &&
+            {articleImage &&
                 <div className='col-span-12 md:col-span-6 lg:col-span-4'>
                     <CustomImage
-                        alt={projectImage.alt}
-                        src={projectImage.src}
+                        alt={articleImage.alt}
+                        src={articleImage.src}
                         fit={'contain'}
                         size={'project'}
                     />

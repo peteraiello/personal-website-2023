@@ -4,7 +4,7 @@ interface TextProps {
     /**
      * font size
      */
-    size?: 'lead' | 'strapline' | 'body' | 'award',
+    size?: 'lead' | 'strapline' | 'body' | 'award' | 'subtitle',
     /**
      * 
      */
@@ -19,18 +19,22 @@ export const getTextClass = ({size}) => {
     let textClass;
     switch (size) {
         case 'award': 
-            textClass = 'text-award leading-body'
+        textClass = 'text-award leading-body';
+        break;
         case 'body': 
-            textClass = 'text-large leading-body';
+        textClass = 'text-large leading-body';
         break;
         case 'lead': 
-            textClass = 'text-lead leading-body';
+        textClass = 'text-lead leading-body';
         break;
         case 'strapline':
-            textClass = 'text-strapline leading-body';
+        textClass = 'text-strapline leading-body';
+        break;
+        case 'subtitle': 
+        textClass = 'text-subtitle leading-subtitle';
         break;
         default:
-            textClass = 'text-large leading-8';
+        textClass = 'text-large leading-8';
     }
     return textClass;
 }
