@@ -26,6 +26,10 @@ interface workItem {
 
 interface ExperienceProps {
     /**
+     * Section Id
+     */
+    id?: string,
+    /**
      * Title
      */
     title?: string,
@@ -36,11 +40,12 @@ interface ExperienceProps {
 }
 
 export const Experience = ({
+    id,
     title,
     experiences
 }:ExperienceProps) => {
     return(
-        <SectionWrapper>
+        <SectionWrapper id={id}>
             <div className="grid grid-cols-12">
                 {title &&
                     <div className="col-span-12">

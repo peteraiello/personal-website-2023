@@ -13,14 +13,19 @@ interface projectsProps {
      * Projects
      */
     projects?: projectProps[],
+    /**
+     * Section Id
+     */
+    id?: string,
 }
 
 export const Projects = ({
     title,
-    projects
+    projects,
+    id
 }:projectsProps) => {
     return (
-        <SectionWrapper>
+        <SectionWrapper id={id}>
                 <div className="flex flex-col gap-md">
                     {title &&
                         <Heading hTag={"3"}>{title}</Heading>

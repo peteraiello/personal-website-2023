@@ -99,7 +99,7 @@ export const BlogArticle = ({
                     <CustomImage
                         alt={articleImage.alt}
                         src={articleImage.src}
-                        fit={'contain'}
+                        fit={'cover'}
                         size={'project'}
                     />
                 </div>

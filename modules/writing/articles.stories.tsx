@@ -32,6 +32,7 @@ export const LightExample = () => {
     <div>
         <div className='bg-white'>
             <Articles 
+                id={'writing'}
                 title={'Writing'}
                 subtitle={'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ac ex eu erat mollis sodales sed sit amet dui. Mauris quis tempus mi, non rutrum arcu. Sed vitae maximus eros. Proin dolor leo, rutrum aliquet lacus a, dictum sagittis enim.'}
                 Articles={exampleArticleData}
@@ -46,6 +47,7 @@ export const DarkExample = () => {
       <div>
           <div className='dark bg-black'>
               <Articles 
+                    id={'writing'}
                     title='Writing'
                     subtitle={'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ac ex eu erat mollis sodales sed sit amet dui. Mauris quis tempus mi, non rutrum arcu. Sed vitae maximus eros. Proin dolor leo, rutrum aliquet lacus a, dictum sagittis enim.'}
                     Articles={exampleArticleData}              

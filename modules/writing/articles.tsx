@@ -18,12 +18,17 @@ interface articlesProps {
      * Articles
      */
     Articles?: ArticleProps[],
+    /**
+     * Section Id
+     */
+    id?: string,
 }
 
 export const Articles = ({
     title,
     subtitle,
-    Articles
+    Articles,
+    id
 }:articlesProps) => {
 
     const [blogs, setBlogs] = useState([]);
@@ -36,7 +41,7 @@ export const Articles = ({
       }, []);
 
     return (
-        <SectionWrapper>
+        <SectionWrapper id={id}>
                 <div className="flex flex-col gap-lg">
                     <div className="grid grid-cols-12">
                         {title &&

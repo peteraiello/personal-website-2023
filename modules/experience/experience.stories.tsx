@@ -46,6 +46,7 @@ Nullam vel nisl a justo [aliquet laoreet eu ac enim](www.google.com). In sagitti
 export const Example = () => {
     return (
         <Experience 
+            id='experience'
             title='Previous Experience'
             experiences={ExperienceData}
         />
@@ -56,6 +57,7 @@ export const ExampleDark = () => {
     return (
         <div className='dark'>
             <Experience 
+                id='experience'
                 title='Previous Experience'
                 experiences={ExperienceData}
             />

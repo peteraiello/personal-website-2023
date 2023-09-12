@@ -11,6 +11,7 @@ export default {
 };
 
 const workData = {
+    sectionId: 'work',
     title: 'Work',
     subtitle: 'Dusted | Frontend Developer',
     content: 
@@ -31,6 +32,7 @@ Suspendisse facilisis faucibus scelerisque. Sed eget volutpat quam, quis.
 export const Example = () => {
     return (
         <Work
+            id={workData.sectionId}
             title={workData.title}
             subtitle={workData.subtitle}
             content={workData.content}
@@ -44,6 +46,7 @@ export const ExampleDark = () => {
     return (
         <div className='dark'>
             <Work
+                id={workData.sectionId}
                 title={workData.title}
                 subtitle={workData.subtitle}
                 content={workData.content}

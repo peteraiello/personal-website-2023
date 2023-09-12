@@ -12,6 +12,7 @@ export default {
 };
 
 const exampleProfile = {
+    sectionId: "overview",
     name: 'Peter Aiello',
     jobTitle: 'Developer / Creative Coder / Writer / Designer',
     profileDesc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
@@ -43,6 +44,7 @@ const exampleProfile = {
 export const Example = () => {
     return (
         <Overview
+            id={exampleProfile.sectionId}
             name={exampleProfile.name}
             jobTitle={exampleProfile.jobTitle}
             profileDesc={exampleProfile.profileDesc}
@@ -63,6 +65,7 @@ export const ExampleDarkTheme = () => {
     return (
         <div className="dark">
             <Overview
+                id={exampleProfile.sectionId}
                 name={exampleProfile.name}
                 jobTitle={exampleProfile.jobTitle}
                 profileDesc={exampleProfile.profileDesc}

@@ -46,8 +46,9 @@ export const LightExample = () => {
     <div>
         <div className='bg-white'>
             <Projects 
-                title='Projects'
-                projects={exampleProjectData}
+              id={'projects'}
+              title='Projects'
+              projects={exampleProjectData}
             />
         </div>
     </div>
@@ -59,8 +60,9 @@ export const DarkExample = () => {
       <div>
           <div className='dark bg-black'>
               <Projects 
-                    title='Projects'
-                    projects={exampleProjectData}              
+                id={'projects'}
+                title='Projects'
+                projects={exampleProjectData}              
               />
           </div>
       </div>

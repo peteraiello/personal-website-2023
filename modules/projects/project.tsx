@@ -35,7 +35,7 @@ export interface projectProps {
     /**
      * Button Link
      */
-    buttonLink?: string
+    buttonLink?: string,
 }
 
 export const Project = ({
@@ -45,7 +45,7 @@ export const Project = ({
     tags,
     projectImage,
     description,
-    buttonLink
+    buttonLink,
 }:projectProps) => {
     return(
         <article className='grid grid-cols-12 gap-y-10 md:gap-5'>

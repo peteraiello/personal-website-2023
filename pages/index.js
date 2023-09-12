@@ -4,7 +4,9 @@ import styles from '../styles/Home.module.css';
 import {Header} from '../modules/header';
 import React from "react";
 import {Articles} from '../modules/writing/articles';
-import navItems from '../modules/header/navItems.json'
+import navItems from '../data/navItems.json';
+import { Overview } from '../modules/overview/overview';
+import overview from '../data/overview.json';
 
 export default function Home() {
 
@@ -14,6 +16,8 @@ export default function Home() {
 
     <>
       <Header items={navItems?.items} />
+
+      <Overview name={overview?.name} />
 
       <Articles
           title={'writing'}

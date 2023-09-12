@@ -25,7 +25,11 @@ interface WorkProps {
     /**
      * Awards
      */
-    awards?: AwardsProps
+    awards?: AwardsProps,
+    /**
+     * Section id
+     */
+    id?: string
 }
 
 export const Work = ({
@@ -33,10 +37,11 @@ export const Work = ({
     subtitle,
     content,
     clients,
-    awards
+    awards,
+    id
 }:WorkProps) => {
     return (
-        <SectionWrapper>
+        <SectionWrapper id={id}>
             <div className="grid grid-cols-12 gap-5">
                 <div className="col-span-12 md:col-span-8 lg:col-span-7 flex flex-col gap-y-5">
                     {title &&

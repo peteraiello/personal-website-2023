@@ -34,7 +34,11 @@ interface OverviewProps {
     /**
      * Cards
      */
-    cards?: CardProps[]
+    cards?: CardProps[],
+     /**
+     * Section Id
+     */
+     id?: string,
 }
 
 export const Overview = ({
@@ -43,10 +47,11 @@ export const Overview = ({
     profileDesc,
     links,
     resumeLink,
-    cards
+    cards,
+    id
 }:OverviewProps) => {
     return (
-        <SectionWrapper>
+        <SectionWrapper id={id}>
             <div className="grid gap-y-5 grid-cols-12">
                 <div className="col-span-12 md:col-span-6 lg:col-span-8">
                     <div className="flex flex-col gap-5">
@@ -90,6 +95,7 @@ export const Overview = ({
                 <div className="col-span-12 md:col-span-6 lg:col-span-4">
                     <div className="flex justify-center md:justify-end w-full">
                         <div className="rounded-full overflow-hidden w-[300px] h-[300px] relative">
+                            
                             <Image 
                                 src={Profile.src}
                                 alt={'profile'}
