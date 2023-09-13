@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import Profile from '../../public/images/overview/profile.png';
 import {Heading} from '../../components/typography/heading';
 import { Text } from "../../components/typography/text";
 import { SectionWrapper } from "../../components/sectionWrapper";
@@ -9,6 +8,7 @@ import { v4 as uuidv4} from 'uuid';
 import { Button, buttonProps } from "../../components/button/button";
 import { TextContent } from "../../components/typography/textContent";
 import { Card, CardProps } from "../../components/card/card";
+import { CustomImage, customImageProps } from "../../components/image/image";
 
 interface OverviewProps {
     /**
@@ -39,6 +39,10 @@ interface OverviewProps {
      * Section Id
      */
      id?: string,
+    /**
+     * Custom Image
+     */
+    profileImage?: customImageProps,
 }
 
 export const Overview = ({
@@ -48,8 +52,12 @@ export const Overview = ({
     links,
     resumeLink,
     cards,
-    id
+    id,
+    profileImage
 }:OverviewProps) => {
+
+    console.log(profileImage);
+
     return (
         <SectionWrapper id={id}>
             <div className="grid gap-y-5 grid-cols-12">
@@ -95,13 +103,14 @@ export const Overview = ({
                 <div className="col-span-12 md:col-span-6 lg:col-span-4">
                     <div className="flex justify-center md:justify-end w-full">
                         <div className="rounded-full overflow-hidden w-[300px] h-[300px] relative">
-                            
-                            <Image 
-                                src={Profile.src}
-                                alt={'profile'}
-                                fill={true}
-                                style={{objectFit: "cover"}}	
+                          {profileImage &&
+                            <CustomImage 
+                                src={profileImage?.src}
+                                alt={profileImage?.alt}
+                                size={'profile'}
+                                fit={'cover'}
                             />
+                          }
                         </div>
                     </div>
                 </div>

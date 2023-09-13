@@ -2,6 +2,8 @@ import React from "react";
 import Image from "next/image";
 import cx from 'classnames';
 
+export type imageSize = 'project' | 'square' | 'profile';
+
 export interface customImageProps {
     /**
      * Alt Text
@@ -12,9 +14,13 @@ export interface customImageProps {
      */
     src?: string,
     /**
+     * Rounded
+     */
+    rounded?: boolean,
+    /**
      * Size
      */
-    size?: 'project' | 'square',
+    size?: 'project' | 'square' | 'profile',
     /**
      * Object fit
      */
@@ -24,6 +30,7 @@ export interface customImageProps {
 export const CustomImage = ({
     alt,
     src,
+    rounded,
     fit,
     size
 }:customImageProps) => {
@@ -35,6 +42,8 @@ export const CustomImage = ({
         if(size === 'project') {
             customClass = 'aspect-[460/247]';
         } else if(size === 'square') {
+            customClass = 'aspect-square';
+        } else if(size === 'profile') {
             customClass = 'aspect-square';
         } else {
             customClass = 'w-full h-full';
@@ -54,9 +63,19 @@ export const CustomImage = ({
         return customClass;
     }
 
+    const getIsRounded = (rounded) => {
+        let customClass;
+        if(rounded === true) {
+            customClass = 'rounded-full overflow-hidden';
+        }
+        return customClass;
+    }
+
     const getImageSize = (size) => {
         let customSize; 
         if(size === 'project') {
+            customSize = '(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw';
+        } else if(size === 'profile') {
             customSize = '(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw';
         } else if (size === 'square') {
             customSize = '100vw';
@@ -69,6 +88,7 @@ export const CustomImage = ({
     return(
         <div className={
             cx(
+                getIsRounded(rounded),
                 getAspectRatio(size),
                 getBaseClass
             )

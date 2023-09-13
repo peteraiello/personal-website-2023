@@ -1,6 +1,8 @@
 import React from 'react';
 import { Overview } from './overview';
 import {buttonIconType}  from '../../components/button';
+import ProfileImg from '../../public/images/overview/profile.png';
+import { imageSize } from '../../components/image/image';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -11,10 +13,18 @@ export default {
   },
 };
 
+const profileImg = {
+    src: ProfileImg.src,
+    alt: 'profile img',
+    // size: 'profile',
+    // fit: 'cover'
+}
+
 const exampleProfile = {
     sectionId: "overview",
     name: 'Peter Aiello',
     jobTitle: 'Developer / Creative Coder / Writer / Designer',
+    profileImg: profileImg,
     profileDesc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
         Vestibulum at blandit felis, et lobortis nulla. 
         Proin eu dolor et nisl euismod. [Some link](https://google.com) pretium sit amet eget orci. 
@@ -49,6 +59,7 @@ export const Example = () => {
             jobTitle={exampleProfile.jobTitle}
             profileDesc={exampleProfile.profileDesc}
             links={exampleProfile.links}
+            profileImage={exampleProfile.profileImg}
             resumeLink={
                 {
                     label: exampleProfile.resumeLink.label,
@@ -70,6 +81,7 @@ export const ExampleDarkTheme = () => {
                 jobTitle={exampleProfile.jobTitle}
                 profileDesc={exampleProfile.profileDesc}
                 links={exampleProfile.links}
+                profileImage={exampleProfile.profileImg}
                 resumeLink={
                     {
                         label: exampleProfile.resumeLink.label,

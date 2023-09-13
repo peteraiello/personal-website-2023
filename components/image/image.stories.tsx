@@ -1,6 +1,7 @@
 import React from 'react';
 import { CustomImage } from './image';
 import pidg from '../../public/images/projects/pidg.jpg';
+import Profile from '../../public/images/overview/profile.png';
 
 export default {
   title: 'Components/CustomImage',
@@ -18,13 +19,19 @@ export const ImageExample = () => {
                 size={'project'}
                 fit={'cover'}
             />
-             <CustomImage
+            <CustomImage
                 src={pidg.src}
                 alt={'PIDG Project'}
                 size={'square'}
                 fit={'cover'}
             />
-        
+            <CustomImage
+                src={Profile.src}
+                alt={'PIDG Project'}
+                size={'profile'}
+                rounded={true}
+                fit={'cover'}
+            />
         </div>
       </div>
     </div>

@@ -21,7 +21,7 @@ export const SectionWrapper = ({
             className="bg-white dark:bg-darkGray text-darkGray dark:text-white py-md md:py-lg lg:py-xl" 
             id={id !== null ? id : undefined} 
         >
-            <div className="wrapper">
+            <div className="wrapper max-w-[1200px] px-5">
                 {children}
             </div>
         </section>

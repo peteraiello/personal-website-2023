@@ -7,6 +7,7 @@ import {Articles} from '../modules/writing/articles';
 import navItems from '../data/navItems.json';
 import { Overview } from '../modules/overview/overview';
 import overview from '../data/overview.json';
+import {overviewContent} from '../data/overviewContent.js';
 
 export default function Home() {
 
@@ -15,9 +16,14 @@ export default function Home() {
   return (
 
     <>
+
       <Header items={navItems?.items} />
 
-      <Overview name={overview?.name} />
+      <Overview 
+          name={overview?.name} 
+          jobTitle={overview?.jobTitle}
+          profileDesc={overviewContent}
+      />
 
       <Articles
           title={'writing'}
