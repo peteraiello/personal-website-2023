@@ -18,7 +18,7 @@ export const SectionWrapper = ({
     ) => {
     return(
         <section 
-            className="bg-white dark:bg-darkGray text-darkGray dark:text-white py-md md:py-lg lg:py-xl" 
+            className="text-darkGray dark:text-white" 
             id={id !== null ? id : undefined} 
         >
             <div className="wrapper max-w-[1200px] px-5">

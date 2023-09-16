@@ -3,6 +3,7 @@ import {Project, projectProps} from './project';
 import { Heading } from "../../components/typography/heading";
 import { SectionWrapper } from "../../components/sectionWrapper";
 import { v4 as uuidv4} from 'uuid';
+export type layoutType = 'normal' | 'reverse' | 'alternating';
 
 interface projectsProps {
     /**
@@ -14,6 +15,10 @@ interface projectsProps {
      */
     projects?: projectProps[],
     /**
+     * Layout 
+     */
+    layout?: 'normal' | 'reverse' | 'alternating';
+    /**
      * Section Id
      */
     id?: string,
@@ -22,6 +27,7 @@ interface projectsProps {
 export const Projects = ({
     title,
     projects,
+    layout,
     id
 }:projectsProps) => {
     return (
@@ -33,10 +39,11 @@ export const Projects = ({
                     {
                         (projects && projects?.length  > 0 ) &&
                             <div className="flex flex-col gap-[60px] lg:gap-lg">
-                                {projects?.map((project) => {
-                                    let id = uuidv4();
+                                {projects?.map((project, index) => {
+                                    let newIndex = index; 
                                     return(
                                         <Project 
+                                            layout={layout}
                                             featured={project.featured}
                                             client={project.client}
                                             agency={project.agency}
@@ -44,7 +51,8 @@ export const Projects = ({
                                             description={project.description}
                                             buttonLink={project.buttonLink}
                                             projectImage={project.projectImage}
-                                            key={id}
+                                            key={index}
+                                            index={newIndex}
                                         />
                                     )}
                                 )}

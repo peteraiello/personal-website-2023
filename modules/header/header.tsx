@@ -24,7 +24,7 @@ interface HeaderProps {
 
 export const Header = ({items}) => {
     return (
-        <div className="bg-white dark:bg-darkGray">
+        <header>
             <div className="wrapper max-w-[1200px] px-5">
                 <div className="py-5 flex justify-center md:justify-between items-center">
                     <div className="h-[84px] w-[237px] relative">
@@ -42,6 +42,6 @@ export const Header = ({items}) => {
                     }
                 </div>
             </div>
-        </div>
+        </header>
     )
 }

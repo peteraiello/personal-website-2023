@@ -5,7 +5,7 @@ import { Button } from '../../components/button';
 import { Text } from '../../components/typography/text';
 import { TextContent} from '../../components/typography/textContent';
 import { CustomImage, customImageProps } from '../../components/image/image';
-import { v4 as uuidv4} from 'uuid';
+import { layoutType } from './projects';
 
 export interface projectProps { 
     /**
@@ -36,7 +36,34 @@ export interface projectProps {
      * Button Link
      */
     buttonLink?: string,
+    /**
+     * Switch layout
+     */
+    layout?: layoutType,
+    /**
+     * The index number 
+     */
+    index?: number,
 }
+
+const getLayout = (layout, index) => {
+    console.log(layout, index);
+    let layoutClass;
+    if(layout === 'normal') {
+        layoutClass = `flex-col md:flex-row`;
+    } else if (layout === 'reverse') {
+        layoutClass = `flex-col md:flex-row-reverse`;
+    } else if (layout === 'alternating') {
+        layoutClass = `flex-col md:flex-row`;
+        // check odd / even
+        if (index % 2) {
+            layoutClass = `flex-col md:flex-row`
+        } else {
+            layoutClass = `flex-col md:flex-row-reverse`;
+        }
+    }
+    return layoutClass;
+}  
 
 export const Project = ({
     featured,
@@ -46,11 +73,13 @@ export const Project = ({
     projectImage,
     description,
     buttonLink,
+    layout,
+    index
 }:projectProps) => {
     return(
-        <article className='grid grid-cols-12 gap-y-10 md:gap-5'>
-            <div className='col-span-12 md:col-span-6 lg:col-span-8'>
-                <div className='flex flex-col gap-10'>
+        <article className={`flex gap-y-10 md:gap-5 ${getLayout(layout, index)}`}>
+            <div className='w-full md:w-1/2 lg:w-2/3'>
+                <div className={`flex flex-col gap-10`}>
                     <div className='flex flex-col gap-5'>
                         {client &&
                             <div className='flex gap-x-5'>
@@ -82,7 +111,7 @@ export const Project = ({
                 </div>
             </div>
             {projectImage &&
-                <div className='col-span-12 md:col-span-6 lg:col-span-4'>
+                <div className='w-full md:w-1/2 lg:w-1/3'>
                     <CustomImage
                         alt={projectImage.alt}
                         src={projectImage.src}

@@ -13,8 +13,12 @@ export default function Document() {
                 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@500&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
             </Head>
             <body className='dark'>
-                <Main />
-                <NextScript />
+                <div className='relative'>
+                    <span className='h-full absolute -z-[1] w-full dark:bg-gradient-to-b from-darkGray to-black'></span>
+                    <span className='h-full absolute -z-[1] w-full dark:bg-gradient-to-r from-darkGray to-black'></span>
+                    <Main />
+                    <NextScript />
+                </div>
             </body>
         </Html>
     )

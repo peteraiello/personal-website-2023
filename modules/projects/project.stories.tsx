@@ -18,7 +18,7 @@ export const LightExample = () => {
             <Projects 
               id={'projects'}
               title='Projects'
-              projects={exampleProjectData}
+              projects={exampleProjectData.projects}
             />
         </div>
     </div>
@@ -32,7 +32,37 @@ export const DarkExample = () => {
               <Projects 
                 id={'projects'}
                 title='Projects'
-                projects={exampleProjectData}              
+                projects={exampleProjectData.projects}
+              />
+          </div>
+      </div>
+    )
+  }
+
+  export const DarkExampleReverse = () => {
+    return(
+      <div>
+          <div className='dark bg-black'>
+              <Projects 
+                id={'projects'}
+                title='Projects'
+                layout={'reverse'}
+                projects={exampleProjectData.projects}
+              />
+          </div>
+      </div>
+    )
+  }
+
+  export const DarkExampleAlternating = () => {
+    return(
+      <div>
+          <div className='dark bg-black'>
+              <Projects 
+                id={'projects'}
+                title='Projects'
+                layout={'alternating'}
+                projects={exampleProjectData.projects}
               />
           </div>
       </div>

@@ -18,4 +18,13 @@
     .wrapper {
         @apply container mx-auto px-3 md:px-0;
     }
+
+    section:first-of-type {
+        @apply py-md md:py-lg lg:py-xl;
+    }
+
+    section + section {
+        @apply pb-md md:pb-lg lg:pb-xl;
+    }
+
 } 
