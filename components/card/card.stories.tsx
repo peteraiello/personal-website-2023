@@ -23,10 +23,12 @@ export const CardExample = () => {
 
 export const DarkCardExample = () => {
     return (
-        <div className='bg-black dark p-5'>
-            <Card 
-                {...cardData}
-            />
+        <div className=' dark p-5'>
+            <div className='dark:bg-darkGray'>
+                <Card 
+                    {...cardData}
+                />
+            </div>
         </div>
     )
 }

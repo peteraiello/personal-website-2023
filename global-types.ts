@@ -1,0 +1,1 @@
+export type colours = 'darkGray' | 'lightGray' | 'brandBlue' | 'brandGold' | 'black' | 'white' | 'transparent' ;

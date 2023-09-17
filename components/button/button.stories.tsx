@@ -16,12 +16,14 @@ export const DownloadButtonExampleLight = () => {
             icon={'download'}
           />
       </div>
-      <div className='h-full w-full bg-black p-12 dark'>
-        <Button
-          label={'Download Resume'}
-          href={'#'}
-          icon={'download'}
-        />
+      <div className='h-full w-full p-12 dark'>
+        <div className='dark:bg-darkGray'>
+          <Button
+            label={'Download Resume'}
+            href={'#'}
+            icon={'download'}
+          />
+          </div>
       </div>
     </div>
   )

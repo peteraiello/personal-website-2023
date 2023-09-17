@@ -26,11 +26,13 @@ export const Example = () => {
 export const ExampleDark = () => {
     return (
         <div className='dark'>
-            <Experience 
-                id='experience'
-                title='Previous Experience'
-                experiences={ExperienceData.experience}
-            />
+            <div className='dark:bg-darkGray'>
+                <Experience 
+                    id='experience'
+                    title='Previous Experience'
+                    experiences={ExperienceData.experience}
+                />
+            </div>
         </div>
     )
 }

@@ -44,7 +44,9 @@ export const Example = () => {
 export const DarkThemeActive = () => {
   return (
       <div className='dark'>
-        <Header items={menuItems} />
+        <div className='dark:bg-darkGray'>
+          <Header items={menuItems} />
+        </div>
       </div>
   )
 }

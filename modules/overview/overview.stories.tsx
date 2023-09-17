@@ -38,22 +38,25 @@ export const Example = () => {
 export const ExampleDarkTheme = () => {
     return (
         <div className="dark">
-            <Overview
-                id={exampleProfile.sectionId}
-                name={exampleProfile.name}
-                jobTitle={exampleProfile.jobTitle}
-                profileDesc={exampleProfile.profileDesc}
-                links={exampleProfile.links}
-                profileImage={exampleProfile.profileImg}
-                resumeLink={
-                    {
-                        label: exampleProfile.resumeLink.label,
-                        href: exampleProfile.resumeLink.href,
-                        icon: exampleProfile.resumeLink.icon as buttonIconType
+            <div className='dark:bg-darkGray'>
+
+                <Overview
+                    id={exampleProfile.sectionId}
+                    name={exampleProfile.name}
+                    jobTitle={exampleProfile.jobTitle}
+                    profileDesc={exampleProfile.profileDesc}
+                    links={exampleProfile.links}
+                    profileImage={exampleProfile.profileImg}
+                    resumeLink={
+                        {
+                            label: exampleProfile.resumeLink.label,
+                            href: exampleProfile.resumeLink.href,
+                            icon: exampleProfile.resumeLink.icon as buttonIconType
+                        }
                     }
-                }
-                cards={exampleProfile.cards}
-            />
+                    cards={exampleProfile.cards}
+                />
+            </div>
         </div>
     )
 }

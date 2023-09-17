@@ -28,14 +28,16 @@ export const Example = () => {
 export const ExampleDark = () => {
     return (
         <div className='dark'>
-            <Work
-                id={workData.sectionId}
-                title={workData.title}
-                subtitle={workData.subtitle}
-                content={workData.content}
-                clients={workData.clients}
-                awards={workData.awards}
-            />
+            <div className='dark:bg-darkGray'>
+                <Work
+                    id={workData.sectionId}
+                    title={workData.title}
+                    subtitle={workData.subtitle}
+                    content={workData.content}
+                    clients={workData.clients}
+                    awards={workData.awards}
+                />
+            </div>
         </div>
     )
 }

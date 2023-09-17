@@ -9,6 +9,8 @@ import { Button, buttonProps } from "../../components/button/button";
 import { TextContent } from "../../components/typography/textContent";
 import { Card, CardProps } from "../../components/card/card";
 import { CustomImage, customImageProps } from "../../components/image/image";
+import { Gradient } from "../../components/gradients/gradient";
+import { GradientWrapper } from "../../components/gradients/gradientWrapper";
 
 interface OverviewProps {
     /**
@@ -104,12 +106,15 @@ export const Overview = ({
                     <div className="flex justify-center md:justify-end w-full">
                         <div className="rounded-full overflow-hidden w-[300px] h-[300px] relative">
                           {profileImage &&
-                            <CustomImage 
-                                src={profileImage?.src}
-                                alt={profileImage?.alt}
-                                size={'profile'}
-                                fit={'cover'}
-                            />
+                            <GradientWrapper>
+                                <Gradient gradientDirection={'top-to-bottom'} fromColour={'transparent'} toColour={'brandGold'} opacity={'1/2'} zIndex={'z-[1]'} />
+                                <CustomImage 
+                                    src={profileImage?.src}
+                                    alt={profileImage?.alt}
+                                    size={'profile'}
+                                    fit={'cover'}
+                                />
+                            </GradientWrapper>
                           }
                         </div>
                     </div>

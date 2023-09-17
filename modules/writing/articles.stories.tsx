@@ -45,13 +45,15 @@ export const LightExample = () => {
 export const DarkExample = () => {
     return(
       <div>
-          <div className='dark bg-black'>
+          <div className='dark'>
+            <div className='dark:bg-darkGray'>
               <Articles 
                     id={'writing'}
                     title='Writing'
                     subtitle={'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ac ex eu erat mollis sodales sed sit amet dui. Mauris quis tempus mi, non rutrum arcu. Sed vitae maximus eros. Proin dolor leo, rutrum aliquet lacus a, dictum sagittis enim.'}
                     Articles={exampleArticleData}              
               />
+            </div>
           </div>
       </div>
     )

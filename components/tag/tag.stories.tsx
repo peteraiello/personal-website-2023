@@ -25,15 +25,17 @@ export const DownloadTagExampleLight = () => {
 
 export const DownloadTagExampleDark = () => {
     return(
-        <div className="flex gap-4 dark bg-black p-10">
-            {(tags && tags.length > 0) &&
-                tags.map((tag) => {
-                    let id = uuidv4();
-                    return(
-                        <Tag key={id}>{tag}</Tag>
-                    )
-                })
-            }
+        <div className="flex gap-4 p-10 dark">
+            <div className='dark:bg-darkGray'>
+                {(tags && tags.length > 0) &&
+                    tags.map((tag) => {
+                        let id = uuidv4();
+                        return(
+                            <Tag key={id}>{tag}</Tag>
+                        )
+                    })
+                }
+            </div>
         </div>
     )
   }

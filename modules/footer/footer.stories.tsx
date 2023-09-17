@@ -18,8 +18,10 @@ export const FooterExample = () => {
 
 export const FooterDarkExample = () => {
     return(
-        <div className='bg-black dark'>
-        <Footer footerText={FooterTextExample} />
+        <div className='dark'>
+            <div className='dark:bg-darkGray'>
+                <Footer footerText={FooterTextExample} />
+            </div>
         </div>
     )
 }

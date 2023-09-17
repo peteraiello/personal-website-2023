@@ -12,8 +12,10 @@ export const StarIconExample = () => {
         <div className='bg-white'>
             <StarIcon />
         </div>
-        <div className='bg-black dark'>
+        <div className="dark">
+          <div className='dark:bg-darkGray'>
             <StarIcon />
+          </div>
         </div>
     </div>
   )
