@@ -41,7 +41,7 @@ export const Heading = ({
         return headingClass;
     }
     
-    const baseClass = 'tracking-wider font-noto lowercase text-darkGray dark:text-white';
+    const baseClass = 'tracking-wider font-noto lowercase';
 
     const htmlTag = React.createElement(`h${hTag}`, {
         dangerouslySetInnerHTML: { __html: children },

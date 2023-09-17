@@ -68,7 +68,7 @@ export const Text = ({
     children
 }: TextProps) => {
 
-    const baseClass = 'font-open text-darkGray dark:text-white tracking-wider';
+    const baseClass = 'font-open tracking-wider';
 
     const para = React.createElement(`p`, {
         dangerouslySetInnerHTML: { __html: children },

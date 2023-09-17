@@ -58,8 +58,6 @@ export const Overview = ({
     profileImage
 }:OverviewProps) => {
 
-    console.log(profileImage);
-
     return (
         <SectionWrapper id={id}>
             <div className="grid gap-y-5 grid-cols-12">
@@ -107,7 +105,7 @@ export const Overview = ({
                         <div className="rounded-full overflow-hidden w-[300px] h-[300px] relative">
                           {profileImage &&
                             <GradientWrapper>
-                                <Gradient gradientDirection={'top-to-bottom'} fromColour={'transparent'} toColour={'brandGold'} opacity={'1/2'} zIndex={'z-[1]'} />
+                                {/* <Gradient gradientDirection={'top-to-bottom'} fromColour={'transparent'} toColour={'brandGold'} opacity={'1/2'} zIndex={'z-[1]'} /> */}
                                 <CustomImage 
                                     src={profileImage?.src}
                                     alt={profileImage?.alt}

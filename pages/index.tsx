@@ -15,61 +15,68 @@ import { ExperienceData } from '../modules/experience/experience-data';
 import { ArticlesData } from '../modules/writing/articles-data';
 import { FooterData } from '../modules/footer/footer-data';
 import { Footer } from '../modules/footer/footer';
-
+import { AppWrapper } from '../components/AppWrapper/app-wrapper';
+import { ThemeProvider
+ } from '../context/ThemeProvider';
 export default function Home() {
 
   return (
     <>
-    
-        <Header items={navItems?.items} />
+        <ThemeProvider>
+            <AppWrapper>
+        
+                <Header items={navItems?.items} />
 
-        <Overview
-              id={exampleProfile.sectionId}
-              name={exampleProfile.name}
-              jobTitle={exampleProfile.jobTitle}
-              profileDesc={exampleProfile.profileDesc}
-              links={exampleProfile.links}
-              profileImage={exampleProfile.profileImg}
-              resumeLink={
-                  {
-                      label: exampleProfile.resumeLink.label,
-                      href: exampleProfile.resumeLink.href,
-                      icon: exampleProfile.resumeLink.icon as buttonIconType
-                  }
-              }
-              cards={exampleProfile.cards}
-        />
+                <Overview
+                    id={exampleProfile.sectionId}
+                    name={exampleProfile.name}
+                    jobTitle={exampleProfile.jobTitle}
+                    profileDesc={exampleProfile.profileDesc}
+                    links={exampleProfile.links}
+                    profileImage={exampleProfile.profileImg}
+                    resumeLink={
+                        {
+                            label: exampleProfile.resumeLink.label,
+                            href: exampleProfile.resumeLink.href,
+                            icon: exampleProfile.resumeLink.icon as buttonIconType
+                        }
+                    }
+                    cards={exampleProfile.cards}
+                />
 
-        <Work
-            id={workData.sectionId}
-            title={workData.title}
-            subtitle={workData.subtitle}
-            content={workData.content}
-            clients={workData.clients}
-            awards={workData.awards}
-        />
+                <Work
+                    id={workData.sectionId}
+                    title={workData.title}
+                    subtitle={workData.subtitle}
+                    content={workData.content}
+                    clients={workData.clients}
+                    awards={workData.awards}
+                />
 
-        <Projects 
-            id={exampleProjectData.id}
-            title={exampleProjectData.title}
-            layout={exampleProjectData.layout as layoutType}
-            projects={exampleProjectData.projects}              
-        />
+                <Projects 
+                    id={exampleProjectData.id}
+                    title={exampleProjectData.title}
+                    layout={exampleProjectData.layout as layoutType}
+                    projects={exampleProjectData.projects}              
+                />
 
-        <Articles
-          id={ArticlesData.id}
-          title={ArticlesData.title}
-        />
+                <Articles
+                id={ArticlesData.id}
+                title={ArticlesData.title}
+                />
 
-        <Experience 
-            id={ExperienceData.id}
-            title={ExperienceData.title}
-            experiences={ExperienceData.experience}
-        />
+                <Experience 
+                    id={ExperienceData.id}
+                    title={ExperienceData.title}
+                    experiences={ExperienceData.experience}
+                />
 
-        <Footer 
-            footerText={FooterData}
-        />
+                <Footer 
+                    footerText={FooterData}
+                />
+
+            </AppWrapper>
+        </ThemeProvider>
     </>
   )
 }

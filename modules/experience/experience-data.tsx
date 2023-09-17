@@ -1,6 +1,6 @@
 export const ExperienceData = { 
-    title: 'Experiences',
-    id: 'experiences',
+    title: 'Experience',
+    id: 'experience',
     experience: [
     {
         title: 'Spotify',

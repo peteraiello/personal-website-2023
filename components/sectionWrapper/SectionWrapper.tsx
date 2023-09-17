@@ -18,7 +18,7 @@ export const SectionWrapper = ({
     ) => {
     return(
         <section 
-            className="text-darkGray dark:text-white" 
+            className="transition-all duration-300 text-darkGray dark:text-white" 
             id={id !== null ? id : undefined} 
         >
             <div className="wrapper max-w-[1200px] px-5">

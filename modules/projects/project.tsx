@@ -47,7 +47,6 @@ export interface projectProps {
 }
 
 const getLayout = (layout, index) => {
-    console.log(layout, index);
     let layoutClass;
     if(layout === 'normal') {
         layoutClass = `flex-col md:flex-row`;
@@ -62,6 +61,7 @@ const getLayout = (layout, index) => {
             layoutClass = `flex-col md:flex-row-reverse`;
         }
     }
+
     return layoutClass;
 }  
 
