@@ -7,7 +7,7 @@ interface TagsProps {
      * Tags
      */
     tags?: string[]
-}
+} 
 
 export const Tags = ({
     tags
