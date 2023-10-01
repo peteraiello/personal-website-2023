@@ -18,6 +18,15 @@
         --color-brand-blue: 0 124 186;
         --color-brand-gold: 223 189 133;
     }
+
+    button,
+    a {
+        @apply focus:outline-none rounded-sm focus:ring-1 focus:ring-offset-1 focus:ring-brandBlue focus:dark:ring-brandGold;
+    }
+
+    a.button {
+        @apply focus:outline-none rounded-sm focus:ring-2 focus:ring-offset-1 focus:ring-brandBlue focus:dark:ring-brandGold;
+    }
 }
 
 @layer components {

@@ -54,7 +54,7 @@ export const Header = ({items}:HeaderProps) => {
 
 
     return (
-            <header ref={headerRef} className={`fixed ${headerScrolled === true ? 'dark:bg-black bg-white bg-opacity-90 ' : ' bg-transparent'} z-[9999]  w-full transition-all duration-300 text-darkGray dark:text-white`}>
+            <header ref={headerRef} className={`fixed ${headerScrolled === true ? 'dark:bg-darkGray bg-lightGray bg-opacity-90 ' : ' bg-transparent'} z-[9999]  w-full transition-all duration-300 text-darkGray dark:text-white`}>
                 <div className="wrapper max-w-[1200px] px-5">
                     <div className="py-5 flex gap-10 items-center">
                         <Link href={'/'} className={`${headerScrolled ? 'h-[50px]' : 'h-[88px]' }`}>
