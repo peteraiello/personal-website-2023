@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import {HeaderIcon} from './logo';
-import { ThemeToggleButton } from "./theme-toggle";
+import { ThemeToggleButton } from "../../components/button/theme-toggle";
 
 
 interface MenuItem {
@@ -33,17 +33,22 @@ export const Header = ({items}) => {
                         <div className="h-[84px] w-[237px] relative">
                             <HeaderIcon />
                         </div>
-                        {
-                            (items && items.length > 0) &&
-                                <ul className="hidden md:flex gap-10 font-open font-medium">
-                                    {items?.map((item, index) => {
-                                        return (
-                                            <li key={index}><Link href={item?.href}>{item?.label}</Link></li>
-                                        )
-                                    })}
-                                </ul>
-                        }
-                        <ThemeToggleButton />
+
+                        <div className="flex items-center">
+                            {
+                                (items && items.length > 0) &&
+                                    <ul className="hidden md:flex mr-10 gap-10 font-open font-medium">
+                                        {items?.map((item, index) => {
+                                            return (
+                                                <li key={index}><Link href={item?.href}>{item?.label}</Link></li>
+                                            )
+                                        })}
+                                    </ul>
+                            }
+
+                            <ThemeToggleButton />
+                        </div>
+
                     </div>
                 </div>
             </header>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from './button';
+import { ThemeToggleButton } from './theme-toggle';
 
 export default {
   title: 'Components/Button',
@@ -39,6 +40,8 @@ export const NewWindowExample = () => {
             icon={'new-window'}
           />
       </div>
+
+
       <div className='h-full w-full bg-black p-12 dark'>
         <Button
           label={'View Project'}
@@ -46,6 +49,16 @@ export const NewWindowExample = () => {
           icon={'new-window'}
         />
       </div>
+
+
+    </div>
+  )
+}
+
+export const ThemeToggleButtonExample = () => {
+  return (
+    <div className='bg-black p-10'>
+      <ThemeToggleButton />
     </div>
   )
 }

@@ -21,8 +21,8 @@ export const AppWrapper = ({children}) => {
                 }
                 {darkThemeActive !== true &&
                     <>
-                        <Gradient fromColour={'white'} toColour={'lightGray'} gradientDirection={'top-to-bottom'} opacity={'full'} zIndex="-z-[1]"/>
-                        <Gradient fromColour={'transparent'} toColour={'brandGold'} gradientDirection={'left-to-right'} opacity={'1/4'} zIndex="-z-[1]"/>
+                        <Gradient fromColour={'lightGray'} toColour={'white'} gradientDirection={'top-to-bottom'} opacity={'full'} zIndex="-z-[1]"/>
+                        <Gradient fromColour={'white'} toColour={'brandBlue'} gradientDirection={'left-to-right'} opacity={'1/4'} zIndex="-z-[1]"/>
                     </>
                 }
 
