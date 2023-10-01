@@ -6,6 +6,12 @@
 @tailwind utilities;
 
 @layer base {
+
+    html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 120px;
+    }
+
     :root {
         --color-dark-gray: 33 34 36;
         --color-light-gray: 224 224 224;
@@ -20,11 +26,31 @@
     }
 
     section:first-of-type {
-        @apply py-md md:py-lg lg:py-xl;
+        @apply py-md md:py-lg lg:pt-xxl lg:pb-xl;
     }
 
     section + section {
         @apply pb-md md:pb-lg lg:pb-xl;
+    }
+
+    @keyframes customRotate {
+        from {
+            transform: rotate(0deg) translate(25%, 25%);
+            transform-origin: center center;
+        }
+        to {
+            transform: rotate(360deg) translate(25%, 25%);
+            transform-origin: center center;
+        }
+    }
+
+    .gator-animated {
+        animation: customRotate 20s linear infinite;
+    }
+
+    .gator-static {
+        transform: rotate(0deg) translate(25%, 25%);
+        transform-origin: center center;
     }
 
 } 

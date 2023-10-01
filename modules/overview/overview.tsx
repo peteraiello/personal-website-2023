@@ -11,6 +11,8 @@ import { Card, CardProps } from "../../components/card/card";
 import { CustomImage, customImageProps } from "../../components/image/image";
 import { Gradient } from "../../components/gradients/gradient";
 import { GradientWrapper } from "../../components/gradients/gradientWrapper";
+import { HeaderIcon } from "../header/logo";
+import { AIcon } from "../header/a-logo";
 
 interface OverviewProps {
     /**
@@ -64,7 +66,7 @@ export const Overview = ({
                 <div className="col-span-12 md:col-span-6 lg:col-span-8">
                     <div className="flex flex-col gap-5">
                         {name &&
-                            <Heading hTag="3">{name}</Heading>
+                            <Heading hTag="3">{name}</Heading>                        
                         }
                         {jobTitle && 
                             <Text size={'strapline'} weight={'bold'}>{jobTitle}</Text>

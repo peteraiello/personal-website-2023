@@ -19,7 +19,8 @@ module.exports = {
           'sm': '20px',
           'md': '40px',
           'lg': '80px',
-          'xl': '120px'
+          'xl': '120px',
+          'xxl': '180px',
         },
         fontSize: {
           '6xl': '4.625rem',
