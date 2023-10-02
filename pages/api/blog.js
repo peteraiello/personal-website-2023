@@ -9,6 +9,7 @@ export default (req, res) => {
   const fileNames = fs.readdirSync(blogsDirectory);
 
   const blogs = fileNames.map((fileName) => {
+    console.log('file name', fileName)
     const filePath = path.join(blogsDirectory, fileName);
     const fileContent = fs.readFileSync(filePath, 'utf-8');
     const { data, content } = matter(fileContent);

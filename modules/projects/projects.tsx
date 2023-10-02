@@ -2,7 +2,6 @@ import React from "react";
 import {Project, projectProps} from './project';
 import { Heading } from "../../components/typography/heading";
 import { SectionWrapper } from "../../components/sectionWrapper";
-import { v4 as uuidv4} from 'uuid';
 export type layoutType = 'normal' | 'reverse' | 'alternating';
 
 interface projectsProps {

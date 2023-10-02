@@ -5,7 +5,12 @@ import matter from 'gray-matter';
 
 const markdownDirectory = path.join(process.cwd(), 'blogs');
 
-export function getMarkdownFiles() {
+
+export const MarkdownRenderer = ({ content }) => {
+  return <ReactMarkdown source={content} />;
+};
+
+export const getMarkdownFiles = () => {
   const fileNames = fs.readdirSync(markdownDirectory);
   
   return fileNames.map(fileName => {
@@ -24,7 +29,7 @@ export function getMarkdownFiles() {
 // utils/markdown.js
 // ...
 
-export function getMarkdownFilesSortedByDate() {
+export const getMarkdownFilesSortedByDate = () => {
   const markdownFiles = getMarkdownFiles();
   
   // Sort the files by date in descending order (most recent first)
