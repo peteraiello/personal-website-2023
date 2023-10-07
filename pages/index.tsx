@@ -34,7 +34,7 @@ export default function Home({
     <>
         <ThemeProvider>
             <AppWrapper>
-        
+    
                 <Header items={navItems?.items} />
 
                 <Overview
