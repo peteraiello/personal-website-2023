@@ -2,8 +2,13 @@ import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
 import { getPostBySlug, getAllArticles } from '../api/blog'
 import Head from 'next/head'
+import { TextContent } from '../../components/typography/textContent'
 import markdownToHtml from '../../utils/markdownToHtml'
-import type {ArticleProps} from '../../modules/writing/article'
+import type {ArticleProps} from '../../modules/writing/article';
+import { SectionWrapper } from '../../components/sectionWrapper'
+import { Footer } from '../../modules/footer/footer'
+import { ThemeProvider } from '../../context/ThemeProvider'
+import { AppWrapper } from '../../components/AppWrapper/app-wrapper'
 
 type Props = {
   post: ArticleProps
@@ -23,14 +28,22 @@ export default function Post({ post, preview }: Props) {
           <p>Loading…</p>
         ) : (
           <>
-            <article className="mb-32">
-              <Head>
-                <title>{title}</title>
-                {/* <meta property="og:image" content={post.ogImage.url} /> */}
-              </Head>
-              <p>{post.title}</p>
-              {post.content}
-            </article>
+            {/* <ThemeProvider> */}
+              {/* <AppWrapper> */}
+                <article className="mb-32">
+                  <Head>
+                    <title>{title}</title>
+                  </Head>
+                  <SectionWrapper>
+
+                    <TextContent>
+                      {post.content}
+                    </TextContent>
+                  </SectionWrapper>
+                  <Footer />
+                </article>
+              {/* </AppWrapper> */}
+            {/* </ThemeProvider> */}
           </>
         )}
    </div>
@@ -48,18 +61,15 @@ export async function getStaticProps({ params }: Params) {
     'title',
     'date',
     'slug',
-    'author',
     'content',
-    'ogImage',
-    'coverImage',
   ])
-  const content = await markdownToHtml(post.content || '')
+  // const content = await markdownToHtml(post.content || '')
 
   return {
     props: {
       post: {
         ...post,
-        content,
+        // content,
       },
     },
   }

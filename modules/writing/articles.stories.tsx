@@ -35,7 +35,7 @@ export const LightExample = () => {
                 id={'writing'}
                 title={'Writing'}
                 subtitle={'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ac ex eu erat mollis sodales sed sit amet dui. Mauris quis tempus mi, non rutrum arcu. Sed vitae maximus eros. Proin dolor leo, rutrum aliquet lacus a, dictum sagittis enim.'}
-                Articles={exampleArticleData}
+                articles={exampleArticleData}
             />
         </div>
     </div>
@@ -51,7 +51,7 @@ export const DarkExample = () => {
                     id={'writing'}
                     title='Writing'
                     subtitle={'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ac ex eu erat mollis sodales sed sit amet dui. Mauris quis tempus mi, non rutrum arcu. Sed vitae maximus eros. Proin dolor leo, rutrum aliquet lacus a, dictum sagittis enim.'}
-                    Articles={exampleArticleData}              
+                    articles={exampleArticleData}              
               />
             </div>
           </div>
