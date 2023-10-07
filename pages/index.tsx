@@ -15,10 +15,20 @@ import { ExperienceData } from '../modules/experience/experience-data';
 import { ArticlesData } from '../modules/writing/articles-data';
 import { FooterData } from '../modules/footer/footer-data';
 import { Footer } from '../modules/footer/footer';
+import { getAllArticles } from './api/blog';
+import { ArticleProps } from '../modules/writing/article';
 import { AppWrapper } from '../components/AppWrapper/app-wrapper';
 import { ThemeProvider
  } from '../context/ThemeProvider';
-export default function Home() {
+
+
+interface IndexProps {
+    allArticles: ArticleProps[]
+}
+
+export default function Home({
+    allArticles
+}:IndexProps) {
 
   return (
     <>
@@ -61,8 +71,9 @@ export default function Home() {
                 />
 
                 <Articles
-                id={ArticlesData.id}
-                title={ArticlesData.title}
+                    id={ArticlesData.id}
+                    title={ArticlesData.title}
+                    articles={allArticles}
                 />
 
                 <Experience 
@@ -80,3 +91,21 @@ export default function Home() {
     </>
   )
 }
+
+export const getStaticProps = async () => {
+    const allArticles = getAllArticles([
+        'title',
+        'featured',
+        'date',
+        'external',
+        'tags',
+        'excerpt',
+        'articleImage',
+        'buttonLink'
+    ])
+  
+    return {
+      props: { allArticles },
+    }
+  }
+  

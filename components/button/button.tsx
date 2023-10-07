@@ -17,13 +17,13 @@ export interface buttonProps {
     /**
      * icon
      */
-    icon?: buttonIconType
+    icon?: buttonIconType,
 }
 
 export const Button = ({
     label,
     href,
-    icon
+    icon,
 }: buttonProps) => {
 
     const base = `button group bg-transparent px-5 py-2 lg:px-10 lg:py-3`;
@@ -36,7 +36,7 @@ export const Button = ({
     
     return (
         <div className="flex gap-3">
-            <a href={href} className={cx(base, typography, border, animationHover)} target={icon === 'new-window' ? '_blank' : '_self'}>
+            <a href={href}  className={cx(base, typography, border, animationHover)} target={icon === 'new-window' ? '_blank' : '_self'}>
                 <div className="flex items-center gap-x-3">
                 {label}
                 {icon === 'download' &&

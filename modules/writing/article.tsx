@@ -45,7 +45,9 @@ export interface ArticleProps {
     /**
      * Button Link
      */
-    buttonLink?: string
+    buttonLink?: string,
+    slug?: string,
+    content?: string
 }
 
 export const BlogArticle = ({

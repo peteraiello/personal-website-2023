@@ -17,7 +17,7 @@ interface articlesProps {
     /** 
      * Articles
      */
-    Articles?: ArticleProps[],
+    articles?: ArticleProps[],
     /**
      * Section Id
      */
@@ -27,18 +27,11 @@ interface articlesProps {
 export const Articles = ({
     title,
     subtitle,
-    Articles,
+    articles,
     id
 }:articlesProps) => {
 
-    const [blogs, setBlogs] = useState([]);
 
-    useEffect(() => {
-        fetch('/api/blog')
-          .then(response => response.json())
-          .then(data => setBlogs(data))
-          .catch(error => console.error('Error fetching data:', error));
-      }, []);
 
     return (
         <SectionWrapper id={id}>
@@ -56,17 +49,17 @@ export const Articles = ({
                         }
                     </div>
 
-                    {blogs.map((blog, index) => {
+                    {articles.map((blog, index) => {
                         return(
                             <BlogArticle
-                                featured={blog?.data?.featured}
-                                external={blog?.data?.external}
-                                tags={blog?.data?.tags}
-                                excerpt={blog?.data?.excerpt}
-                                title={blog?.data?.title}
-                                date={blog?.data?.date}
-                                articleImage={blog?.data?.articleImage}
-                                buttonLink={blog?.data?.buttonLink}
+                                featured={blog?.featured}
+                                external={blog?.external}
+                                tags={blog?.tags}
+                                excerpt={blog?.excerpt}
+                                title={blog?.title}
+                                date={blog?.date}
+                                articleImage={blog?.articleImage}
+                                buttonLink={blog?.buttonLink}
                                 key={index}
                             />
                         )
