@@ -14,8 +14,10 @@ export const DownloadTagExampleLight = () => {
         <div className="flex gap-4">
             {(tags && tags.length > 0) &&
                 tags.map((tag) => {
+                    let id = uuidv4();
+
                     return(
-                        <Tag>{tag}</Tag>
+                        <Tag key={id}>{tag}</Tag>
                     )
                 })
             }
