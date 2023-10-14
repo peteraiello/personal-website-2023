@@ -30,8 +30,6 @@ export const Header = ({items}:HeaderProps) => {
 
     const handleScroll = () => {
 
-        console.log(scrollY);
-
         if(scrollY > 100) {
             setHeaderScrolled(true);
         } else {
@@ -41,8 +39,6 @@ export const Header = ({items}:HeaderProps) => {
 
 
     useEffect(() => {
-
-        console.log(headerRef.current)
 
         window.addEventListener("scroll", handleScroll);
 

@@ -16,25 +16,27 @@ import { ArticlesData } from '../modules/writing/articles-data';
 import { FooterData } from '../modules/footer/footer-data';
 import { Footer } from '../modules/footer/footer';
 import { getAllArticles } from './api/blog';
+import { getAllProjects } from './api/projects';
 import { ArticleProps } from '../modules/writing/article';
 import { AppWrapper } from '../components/AppWrapper/app-wrapper';
-import { ThemeProvider
- } from '../context/ThemeProvider';
-
+import { ThemeProvider} from '../context/ThemeProvider';
+import { projectProps } from '../modules/projects/project';
 
 interface IndexProps {
     allArticles: ArticleProps[]
+    allProjects: projectProps[]
 }
 
 export default function Home({
-    allArticles
+    allArticles,
+    allProjects
 }:IndexProps) {
 
   return (
     <>
         <ThemeProvider>
             <AppWrapper>
-    
+              
                 <Header items={navItems?.items} />
 
                 <Overview
@@ -67,7 +69,8 @@ export default function Home({
                     id={exampleProjectData.id}
                     title={exampleProjectData.title}
                     layout={exampleProjectData.layout as layoutType}
-                    projects={exampleProjectData.projects}              
+                    // projects={exampleProjectData.projects}
+                    projects={allProjects}
                 />
 
                 <Articles
@@ -85,9 +88,8 @@ export default function Home({
                 <Footer 
                     footerText={FooterData}
                 />
-
             </AppWrapper>
-        </ThemeProvider>
+        </ThemeProvider> 
     </>
   )
 }
@@ -103,9 +105,23 @@ export const getStaticProps = async () => {
         'articleImage',
         'buttonLink'
     ])
+
+    const allProjects = getAllProjects([
+        'featured',
+        'client',
+        'agency',
+        'tags',
+        'projectImage',
+        'description',
+        'buttonLink',
+        'layout'
+    ])
   
     return {
-      props: { allArticles },
+        props: { 
+            allArticles,
+            allProjects
+        },
     }
   }
   

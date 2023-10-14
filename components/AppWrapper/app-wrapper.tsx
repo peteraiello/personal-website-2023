@@ -10,7 +10,7 @@ export const AppWrapper = ({children}) => {
     {console.log(darkThemeActive)}
 
     return (
-        <div className={darkThemeActive === true && 'dark' }>
+        <div className={darkThemeActive === true ? 'dark' : '' }>
 
             <GradientWrapper>
                 {darkThemeActive === true &&

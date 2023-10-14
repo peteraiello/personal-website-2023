@@ -7,8 +7,8 @@ export default function Document() {
     return (
         <Html lang="en">
             <Head>
-                <title>Peter Aiello | Frontend Developer</title>
-                <meta name="description" content="Frontend Developer specialising in React, JavaScript and UI Development" />
+                {/* <title>Peter Aiello | Frontend Developer</title> */}
+                <meta name="description" content="Frontend Developer, specialising in React, JavaScript and UI" />
                 <link rel="icon" href="/favicon.ico" />
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" />

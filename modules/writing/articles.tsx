@@ -30,9 +30,6 @@ export const Articles = ({
     articles,
     id
 }:articlesProps) => {
-
-
-
     return (
         <SectionWrapper id={id}>
                 <div className="flex flex-col gap-lg">

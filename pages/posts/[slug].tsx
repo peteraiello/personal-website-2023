@@ -3,12 +3,14 @@ import ErrorPage from 'next/error'
 import { getPostBySlug, getAllArticles } from '../api/blog'
 import Head from 'next/head'
 import { TextContent } from '../../components/typography/textContent'
-import markdownToHtml from '../../utils/markdownToHtml'
 import type {ArticleProps} from '../../modules/writing/article';
 import { SectionWrapper } from '../../components/sectionWrapper'
 import { Footer } from '../../modules/footer/footer'
-import { ThemeProvider } from '../../context/ThemeProvider'
+import { FooterData } from '../../modules/footer/footer-data'
 import { AppWrapper } from '../../components/AppWrapper/app-wrapper'
+import { Header } from '../../modules/header'
+import { ThemeProvider } from '../../context/ThemeProvider'
+import { Button } from '../../components/button'
 
 type Props = {
   post: ArticleProps
@@ -23,30 +25,38 @@ export default function Post({ post, preview }: Props) {
     return <ErrorPage statusCode={404} />
   }
   return (
-    <div>
+    <>
         {router.isFallback ? (
           <p>Loading…</p>
         ) : (
           <>
-            {/* <ThemeProvider> */}
-              {/* <AppWrapper> */}
-                <article className="mb-32">
-                  <Head>
-                    <title>{title}</title>
-                  </Head>
+          <ThemeProvider>
+            <AppWrapper> 
+                <Head>
+                    <title>{title + '| Frontend developer'}</title>
+                </Head>
+                <Header />
+                <article>
                   <SectionWrapper>
-
-                    <TextContent>
-                      {post.content}
-                    </TextContent>
+                    <h1 className='text-5xl font-semibold'>{title}</h1>
+                    <div className='w-full lg:w-10/12'>
+                      <TextContent>
+                        {post.content}
+                      </TextContent>
+                    </div>
+                    <div className='py-lg'>
+                      <Button label={'Back'} href={'/'} />
+                    </div>
                   </SectionWrapper>
-                  <Footer />
                 </article>
-              {/* </AppWrapper> */}
-            {/* </ThemeProvider> */}
+                <Footer 
+                  footerText={FooterData}
+                />
+            </AppWrapper> 
+            </ThemeProvider>
           </>
         )}
-   </div>
+   </>
   )
 }
 

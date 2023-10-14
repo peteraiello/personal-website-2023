@@ -2,6 +2,7 @@ import React from "react";
 import cx from "classnames";
 import { DownloadIcon } from "../icons/download";
 import { NewWindowIcon } from "../icons/new-window";
+import Link from "next/link";
 
 export type buttonIconType = 'download' | 'new-window' | 'none';
 
@@ -36,7 +37,7 @@ export const Button = ({
     
     return (
         <div className="flex gap-3">
-            <a href={href}  className={cx(base, typography, border, animationHover)} target={icon === 'new-window' ? '_blank' : '_self'}>
+            <Link href={href}  className={cx(base, typography, border, animationHover)} target={icon === 'new-window' ? '_blank' : '_self'}>
                 <div className="flex items-center gap-x-3">
                 {label}
                 {icon === 'download' &&
@@ -50,7 +51,7 @@ export const Button = ({
                     </div>
                 }
                 </div>
-            </a>
+            </Link>
         </div>
     )
 }
