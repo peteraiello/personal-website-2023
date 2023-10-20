@@ -115,8 +115,10 @@ export const Project = ({
                     <CustomImage
                         alt={projectImage.alt}
                         src={projectImage.src}
-                        fit={'contain'}
+                        fit={'cover'}
                         size={'project'}
+                        rounded={'md'}
+                        border={true}
                     />
                 </div>
             }

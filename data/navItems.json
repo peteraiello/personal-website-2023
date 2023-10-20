@@ -2,23 +2,23 @@
     "items": [
         {
             "label": "About",
-            "href": "#overview"
+            "href": "/#overview"
         },
         {
             "label": "Work",
-            "href": "#work"
+            "href": "/#work"
         },
         {
             "label": "Projects",
-            "href": "#projects"
+            "href": "/#projects"
         },
         {
             "label": "Writing",
-            "href": "#writing"
+            "href": "/#writing"
         },
         {
             "label": "Experience",
-            "href": "#experience"
+            "href": "/#experience"
         }
     ]
 }

@@ -9,6 +9,7 @@ import { Footer } from '../../modules/footer/footer'
 import { FooterData } from '../../modules/footer/footer-data'
 import { AppWrapper } from '../../components/AppWrapper/app-wrapper'
 import { Header } from '../../modules/header'
+import navItems from '../../data/navItems.json';
 import { ThemeProvider } from '../../context/ThemeProvider'
 import { Button } from '../../components/button'
 
@@ -35,7 +36,7 @@ export default function Post({ post, preview }: Props) {
                 <Head>
                     <title>{title + '| Frontend developer'}</title>
                 </Head>
-                <Header />
+                <Header items={navItems?.items} />
                 <article>
                   <SectionWrapper>
                     <h1 className='text-5xl font-semibold'>{title}</h1>

@@ -16,7 +16,11 @@ export interface customImageProps {
     /**
      * Rounded
      */
-    rounded?: boolean,
+    rounded?: 'full' | 'md',
+    /**
+     * border
+     */
+    border?: boolean,
     /**
      * Size
      */
@@ -32,10 +36,21 @@ export const CustomImage = ({
     src,
     rounded,
     fit,
-    size
+    size,
+    border
 }:customImageProps) => {
 
     const getBaseClass = `relative`;
+
+    const getBorder = (border) => {
+        let customClass;
+        if(border === true) {
+            customClass = 'border-[1px] dark:border-brandGold border-brandBlue'
+        } else {
+            customClass = 'border-0';
+        }
+        return customClass;
+    }
 
     const getAspectRatio = (size) => {
         let customClass;
@@ -65,8 +80,10 @@ export const CustomImage = ({
 
     const getIsRounded = (rounded) => {
         let customClass;
-        if(rounded === true) {
+        if(rounded === 'full') {
             customClass = 'rounded-full overflow-hidden';
+        } else if(rounded === 'md') {
+            customClass = 'rounded-lg overflow-hidden';
         }
         return customClass;
     }
@@ -88,16 +105,21 @@ export const CustomImage = ({
     return(
         <div className={
             cx(
+                getBorder(border),
                 getIsRounded(rounded),
                 getAspectRatio(size),
                 getBaseClass
-            )
+            )        
         }>
             <Image 
                 src={src}
                 alt={alt}
                 fill
-                className={getObjectFit(fit)}
+                className={
+                    // 'border border-brandGold'
+
+                   getObjectFit(fit)
+                }
                 sizes={getImageSize(size)}
             />
         </div>
