@@ -13,6 +13,8 @@ import { Gradient } from "../../components/gradients/gradient";
 import { GradientWrapper } from "../../components/gradients/gradientWrapper";
 import { HeaderIcon } from "../header/logo";
 import { AIcon } from "../header/a-logo";
+import handleViewport, { type InjectedViewportProps } from 'react-in-viewport';
+
 
 interface OverviewProps {
     /**

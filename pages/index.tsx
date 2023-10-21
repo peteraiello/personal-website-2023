@@ -15,7 +15,7 @@ import { ExperienceData } from '../modules/experience/experience-data';
 import { ArticlesData } from '../modules/writing/articles-data';
 import { FooterData } from '../modules/footer/footer-data';
 import { Footer } from '../modules/footer/footer';
-import { getAllArticles } from './api/blog';
+import { getAllArticles, getLatestExternalBlogPosts, getLatestPersonalBlogPosts } from './api/blog';
 import { getAllProjects } from './api/projects';
 import { ArticleProps } from '../modules/writing/article';
 import { AppWrapper } from '../components/AppWrapper/app-wrapper';
@@ -23,13 +23,15 @@ import { ThemeProvider} from '../context/ThemeProvider';
 import { projectProps } from '../modules/projects/project';
 
 interface IndexProps {
-    allArticles: ArticleProps[]
+    latestPersonalBlog: ArticleProps[]
+    latestExternalPosts: ArticleProps[]
     allProjects: projectProps[]
 }
 
 export default function Home({
-    allArticles,
-    allProjects
+    allProjects,
+    latestPersonalBlog,
+    latestExternalPosts
 }:IndexProps) {
 
   return (
@@ -69,14 +71,27 @@ export default function Home({
                     id={exampleProjectData.id}
                     title={exampleProjectData.title}
                     layout={exampleProjectData.layout as layoutType}
-                    // projects={exampleProjectData.projects}
                     projects={allProjects}
                 />
 
                 <Articles
                     id={ArticlesData.id}
-                    title={ArticlesData.title}
-                    articles={allArticles}
+                    title={'Writing'}
+                    subtitle={'I have a few posts on external websites.'}
+                    articles={latestExternalPosts}
+                />
+
+                <Articles
+                    id={ArticlesData.id}
+                    title={'Personal Blog'}
+                    subtitle={'I also keep an external blog'}
+                    articles={latestPersonalBlog}
+                    sectionButton={
+                        {
+                            label: 'Personal Blog',
+                            href: '/posts'
+                        }
+                    }
                 />
 
                 <Experience 
@@ -95,16 +110,10 @@ export default function Home({
 }
 
 export const getStaticProps = async () => {
-    const allArticles = getAllArticles([
-        'title',
-        'featured',
-        'date',
-        'external',
-        'tags',
-        'excerpt',
-        'articleImage',
-        'buttonLink'
-    ])
+  
+    const latestPersonalBlog = getLatestPersonalBlogPosts()
+
+    const latestExternalPosts = getLatestExternalBlogPosts()
 
     const allProjects = getAllProjects([
         'featured',
@@ -119,8 +128,9 @@ export const getStaticProps = async () => {
   
     return {
         props: { 
-            allArticles,
-            allProjects
+            allProjects,
+            latestPersonalBlog,            
+            latestExternalPosts,
         },
     }
   }

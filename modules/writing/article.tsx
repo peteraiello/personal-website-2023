@@ -2,6 +2,7 @@ import React from 'react';
 import { StarIcon } from '../../components/icons/star-icon';
 import { Tags } from '../../components/tag/tags';
 import { Button } from '../../components/button';
+import { ArticleButton } from '../../components/button/articleButton';
 import { Text } from '../../components/typography/text';
 import { TextContent} from '../../components/typography/textContent';
 import { CustomImage, customImageProps } from '../../components/image/image';
@@ -86,13 +87,21 @@ export const BlogArticle = ({
                             <Tags tags={tags} />
                         }
                     </div>
-                    {buttonLink &&
-                        <Button 
-                            label={'Read Article'} 
-                            icon={external === true ? 'new-window' : 'none'}
-                            href={buttonLink}
-                        />
-                    }       
+                    {external === true ? 
+                        buttonLink &&
+                            <Button 
+                                label={'Read Article'} 
+                                icon={external === true ? 'new-window' : 'none'}
+                                href={buttonLink}
+                            />
+                        :
+                        buttonLink &&
+                            <ArticleButton 
+                                label={'Read Article'} 
+                                href={buttonLink}
+                            />
+                    }
+                        
 
                 </div>
             </div>

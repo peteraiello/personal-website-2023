@@ -3,7 +3,7 @@ import {BlogArticle, ArticleProps} from './article';
 import { Heading } from "../../components/typography/heading";
 import { SectionWrapper } from "../../components/sectionWrapper";
 import { Text } from "../../components/typography/text";
-// import { v4 as uuidv4} from 'uuid';
+import { Button, buttonProps } from "../../components/button";
 
 interface articlesProps {
     /**
@@ -22,18 +22,25 @@ interface articlesProps {
      * Section Id
      */
     id?: string,
+    /**
+     * Section Button
+     */
+    sectionButton?: buttonProps;
+
 }
 
 export const Articles = ({
     title,
     subtitle,
     articles,
-    id
+    id,
+    sectionButton
 }:articlesProps) => {
     return (
         <SectionWrapper id={id}>
-                <div className="flex flex-col gap-lg">
-                    <div className="grid grid-cols-12">
+            <div className="flex flex-col gap-md">
+                <div className="flex flex-col">
+                    <div className="grid grid-cols-12 gap-sm">
                         {title &&
                             <div className="col-span-12">
                                 <Heading hTag={"3"}>{title}</Heading>
@@ -45,7 +52,8 @@ export const Articles = ({
                             </div>
                         }
                     </div>
-
+                </div>
+                <div className="flex flex-col gap-lg">
                     {articles.map((blog, index) => {
                         return(
                             <BlogArticle
@@ -60,9 +68,19 @@ export const Articles = ({
                                 key={index}
                             />
                         )
-                    })}         
+                    })}        
+                </div> 
 
-                </div>
+                {sectionButton &&
+                    <div className="flex justify-center">
+                        <Button 
+                            href={sectionButton.href}
+                            label={sectionButton.label}
+                        />
+                    </div>
+                }
+
+            </div>
         </SectionWrapper>
     )
 }

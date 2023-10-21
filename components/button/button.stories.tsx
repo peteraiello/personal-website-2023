@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from './button';
 import { ThemeToggleButton } from './theme-toggle';
+import { ArticleButton } from './articleButton';
 
 export default {
   title: 'Components/Button',
@@ -30,6 +31,15 @@ export const DownloadButtonExampleLight = () => {
   )
 }
 
+export const ArticleButtonExample = () => {
+  return (
+    <ArticleButton 
+      href={'/'}
+      label={'Read article'}
+    />
+  )
+}
+
 export const NewWindowExample = () => {
   return (
     <div>
@@ -40,8 +50,6 @@ export const NewWindowExample = () => {
             icon={'new-window'}
           />
       </div>
-
-
       <div className='h-full w-full bg-black p-12 dark'>
         <Button
           label={'View Project'}
@@ -49,8 +57,6 @@ export const NewWindowExample = () => {
           icon={'new-window'}
         />
       </div>
-
-
     </div>
   )
 }

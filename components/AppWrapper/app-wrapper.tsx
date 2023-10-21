@@ -7,8 +7,6 @@ export const AppWrapper = ({children}) => {
 
     const {darkThemeActive} = useContext(ThemeContext);
 
-    {console.log(darkThemeActive)}
-
     return (
         <div className={darkThemeActive === true ? 'dark' : '' }>
 
