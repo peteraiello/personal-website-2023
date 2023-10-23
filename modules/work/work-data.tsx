@@ -12,7 +12,7 @@ Suspendisse facilisis faucibus scelerisque. Sed eget volutpat quam, quis.
     clients: 'Ukas, Mahindra, HTB Bank',
     awards: {
         title: 'Awards & Recognition',
-        // subtitle: "We have been recognised for the following...",
+        subtitle: "Dusted have been recognised for the following...",
         awards: ['2023 Transform Awards', '2022 Transform Awards', '2021 Transform awards']
     }
 }

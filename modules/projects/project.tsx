@@ -6,6 +6,7 @@ import { Text } from '../../components/typography/text';
 import { TextContent} from '../../components/typography/textContent';
 import { CustomImage, customImageProps } from '../../components/image/image';
 import { layoutType } from './projects';
+import { AnimatedElement } from '../../components/AnimatedElement/animated-element';
 
 export interface projectProps { 
     /**
