@@ -72,7 +72,7 @@ export const Header = ({items}:HeaderProps) => {
                                 <ul className="hidden md:flex mr-10 gap-10 font-open font-medium">
                                     {items?.map((item, index) => {
                                         return (
-                                            <li key={index}><Link href={item?.href}>{item?.label}</Link></li>
+                                            <li key={index} className="lowercase"><Link href={item?.href}>{item?.label}</Link></li>
                                         )
                                     })}
                                 </ul>

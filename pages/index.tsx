@@ -1,4 +1,5 @@
 import {Header} from '../modules/header';
+import Head from 'next/head'
 import React from "react";
 import {Articles} from '../modules/writing/articles';
 import navItems from '../data/navItems.json';
@@ -38,7 +39,11 @@ export default function Home({
     <>
         <ThemeProvider>
             <AppWrapper>
-              
+
+                <Head>
+                    <title>{'Peter Aiello | Frontend developer'}</title>
+                </Head>
+
                 <Header items={navItems?.items} />
 
                 <Overview

@@ -34,12 +34,12 @@ export default function Post({ post, preview }: Props) {
           <ThemeProvider>
             <AppWrapper> 
                 <Head>
-                    <title>{title + '| Frontend developer'}</title>
+                    <title>{title + '| Peter Aiello - Frontend developer'}</title>
                 </Head>
                 <Header items={navItems?.items} />
                 <article>
                   <SectionWrapper>
-                    <h1 className='text-5xl font-semibold'>{title}</h1>
+                    <h1 className='text-5xl mb-5 font-semibold'>{title}</h1>
                     <div className='w-full lg:w-10/12'>
                       <TextContent>
                         {post.content}
