@@ -1,7 +1,5 @@
 import React from "react";
 import cx from "classnames";
-import { DownloadIcon } from "../icons/download";
-import { NewWindowIcon } from "../icons/new-window";
 import Link from "next/link";
 
 export type buttonIconType = 'download' | 'new-window' | 'none';
@@ -28,7 +26,7 @@ export const ArticleButton = ({
     
     const border = `ring-0 rounded-0`;
 
-    const animationHover = `transition-all duration-150 ease-in-out hover:text-white`;
+    const animationHover = `transition-all duration-150 ease-in-out`;
     
     return (
         <div className="flex gap-3">

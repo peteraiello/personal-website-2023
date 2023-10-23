@@ -40,7 +40,7 @@ export const CustomImage = ({
     border
 }:customImageProps) => {
 
-    const getBaseClass = `relative`;
+    const getBaseClass = `drop-shadow-lg relative`;
 
     const getBorder = (border) => {
         let customClass;

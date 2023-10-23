@@ -38,7 +38,7 @@ function Element({ index, children }) {
         once: false 
     });  
     return (
-      <div ref={ref} className={`transition-all ease-in-out duration-500 ${getTheDelay(index)} ${isInView ? 'opacity-100 translate-y-0' : 'translate-y-10 opacity-0'}`}>
+      <div ref={ref} className={`transition-opacity ease-in-out duration-500 ${getTheDelay(index)} ${isInView ? 'opacity-100 translate-y-0' : 'translate-y-10 opacity-0'}`}>
         {children}
       </div>
     );
