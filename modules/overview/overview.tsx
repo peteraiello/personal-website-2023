@@ -13,8 +13,7 @@ import { Gradient } from "../../components/gradients/gradient";
 import { GradientWrapper } from "../../components/gradients/gradientWrapper";
 import { HeaderIcon } from "../header/logo";
 import { AIcon } from "../header/a-logo";
-import handleViewport, { type InjectedViewportProps } from 'react-in-viewport';
-
+import {inView} from "framer-motion";
 
 interface OverviewProps {
     /**
@@ -61,7 +60,6 @@ export const Overview = ({
     id,
     profileImage
 }:OverviewProps) => {
-
     return (
         <SectionWrapper id={id}>
             <div className="grid gap-y-5 grid-cols-12">
@@ -124,10 +122,10 @@ export const Overview = ({
             </div>
             <div className="flex flex-col md:flex-row gap-5 mt-sm md:mt-md lg:mt-lg">
                 {(cards && cards.length > 0) && 
-                    cards?.map((card) => {
+                    cards?.map((card, i) => {
                         let id = uuidv4();
                         return(
-                            <Card { ...card } key={id} />
+                            <Card { ...card } key={id} index={i}/>
                         )
                     })
                 }

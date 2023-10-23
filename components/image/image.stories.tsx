@@ -29,7 +29,7 @@ export const ImageExample = () => {
                 src={Profile.src}
                 alt={'PIDG Project'}
                 size={'profile'}
-                rounded={true}
+                rounded={'full'}
                 fit={'cover'}
             />
         </div>

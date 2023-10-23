@@ -4,6 +4,7 @@ import { Heading } from "../../components/typography/heading";
 import { SectionWrapper } from "../../components/sectionWrapper";
 import { Text } from "../../components/typography/text";
 import { Button, buttonProps } from "../../components/button";
+import { AnimatedElement } from "../../components/AnimatedElement/animated-element";
 
 interface articlesProps {
     /**
@@ -26,7 +27,6 @@ interface articlesProps {
      * Section Button
      */
     sectionButton?: buttonProps;
-
 }
 
 export const Articles = ({
@@ -56,17 +56,18 @@ export const Articles = ({
                 <div className="flex flex-col gap-lg">
                     {articles.map((blog, index) => {
                         return(
-                            <BlogArticle
-                                featured={blog?.featured}
-                                external={blog?.external}
-                                tags={blog?.tags}
-                                excerpt={blog?.excerpt}
-                                title={blog?.title}
-                                date={blog?.date}
-                                articleImage={blog?.articleImage}
-                                buttonLink={blog?.buttonLink}
-                                key={index}
-                            />
+                            <AnimatedElement index={index} key={index}>
+                                <BlogArticle
+                                    featured={blog?.featured}
+                                    external={blog?.external}
+                                    tags={blog?.tags}
+                                    excerpt={blog?.excerpt}
+                                    title={blog?.title}
+                                    date={blog?.date}
+                                    articleImage={blog?.articleImage}
+                                    buttonLink={blog?.buttonLink}
+                                />
+                            </AnimatedElement>
                         )
                     })}        
                 </div> 

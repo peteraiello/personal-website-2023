@@ -2,6 +2,7 @@ import React from "react";
 import {Project, projectProps} from './project';
 import { Heading } from "../../components/typography/heading";
 import { SectionWrapper } from "../../components/sectionWrapper";
+import { AnimatedElement } from "../../components/AnimatedElement/animated-element";
 export type layoutType = 'normal' | 'reverse' | 'alternating';
 
 interface projectsProps {
@@ -41,6 +42,7 @@ export const Projects = ({
                                 {projects?.map((project, index) => {
                                     let newIndex = index; 
                                     return(
+                                        <AnimatedElement index={index} key={index}>
                                         <Project 
                                             layout={layout}
                                             featured={project.featured}
@@ -50,9 +52,9 @@ export const Projects = ({
                                             description={project.description}
                                             buttonLink={project.buttonLink}
                                             projectImage={project.projectImage}
-                                            key={index}
                                             index={newIndex}
                                         />
+                                        </AnimatedElement>
                                     )}
                                 )}
                             </div>
