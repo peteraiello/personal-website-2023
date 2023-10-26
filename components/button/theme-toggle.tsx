@@ -10,6 +10,7 @@ export const ThemeToggleButton = () => {
     const clickHandler = (e) => {
         e.preventDefault();
         toggleDarkTheme();
+        localStorage.setItem("darkTheme", darkThemeActive === false ? 'true' : 'false');
     }
 
     return (

@@ -7,6 +7,7 @@ interface IThemeContext {
 
 export const defaultState = {
     darkThemeActive: false,
+    
 };
 
 export const ThemeContext = createContext<IThemeContext>(defaultState);

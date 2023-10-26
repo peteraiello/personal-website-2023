@@ -1,11 +1,17 @@
-import React, {useContext} from "react";
+import React, {useContext, useEffect} from "react";
 import { ThemeContext } from "../../context/ThemeContext/ThemeContext";
 import { Gradient } from "../gradients/gradient";
 import { GradientWrapper } from "../gradients/gradientWrapper";
 
 export const AppWrapper = ({children}) => {
 
-    const {darkThemeActive} = useContext(ThemeContext);
+    const {darkThemeActive, toggleDarkTheme} = useContext(ThemeContext);
+
+    useEffect(() => {
+        if(localStorage.getItem('darkTheme') === 'true') {
+            toggleDarkTheme()
+        } 
+    }, [])
 
     return (
         <div className={darkThemeActive === true ? 'dark' : '' }>
