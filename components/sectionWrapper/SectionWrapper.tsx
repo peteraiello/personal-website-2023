@@ -16,7 +16,7 @@ interface SectionWrapperProps {
 
 function Section({ id, children }) {
     const ref = useRef(null);
-    const isInView = useInView(ref, { once: false });  
+    const isInView = useInView(ref, { once: true });  
     return (
       <section ref={ref} id={id !== null ? id : undefined}  className={` transition-all ease-in-out duration-500  ${isInView ? 'opacity-100 translate-y-0' : 'translate-y-10 opacity-0'}`}>
         <div className="text-darkGray dark:text-white">

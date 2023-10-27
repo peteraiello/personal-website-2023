@@ -35,7 +35,7 @@ function Element({ index, children }) {
     const ref = useRef(null);
     const isInView = useInView(ref, {
         margin: "0px 0px -10% 0px",
-        once: false 
+        once: true 
     });  
     return (
       <div ref={ref} className={`transition-opacity ease-in-out duration-500 ${getTheDelay(index)} ${isInView ? 'opacity-100 translate-y-0' : 'translate-y-10 opacity-0'}`}>
