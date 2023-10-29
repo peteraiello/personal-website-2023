@@ -19,7 +19,7 @@ export const getTextClass = ({size}) => {
     let textClass;
     switch (size) {
         case 'award': 
-        textClass = 'text-award leading-body';
+        textClass = 'text-body leading-body';
         break;
         case 'body': 
         textClass = 'text-large leading-body';

@@ -35,7 +35,7 @@
     }
 
     section:first-of-type {
-        @apply py-xl md:pt-xxl md:pb-lg;
+        @apply pb-md pt-xl md:pt-xxl md:pb-lg;
     }
 
     section + section {
