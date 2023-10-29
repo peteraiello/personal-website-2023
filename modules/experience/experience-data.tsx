@@ -3,7 +3,7 @@ export const ExperienceData = {
     id: 'experience',
     experience: [
     {
-        title: 'Spotify',
+        company: 'Spotify',
         position: 'Dusted | Frontend Developer',
         date: 'Feb 2018 - Jul 2020',
         description: 
@@ -12,7 +12,7 @@ Nullam vel nisl a justo [aliquet laoreet eu ac enim](www.google.com). In sagitti
 `,
     },
     {
-        title: 'Google',
+        company: 'Google',
         position: 'Dusted | Frontend Developer',
         date: 'Feb 2018 - Jul 2020',
         description: 
@@ -21,7 +21,7 @@ Nullam vel nisl a justo [aliquet laoreet eu ac enim](www.google.com). In sagitti
 `,
     },
     {
-        title: 'Amazon',
+        company: 'Amazon',
         position: 'Dusted | Frontend Developer',
         date: 'Feb 2018 - Jul 2020',
         description: 

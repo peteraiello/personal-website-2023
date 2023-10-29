@@ -5,14 +5,14 @@ import {Articles} from '../modules/writing/articles';
 import navItems from '../data/navItems.json';
 import { Overview } from '../modules/overview/overview';
 import { buttonIconType } from '../components/button';
-import { exampleProfile } from '../modules/overview/overview-data';
+import { exampleProfile } from '../content/overview-content';
 import { Work } from '../modules/work/work';
-import { workData } from '../modules/work/work-data';
+import { workData } from '../content/work-content';
 import { Projects } from '../modules/projects/projects';
 import { layoutType } from '../modules/projects/projects';
 import { exampleProjectData } from '../modules/projects/project-data';
 import { Experience } from '../modules/experience/experience';
-import { ExperienceData } from '../modules/experience/experience-data';
+import { ExperienceData } from '../content/experience-content';
 import { ArticlesData } from '../modules/writing/articles-data';
 import { FooterData } from '../modules/footer/footer-data';
 import { Footer } from '../modules/footer/footer';
@@ -57,7 +57,7 @@ export default function Home({
                     resumeLink={
                         {
                             label: exampleProfile.resumeLink.label,
-                            href: exampleProfile.resumeLink.href,
+                            href: exampleProfile?.resumeLink.href,
                             icon: exampleProfile.resumeLink.icon as buttonIconType
                         }
                     }
@@ -83,10 +83,11 @@ export default function Home({
                 <Articles
                     id={ArticlesData.id}
                     title={'Writing'}
-                    subtitle={'I have a few posts on external websites.'}
+                    subtitle={'I write the occasional article on the Dusted Insights page.'}
                     articles={latestExternalPosts}
                 />
 
+                {/* off until has blog
                 <Articles
                     id={ArticlesData.id}
                     title={'Personal Blog'}
@@ -99,6 +100,7 @@ export default function Home({
                         }
                     }
                 />
+                */}
 
                 <Experience 
                     id={ExperienceData.id}

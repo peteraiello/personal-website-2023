@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import {Heading} from '../../components/typography/heading';
 import { Text } from "../../components/typography/text";
 import { SectionWrapper } from "../../components/sectionWrapper";
@@ -9,11 +8,7 @@ import { Button, buttonProps } from "../../components/button/button";
 import { TextContent } from "../../components/typography/textContent";
 import { Card, CardProps } from "../../components/card/card";
 import { CustomImage, customImageProps } from "../../components/image/image";
-import { Gradient } from "../../components/gradients/gradient";
 import { GradientWrapper } from "../../components/gradients/gradientWrapper";
-import { HeaderIcon } from "../header/logo";
-import { AIcon } from "../header/a-logo";
-import {inView} from "framer-motion";
 
 interface OverviewProps {
     /**
@@ -91,7 +86,7 @@ export const Overview = ({
                                 {profileDesc}
                             </TextContent>
                         }
-                        {resumeLink &&
+                        {resumeLink.label &&
                             <div className="lg:mt-5">
                                 <Button 
                                     label={resumeLink?.label}
@@ -107,7 +102,6 @@ export const Overview = ({
                         <div className="rounded-full overflow-hidden w-[300px] h-[300px] relative">
                           {profileImage &&
                             <GradientWrapper>
-                                {/* <Gradient gradientDirection={'top-to-bottom'} fromColour={'transparent'} toColour={'brandGold'} opacity={'1/2'} zIndex={'z-[1]'} /> */}
                                 <CustomImage 
                                     src={profileImage?.src}
                                     alt={profileImage?.alt}
@@ -120,16 +114,19 @@ export const Overview = ({
                     </div>
                 </div>
             </div>
-            <div className="flex flex-col md:flex-row gap-5 mt-sm md:mt-md lg:mt-lg">
-                {(cards && cards.length > 0) && 
-                    cards?.map((card, i) => {
-                        let id = uuidv4();
-                        return(
-                            <Card { ...card } key={id} index={i}/>
-                        )
-                    })
-                }
-            </div>    
+
+            {(cards && cards.length > 0) && 
+                <div className="flex flex-col md:flex-row gap-5 mt-sm md:mt-md lg:mt-lg">
+                    {(cards && cards.length > 0) && 
+                        cards?.map((card, i) => {
+                            let id = uuidv4();
+                            return(
+                                <Card { ...card } key={id} index={i}/>
+                            )
+                        })
+                    }
+                </div>    
+            }
         </SectionWrapper>
     )
 }

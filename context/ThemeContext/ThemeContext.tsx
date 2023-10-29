@@ -6,7 +6,7 @@ interface IThemeContext {
 }
 
 export const defaultState = {
-    darkThemeActive: false,
+    darkThemeActive: true,
     
 };
 

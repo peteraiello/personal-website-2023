@@ -42,7 +42,7 @@ export const Projects = ({
                                 {projects?.map((project, index) => {
                                     let newIndex = index; 
                                     return(
-                                        <AnimatedElement index={index} key={index}>
+                                    <AnimatedElement index={index} key={index}>
                                         <Project 
                                             layout={layout}
                                             featured={project.featured}

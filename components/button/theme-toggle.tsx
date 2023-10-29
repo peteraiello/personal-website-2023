@@ -16,7 +16,7 @@ export const ThemeToggleButton = () => {
     return (
         <div className="flex items-center">
             <label className={'inline-block h-[34px] bg-lightGray relative rounded-full w-[68px]'} htmlFor="checkbox"> 
-                <button className={`block transition-all duration-300 ${darkThemeActive === true ? 'translate-x-[33px]' : 'translate-x-0'} `} aria-pressed="false" id="checkbox" onClick={(e) => clickHandler(e)}>
+                <button className={`block focus:rounded-full transition-all duration-300 ${darkThemeActive === true ? 'translate-x-[33px]' : 'translate-x-0'} `} aria-pressed="false" id="checkbox" onClick={(e) => clickHandler(e)}>
                     <div className={`transition-all duration-300 dark:bg-brandGold bg-brandBlue m-0 p-[3px] relative left-0 top-0 right-0 cursor-pointer duration-400 rounded-full h-full`}>
                         <div className={`dark:bg-black bg-white transition-all duration-300 ease-linear h-[28px] w-[28px] rounded-full`}>
                             <div className="flex items-center w-full h-full justify-center overflow-hidden relative">

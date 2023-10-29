@@ -8,9 +8,9 @@ import {v4 as uuidv4} from 'uuid';
 
 interface workItem {
     /**
-     * title (name of the agency)
+     * company title (name of the agency)
      */
-    title?: string,
+    company?: string,
     /**
      * Position 
      */
@@ -63,8 +63,8 @@ export const Experience = ({
                                             <AnimatedElement index={index} key={id}>
                                                 <div className="grid grid-cols-12">
                                                     <div className="col-span-12 lg:col-span-4 flex flex-col gap-[10px]">
-                                                        {experience.title &&
-                                                            <Text weight={'bold'} size={'strapline'}>{experience.title}</Text>
+                                                        {experience.company &&
+                                                            <Text weight={'bold'} size={'strapline'}>{experience.company}</Text>
                                                         }
                                                         {experience.position &&
                                                             <Text weight={'bold'} size={'strapline'}>{experience.position}</Text>

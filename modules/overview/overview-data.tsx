@@ -7,8 +7,8 @@ export const profileImg = {
 
 export const exampleProfile = {
     sectionId: "overview",
-    name: 'Peter Aiello',
-    jobTitle: 'Developer / Creative Coder / Writer / Designer',
+    name: 'Jonathan Ham Roberts',
+    jobTitle: 'Developer / Entrepeneur / Writer / Designer',
     profileImg: profileImg,
     profileDesc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
         Vestibulum at blandit felis, et lobortis nulla. 
@@ -18,15 +18,15 @@ export const exampleProfile = {
         Nunc lacinia rhoncus porta. Pellentesque pellentesque`,
     links: 
         [
-            {preLabel: 'WWW', label: 'peteraiello.dev', customLink: {href: 'https://peteraiello.dev', target: "_blank"}},
-            {preLabel: 'EM', label: 'hello@peteraiello.dev', customLink: {href: 'hello@peteraiello.dev', target: "_blank"}},
-            {preLabel: 'GIT', label: 'github.com/peteraiello', customLink: {href: 'https://github.com/peteraiello', target: "_blank"}},
-            {preLabel: 'IN', label: 'linkedin.com/in/peter-aiello', customLink: {href: 'https://linkedin.com/in/peter-aiello', target: "_blank"}}
+            {preLabel: 'WWW', label: 'jonathan-ham.dev', customLink: {href: 'https://jonathan-ham.dev', target: "_blank"}},
+            {preLabel: 'EM', label: 'hello@jonathan-ham.dev', customLink: {href: 'hello@jonathan-ham.dev', target: "_blank"}},
+            {preLabel: 'GIT', label: 'github.com/hambo-spambo', customLink: {href: 'https://github.com/hambo-spambo', target: "_blank"}},
+            {preLabel: 'IN', label: 'linkedin.com/in/jonathan-ham', customLink: {href: 'https://linkedin.com/in/jonathan-ham', target: "_blank"}}
         ],
     resumeLink: {
-        label: 'Download Resume',
-        href: '/#',
-        icon: 'download'
+        label: '',
+        href: '',
+        icon: ''
     },
     cards: 
         [   
