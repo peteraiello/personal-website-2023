@@ -2,7 +2,6 @@ import React from "react";
 import { useRef } from "react";
 import {useInView} from 'framer-motion';
 
-
 interface SectionWrapperProps {
     /**
      * Children of the react element
@@ -14,30 +13,25 @@ interface SectionWrapperProps {
     id?: string,
 }
 
-function Section({ id, children }) {
-    const ref = useRef(null);
-    const isInView = useInView(ref, { once: true });  
-    return (
-      <section ref={ref} id={id !== null ? id : undefined}  className={` transition-all ease-in-out duration-500  ${isInView ? 'opacity-100 translate-y-0' : 'translate-y-10 opacity-0'}`}>
-        <div className="text-darkGray dark:text-white">
-        {children}
-        </div>
-      </section>
-    );
-}
-
 export const SectionWrapper = ({
     id,
     children
 }: SectionWrapperProps
     ) => {
+
+    const ref = useRef(null);
+    const isInView = useInView(ref, 
+        { once: true }
+    );  
+
     return(
-        <Section 
-            id={id}
+        <section 
+            ref={ref} id={id !== null ? id : undefined} 
+            className={` transition-all ease-in-out duration-500 text-darkGray dark:text-white ${isInView ? 'opacity-100 translate-y-0' : 'translate-y-10 opacity-0'}`}
         >
             <div className="wrapper max-w-[1200px] px-5">
                 {children}
             </div>
-        </Section>
+        </section>
     )
 }
