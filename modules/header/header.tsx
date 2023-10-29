@@ -53,7 +53,8 @@ export const Header = ({items}:HeaderProps) => {
             <header ref={headerRef} className={`absolute md:fixed ${headerScrolled === true ? 'dark:bg-darkGray bg-white bg-opacity-90 ' : ' bg-transparent'} z-[9999]  w-full transition-all duration-300 text-darkGray dark:text-white`}>
                 <div className="wrapper max-w-[1200px] px-5">
                     <div className="py-5 flex gap-10 items-center justify-between md:justify-normal">
-                        <Link href={'/'} className={`transition-all duration-300 ${headerScrolled ? 'h-[50px]' : 'h-[88px]' }`}>
+                        <Link href={'/'} className={`focus:rounded-full transition-all duration-300 ${headerScrolled ? 'w-[50px] h-[50px]' : 'w-[88px] h-[88px]' }`}>
+                            <span className="opacity-0 absolute font-0 ">Return to homepage</span>
                             <svg width="100%" height="100%" viewBox="0 0 380 380">
                                 <g id="group_1" data-name="Group 1" transform="translate(0 -1)">
                                 <g className="stroke-black dark:stroke-white" id="ellipse_1" data-name="ellipse" transform="translate(0 1)" fill="none" strokeWidth="10" >
@@ -65,7 +66,6 @@ export const Header = ({items}:HeaderProps) => {
                                 </g>
                             </svg>
                         </Link>
-
                         <div className="flex items-center">
                             {
                                 (items && items.length > 0) &&
@@ -77,7 +77,6 @@ export const Header = ({items}:HeaderProps) => {
                                     })}
                                 </ul>
                             }
-
                             <ThemeToggleButton />
                         </div>
 
