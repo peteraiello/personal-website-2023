@@ -6,7 +6,7 @@ export const ExperienceData = {
         company: 'WordPress Developer',
         position: 'PMW Communcications',
         date: 'Feb 2018 - Jul 2020',
-        description: 
+        description:  
 `I worked as a WordPress developer for a full-service marketing agency. One of my main tasks was the complete overhaul and transformation of their existing website into an SEO-optimised, business-generating digital product.`,
     },
     {
