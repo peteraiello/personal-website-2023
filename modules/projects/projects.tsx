@@ -39,22 +39,28 @@ export const Projects = ({
                     {
                         (projects && projects?.length  > 0 ) &&
                             <div className="flex flex-col gap-[60px] lg:gap-lg">
-                                {projects?.map((project, index) => {
+                                {projects?.map((project, index) => {                                   
                                     let newIndex = index; 
                                     return(
-                                    <AnimatedElement index={index} key={index}>
-                                        <Project 
-                                            layout={layout}
-                                            featured={project.featured}
-                                            client={project.client}
-                                            agency={project.agency}
-                                            tags={project.tags}
-                                            description={project.description}
-                                            buttonLink={project.buttonLink}
-                                            projectImage={project.projectImage}
-                                            index={newIndex}
-                                        />
-                                        </AnimatedElement>
+                                        <>
+                                        {project.status === "published" &&
+
+                                            <AnimatedElement index={index} key={index}>
+                                                <Project 
+                                                    layout={layout}
+                                                    featured={project.featured}
+                                                    client={project.client}
+                                                    agency={project.agency}
+                                                    tags={project.tags}
+                                                    description={project.description}
+                                                    buttonLink={project.buttonLink}
+                                                    projectImage={project.projectImage}
+                                                    index={newIndex}
+                                                />
+                                            </AnimatedElement>
+                                            }
+                                        </>
+                                       
                                     )}
                                 )}
                             </div>

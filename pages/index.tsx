@@ -131,7 +131,8 @@ export const getStaticProps = async () => {
         'projectImage',
         'description',
         'buttonLink',
-        'layout'
+        'layout',
+        'status'
     ])
   
     return {

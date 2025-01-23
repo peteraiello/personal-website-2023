@@ -45,6 +45,10 @@ export interface projectProps {
      * The index number 
      */
     index?: number,
+    /**
+     * Project status
+     */
+    status?: 'draft' | 'published'
 }
 
 const getLayout = (layout, index) => {

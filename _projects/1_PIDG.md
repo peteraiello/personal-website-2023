@@ -1,5 +1,6 @@
 ---
 title: 'Digital Sustainability Article for Dusted'
+status: 'draft'
 featured: false
 client: 'PIDG'
 agency: 'Dusted'
