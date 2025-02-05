@@ -12,13 +12,13 @@ export const ExperienceData = {
     {
         company: 'Austin Marketing',
         position: 'Dusted | Frontend Developer',
-        date: 'Feb 2018 - Jul 2020',
+        date: 'Jul 2016 - Feb 2018',
         description: 
 `In my first full-time role as a web designer and developer, I worked as part of a small team for a long-established agency. My responsibilities included everything from designing websites to production using pre-existing WordPress themes. `,
     },
     {
         position: 'Freelance Web Designer',
-        date: 'Feb 2018 - Jul 2020',
+        date: '2014 - Apr 2016',
         description: 
 `Whilst working part-time, I also freelanced as a web designer for a local museum and a hypnotherapy and teaching centre. Some of my brand work is still used several years on.
 `,
