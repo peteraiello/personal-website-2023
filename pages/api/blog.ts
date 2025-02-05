@@ -12,7 +12,8 @@ const articleFields = [
     'tags',
     'excerpt',
     'articleImage',
-    'buttonLink'
+    'buttonLink',
+    'draft'
 ]
 
 export function getPostSlugs() {
@@ -76,7 +77,7 @@ export function getPersonalBlogPosts() {
 export function getLatestPersonalBlogPosts() {
   const posts = getAllArticles(articleFields)
   const personalBlogPosts = convertToPersonalBlog(posts);
-  const latestPosts = personalBlogPosts.slice(0,3);
+  const latestPosts = personalBlogPosts.slice(0,3); /* get the latest 3 articles */
   return latestPosts;
 }
 

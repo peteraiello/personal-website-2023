@@ -16,7 +16,7 @@ import { ExperienceData } from '../content/experience-content';
 import { ArticlesData } from '../modules/writing/articles-data';
 import { FooterData } from '../modules/footer/footer-data';
 import { Footer } from '../modules/footer/footer';
-import { getAllArticles, getLatestExternalBlogPosts, getLatestPersonalBlogPosts } from './api/blog';
+import { getLatestExternalBlogPosts, getLatestPersonalBlogPosts } from './api/blog';
 import { getAllProjects } from './api/projects';
 import { ArticleProps } from '../modules/writing/article';
 import { AppWrapper } from '../components/AppWrapper/app-wrapper';
@@ -87,20 +87,12 @@ export default function Home({
                     articles={latestExternalPosts}
                 />
 
-                {/* off until has blog
                 <Articles
                     id={ArticlesData.id}
-                    title={'Personal Blog'}
-                    subtitle={'I also keep an external blog'}
-                    articles={latestPersonalBlog}
-                    sectionButton={
-                        {
-                            label: 'Personal Blog',
-                            href: '/posts'
-                        }
-                    }
+                    title={'Blog'}
+                    articles={latestPersonalBlog}     
+                    noPublishedPostsMsg={'Coming soon'}                       
                 />
-                */}
 
                 <Experience 
                     id={ExperienceData.id}

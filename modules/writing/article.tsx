@@ -48,7 +48,8 @@ export interface ArticleProps {
      */
     buttonLink?: string,
     slug?: string,
-    content?: string
+    content?: string,
+    draft?: boolean
 }
 
 export const BlogArticle = ({

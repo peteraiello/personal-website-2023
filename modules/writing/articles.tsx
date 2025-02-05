@@ -5,6 +5,9 @@ import { SectionWrapper } from "../../components/sectionWrapper";
 import { Text } from "../../components/typography/text";
 import { Button, buttonProps } from "../../components/button";
 import { AnimatedElement } from "../../components/AnimatedElement/animated-element";
+import {v4 as uuidv4} from "uuid";
+import cx from "classnames";
+
 
 interface articlesProps {
     /**
@@ -15,6 +18,10 @@ interface articlesProps {
      * Subtitle
      */
     subtitle?: string,
+    /**
+     * No posts found text
+     */
+    noPublishedPostsMsg?: string,
     /** 
      * Articles
      */
@@ -34,8 +41,22 @@ export const Articles = ({
     subtitle,
     articles,
     id,
+    noPublishedPostsMsg,
     sectionButton
 }:articlesProps) => {
+
+    const PlaceholderText = () => {
+        return (
+            <Text weight={'medium'} size={'body'}>
+                {noPublishedPostsMsg ? noPublishedPostsMsg : 'No posts found'}
+            </Text>
+        );
+    }
+
+    const publicPosts = articles?.filter((post) => {return !post?.draft && post });
+
+    console.log('publicPosts', publicPosts);
+
     return (
         <SectionWrapper id={id}>
             <div className="flex flex-col gap-md">
@@ -54,26 +75,34 @@ export const Articles = ({
                     </div>
                 </div>
                 <div className="flex flex-col gap-lg">
-                    {articles.map((blog, index) => {
-                        return(
-                            <AnimatedElement index={index} key={index}>
-                                <BlogArticle
-                                    featured={blog?.featured}
-                                    external={blog?.external}
-                                    tags={blog?.tags}
-                                    excerpt={blog?.excerpt}
-                                    title={blog?.title}
-                                    date={blog?.date}
-                                    articleImage={blog?.articleImage}
-                                    buttonLink={blog?.buttonLink}
-                                />
-                            </AnimatedElement>
-                        )
-                    })}        
+                    {Boolean(articles?.length > 0 && Boolean(publicPosts?.length > 0)) ?
+                        articles.map((blog, index) => {
+                            let id = uuidv4();
+                            return(
+                                <>
+                                    <AnimatedElement index={index} key={id}>
+                                        <BlogArticle
+                                            featured={blog?.featured}
+                                            external={blog?.external}
+                                            tags={blog?.tags}
+                                            excerpt={blog?.excerpt}
+                                            title={blog?.title}
+                                            date={blog?.date}
+                                            articleImage={blog?.articleImage}
+                                            buttonLink={blog?.buttonLink}
+                                        />
+                                    </AnimatedElement>                                                                    
+                                </>
+                            )
+                        })
+                        :
+                            <PlaceholderText />                                    
+                    }                     
+
                 </div> 
 
                 {sectionButton &&
-                    <div className="flex justify-center">
+                    <div className="flex justify-left"> {/* ToDo: buttonWrapper component */}
                         <Button 
                             href={sectionButton.href}
                             label={sectionButton.label}

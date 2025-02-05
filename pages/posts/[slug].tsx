@@ -20,46 +20,50 @@ type Props = {
 }
 
 export default function Post({ post, preview }: Props) {
+  console.log('is draft');
   const router = useRouter()
-  const title = `${post.title}`
-  if (!router.isFallback && !post?.slug) {
+  const title = `${post?.title}`
+  const isPublished = `${!post?.draft}`
+  console.log('is draft', isPublished);
+  if ((!router.isFallback && !post?.slug) || isPublished === "false") {
     return <ErrorPage statusCode={404} />
+  } 
+    return (
+      <>
+          {router.isFallback ? (
+            <p>Loading…</p>
+          ) : (
+            <>
+            <ThemeProvider>
+              <AppWrapper> 
+                  <Head>
+                      <title>{title + '| Peter Aiello - Frontend developer'}</title>
+                  </Head>
+                  <Header items={navItems?.items} />
+                  <article>
+                    <SectionWrapper>
+                      <h1 className='text-5xl mb-5 font-semibold'>{title}</h1>
+                      <div className='w-full lg:w-10/12'>
+                        <TextContent>
+                          {post.content}
+                        </TextContent>
+                      </div>
+                      <div className='py-lg'>
+                        <Button label={'Back'} href={'/'} />
+                      </div>
+                    </SectionWrapper>
+                  </article>
+                  <Footer 
+                    footerText={FooterData}
+                  />
+              </AppWrapper> 
+              </ThemeProvider>
+            </>
+          )}
+    </>
+    )
   }
-  return (
-    <>
-        {router.isFallback ? (
-          <p>Loading…</p>
-        ) : (
-          <>
-          <ThemeProvider>
-            <AppWrapper> 
-                <Head>
-                    <title>{title + '| Peter Aiello - Frontend developer'}</title>
-                </Head>
-                <Header items={navItems?.items} />
-                <article>
-                  <SectionWrapper>
-                    <h1 className='text-5xl mb-5 font-semibold'>{title}</h1>
-                    <div className='w-full lg:w-10/12'>
-                      <TextContent>
-                        {post.content}
-                      </TextContent>
-                    </div>
-                    <div className='py-lg'>
-                      <Button label={'Back'} href={'/'} />
-                    </div>
-                  </SectionWrapper>
-                </article>
-                <Footer 
-                  footerText={FooterData}
-                />
-            </AppWrapper> 
-            </ThemeProvider>
-          </>
-        )}
-   </>
-  )
-}
+
 
 type Params = {
   params: {
@@ -73,6 +77,7 @@ export async function getStaticProps({ params }: Params) {
     'date',
     'slug',
     'content',
+    'draft'
   ])
   // const content = await markdownToHtml(post.content || '')
 
