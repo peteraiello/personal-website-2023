@@ -19,13 +19,15 @@
         --color-brand-gold: 223 189 133;
     }
 
-    button,
-    a {
-        @apply focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-brandBlue focus:dark:ring-white;
-    }
+    div.patterns {
+        button,
+        a {
+            @apply focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-brandBlue focus:dark:ring-white;
+        }
 
-    a.button {
-        @apply focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-brandBlue focus:dark:ring-white;
+        a.button {
+            @apply focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-brandBlue focus:dark:ring-white;
+        }
     }
 }
 
@@ -69,5 +71,4 @@
     .footer-text {
         @apply prose-p:m-0;
     }
-
 } 

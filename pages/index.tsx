@@ -46,59 +46,62 @@ export default function Home({
 
                 <Header items={navItems?.items} />
 
+                <div className='patterns'>
 
-                <Overview
-                    id={exampleProfile.sectionId}
-                    name={exampleProfile.name}
-                    jobTitle={exampleProfile.jobTitle}
-                    profileDesc={exampleProfile.profileDesc}
-                    links={exampleProfile.links}
-                    profileImage={exampleProfile.profileImg}
-                    resumeLink={
-                        {
-                            label: exampleProfile.resumeLink.label,
-                            href: exampleProfile?.resumeLink.href,
-                            icon: exampleProfile.resumeLink.icon as buttonIconType
+                    <Overview
+                        id={exampleProfile.sectionId}
+                        name={exampleProfile.name}
+                        jobTitle={exampleProfile.jobTitle}
+                        profileDesc={exampleProfile.profileDesc}
+                        links={exampleProfile.links}
+                        profileImage={exampleProfile.profileImg}
+                        resumeLink={
+                            {
+                                label: exampleProfile.resumeLink.label,
+                                href: exampleProfile?.resumeLink.href,
+                                icon: exampleProfile.resumeLink.icon as buttonIconType
+                            }
                         }
-                    }
-                    cards={exampleProfile.cards}
-                />
+                        cards={exampleProfile.cards}
+                    />
 
-                <Work
-                    id={workData.sectionId}
-                    title={workData.title}
-                    subtitle={workData.subtitle}
-                    content={workData.content}
-                    clients={workData.clients}
-                    awards={workData.awards}
-                />
+                    <Work
+                        id={workData.sectionId}
+                        title={workData.title}
+                        subtitle={workData.subtitle}
+                        content={workData.content}
+                        clients={workData.clients}
+                        awards={workData.awards}
+                    />
 
-                <Projects 
-                    id={exampleProjectData.id}
-                    title={exampleProjectData.title}
-                    layout={exampleProjectData.layout as layoutType}
-                    projects={allProjects}
-                />
+                    <Projects 
+                        id={exampleProjectData.id}
+                        title={exampleProjectData.title}
+                        layout={exampleProjectData.layout as layoutType}
+                        projects={allProjects}
+                    />
 
-                <Articles
-                    id={ArticlesData.id}
-                    title={'Writing'}
-                    subtitle={'I write the occasional article on the Dusted Insights page.'}
-                    articles={latestExternalPosts}
-                />
+                    <Articles
+                        id={ArticlesData.id}
+                        title={'Writing'}
+                        subtitle={'I write the occasional article on the Dusted Insights page.'}
+                        articles={latestExternalPosts}
+                    />
 
-                <Articles
-                    id={ArticlesData.id}
-                    title={'Blog'}
-                    articles={latestPersonalBlog}     
-                    noPublishedPostsMsg={'Coming soon'}                       
-                />
+                    <Articles
+                        id={ArticlesData.id}
+                        title={'Blog'}
+                        articles={latestPersonalBlog}     
+                        noPublishedPostsMsg={'Coming soon'}                       
+                    />
 
-                <Experience 
-                    id={ExperienceData.id}
-                    title={ExperienceData.title}
-                    experiences={ExperienceData.experience}
-                />
+                    <Experience 
+                        id={ExperienceData.id}
+                        title={ExperienceData.title}
+                        experiences={ExperienceData.experience}
+                    />
+
+                </div>
 
                 <Footer 
                     footerText={FooterData}
