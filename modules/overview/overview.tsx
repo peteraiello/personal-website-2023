@@ -9,6 +9,7 @@ import { TextContent } from "../../components/typography/textContent";
 import { Card, CardProps } from "../../components/card/card";
 import { CustomImage, customImageProps } from "../../components/image/image";
 import { GradientWrapper } from "../../components/gradients/gradientWrapper";
+import { Tags } from "../../components/tag/tags";
 
 interface OverviewProps {
     /**
@@ -32,6 +33,19 @@ interface OverviewProps {
      */
     resumeLink?: buttonProps,
     /**
+     * Skills
+     */
+    skillGroups?: {
+        /**
+         * Group title i.e. "Soft skills", "Software skills"
+         */
+        title: string,
+        /**
+         * The tags
+         */
+        skills?: string[]
+    }[],
+    /**
      * Cards
      */
     cards?: CardProps[],
@@ -51,6 +65,7 @@ export const Overview = ({
     profileDesc,
     links,
     resumeLink,
+    skillGroups,
     cards,
     id,
     profileImage
@@ -61,10 +76,10 @@ export const Overview = ({
                 <div className="col-span-12 md:col-span-6 lg:col-span-8">
                     <div className="flex flex-col gap-5">
                         {name &&
-                            <Heading hTag="3">{name}</Heading>                        
+                            <Heading hTag="1" fontSize={'text-4xl'}>{name}</Heading>                        
                         }
                         {jobTitle && 
-                            <Text size={'strapline'} weight={'bold'}>{jobTitle}</Text>
+                            <Heading hTag="2" fontSize="text-lg" fontStyle={'san-serif'} classes="font-bold">{jobTitle}</Heading>
                         }
                         {links &&
                             <ul className="list-none flex flex-wrap gap-y-5">
@@ -114,6 +129,21 @@ export const Overview = ({
                     </div>
                 </div>
             </div>
+
+            {Boolean(skillGroups?.length > 0) &&
+                <div className="flex flex-col gap-3 mt-sm md:mt-md">
+                    {skillGroups?.map((group, index) => {   
+                        return (                 
+                            <div key={index} className="flex flex-col gap-2">
+                               
+                                {Boolean(group?.skills) &&
+                                    <Tags title={group?.title}  tags={group?.skills} />
+                                }
+                            </div>      
+                        )                                                                 
+                    })}
+                </div>
+            }
 
             {(cards && cards.length > 0) && 
                 <div className="flex flex-col md:flex-row gap-5 mt-sm md:mt-md lg:mt-lg">

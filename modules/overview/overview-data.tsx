@@ -23,6 +23,21 @@ export const exampleProfile = {
             {preLabel: 'GIT', label: 'github.com/hambo-spambo', customLink: {href: 'https://github.com/hambo-spambo', target: "_blank"}},
             {preLabel: 'IN', label: 'linkedin.com/in/jonathan-ham', customLink: {href: 'https://linkedin.com/in/jonathan-ham', target: "_blank"}}
         ],
+    skillGroups: [
+        {
+            title: 'Technical Skills (newer)',
+            skills: ['JavaScript', 'TypeScript', 'React', 'Next.js', 'Gatsby', 'Jest', 'Storybook', 'Tailwind CSS']
+        },
+        {
+            title: 'Technical skills (older)',
+            skills: ["WordPress", "PHP"]
+        },
+        {
+            title: "Design & Visual skills",
+            skills: ["UI and UX Design"]
+        }
+    ],
+
     resumeLink: {
         label: '',
         href: '',

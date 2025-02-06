@@ -4,7 +4,7 @@ import {useInView} from 'framer-motion';
 
 export const AnimatedElement = ({
     children,
-    index
+    index,
 }) => {
 
     const ref = useRef(null);

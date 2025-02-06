@@ -21,7 +21,7 @@ export const SectionWrapper = ({
 
     const ref = useRef(null);
     const isInView = useInView(ref, 
-        { once: true }
+        { once: false }
     );  
 
     return(

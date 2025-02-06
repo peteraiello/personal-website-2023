@@ -31,6 +31,7 @@ export const Example = () => {
                 }
             }
             cards={exampleProfile.cards}
+            skillGroups={exampleProfile.skillGroups}
         />
     )
 }
@@ -55,6 +56,7 @@ export const ExampleDarkTheme = () => {
                         }
                     }
                     cards={exampleProfile.cards}
+                    skillGroups={exampleProfile.skillGroups}
                 />
             </div>
         </div>

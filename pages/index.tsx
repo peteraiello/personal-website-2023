@@ -62,7 +62,8 @@ export default function Home({
                                 icon: exampleProfile.resumeLink.icon as buttonIconType
                             }
                         }
-                        cards={exampleProfile.cards}
+                        skillGroups={exampleProfile.skillGroups}
+                        // cards={exampleProfile.cards}
                     />
 
                     <Work

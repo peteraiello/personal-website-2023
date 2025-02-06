@@ -1,10 +1,23 @@
 import React from "react";
+import cx from "classnames";
 
 interface headingProps {
     /**
      * The heading level 
      */
     hTag?: '1' | '2' | '3' | '4' | '5' | '6',
+    /**
+     * Font
+     */
+    fontStyle?: 'serif' | 'san-serif',
+    /**
+     * Font size
+     */
+    fontSize?: 'text-md' | 'text-md' | 'text-lg' | 'text-xl' | 'text-2xl' | 'text-3xl' | 'text-4xl' | 'text-5xl' | 'text-6xl',
+    /**
+     * Classes (any additional classes you want to add)
+     */
+    classes?: string,
     /** 
      * The heading text
      */
@@ -13,6 +26,9 @@ interface headingProps {
 
 export const Heading = ({
     hTag, 
+    fontStyle = "serif",
+    fontSize,
+    classes,
     children
 }: headingProps) => {
 
@@ -41,11 +57,11 @@ export const Heading = ({
         return headingClass;
     }
     
-    const baseClass = 'tracking-wider font-noto lowercase';
+    const fontClass = (fontStyle == "serif" ? "font-noto lowercase tracking-wider" : "font-open");
 
     const htmlTag = React.createElement(`h${hTag}`, {
         dangerouslySetInnerHTML: { __html: children },
-            className: baseClass + " " + getHeadingClass({hTag})
+            className: cx(fontClass, classes, fontSize ? fontSize : getHeadingClass({hTag}))
     });
 
     return (
