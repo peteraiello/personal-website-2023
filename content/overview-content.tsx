@@ -8,7 +8,7 @@ export const profileImg = {
 export const exampleProfile = {
     sectionId: "overview",
     name: 'Peter Aiello',
-    jobTitle: 'Frontend Developer | Writer | Designer',
+    jobTitle: 'Frontend Developer',
     profileImg: profileImg,
     profileDesc: 
 `
