@@ -15,7 +15,7 @@ export interface CardProps {
     /**
      * Index (the order the element appears)
      */
-    index?: Number
+    index?: number
 }
 
 export const Card = ({
