@@ -13,6 +13,7 @@
     }
 
     :root {
+        --color-darker-gray: 18 18 18;
         --color-dark-gray: 33 34 36;
         --color-light-gray: 224 224 224;
         --color-brand-blue: 0 124 186;

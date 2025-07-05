@@ -61,6 +61,8 @@ export const Gradient = ({
             customClass = 'from-white';
         } else if (fromColour === 'transparent') {
             customClass = 'from-transparent';
+        } else if (fromColour === 'darkerGray') {
+            customClass = 'from-darkerGray';
         }
         return customClass;
     }
@@ -81,6 +83,8 @@ export const Gradient = ({
             customClass = 'to-white';
         } else if (toColour === 'transparent') {
             customClass = 'to-transparent';
+        } else if (fromColour === 'darkerGray') {
+            customClass = 'from-darkerGray';
         }
         return customClass;
     }

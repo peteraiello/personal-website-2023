@@ -14,13 +14,13 @@ export const AppWrapper = ({children}) => {
     }, [])
 
     return (
-        <div className={darkThemeActive === true ? 'dark' : '' }>
+        <div className={darkThemeActive === true ? 'dark bg-darkerGray' : '' }>
 
             <GradientWrapper>
                 {darkThemeActive === true &&
                     <>
-                        <Gradient fromColour={'darkGray'} toColour={'black'} gradientDirection={'top-to-bottom'} opacity={'full'} zIndex="-z-[1]"/>
-                        <Gradient fromColour={'darkGray'} toColour={'brandGold'} gradientDirection={'left-to-right'} opacity={'1/4'} zIndex="-z-[1]"/>
+                        <Gradient fromColour={'darkerGray'} toColour={'black'} gradientDirection={'top-to-bottom'} opacity={'1/4'} zIndex="-z-[1]"/>
+                        <Gradient fromColour={'darkGray'} toColour={'brandGold'} gradientDirection={'left-to-right'} opacity={'1/4'} zIndex="-z-[1]"/>   
                     </>
                 }
                 {darkThemeActive !== true &&
