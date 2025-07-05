@@ -55,8 +55,6 @@ export const Articles = ({
 
     const publicPosts = articles?.filter((post) => {return !post?.draft && post });
 
-    console.log('publicPosts', publicPosts);
-
     return (
         <SectionWrapper id={id}>
             <div className="flex flex-col gap-md">
@@ -79,8 +77,8 @@ export const Articles = ({
                         articles.map((blog, index) => {
                             let id = uuidv4();
                             return(
-                                <>
-                                    <AnimatedElement index={index} key={id}>
+                                <div key={id}>
+                                    <AnimatedElement index={index}>
                                         <BlogArticle
                                             featured={blog?.featured}
                                             external={blog?.external}
@@ -92,7 +90,7 @@ export const Articles = ({
                                             buttonLink={blog?.buttonLink}
                                         />
                                     </AnimatedElement>                                                                    
-                                </>
+                                </div>
                             )
                         })
                         :

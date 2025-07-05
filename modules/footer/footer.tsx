@@ -1,6 +1,6 @@
 import React from "react";
+// import { TextContent } from "../../components/typography/textContent";
 import { TextContent } from "../../components/typography/textContent";
-import ReactMarkdown from "react-markdown";
 
 
 interface FooterProps {
@@ -19,7 +19,7 @@ export const Footer = ({
                 <div className="py-md lg:py-[56px] col-span-12 lg:col-start-4 lg:col-span-8">
                     {footerText &&
                     <div className="markdown-text footer-text">
-                        <ReactMarkdown>{footerText}</ReactMarkdown>
+                        <TextContent isProject={true}>{footerText}</TextContent>
                     </div>
                     }
                 </div>

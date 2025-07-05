@@ -66,7 +66,11 @@
     }
 
     .markdown-text {
-        @apply transition-all duration-300 prose max-w-full dark:prose-blockquote:text-white prose-blockquote:text-darkGray   dark:prose-headings:text-white prose-p:text-body prose-p:first-of-type:m-0 prose-p:mt-0 prose-p:leading-[32px] prose-ul:text-body prose-ul:leading-[32px] dark:text-white prose-a:text-brandBlue dark:prose-a:text-brandGold prose-a:font-normal; 
+        @apply transition-all duration-300 prose max-w-full dark:prose-blockquote:text-white prose-blockquote:text-darkGray dark:prose-headings:text-white prose-p:text-body prose-p:first-of-type:m-0 prose-p:mt-0 prose-p:leading-[32px] prose-ul:text-body prose-ul:leading-[32px] dark:text-white prose-a:text-brandBlue dark:prose-a:text-brandGold prose-a:font-normal; 
+    }
+
+    .markdown-project {
+        @apply prose prose-p:text-[1rem];
     }
 
     .footer-text {

@@ -3,6 +3,7 @@ import {Project, projectProps} from './project';
 import { Heading } from "../../components/typography/heading";
 import { SectionWrapper } from "../../components/sectionWrapper";
 import { AnimatedElement } from "../../components/AnimatedElement/animated-element";
+import { v4 as uuidv4} from 'uuid';
 export type layoutType = 'normal' | 'reverse' | 'alternating';
 
 interface projectsProps {
@@ -39,12 +40,13 @@ export const Projects = ({
                     {
                         (projects && projects?.length  > 0 ) &&
                             <div className="flex flex-col gap-[60px] lg:gap-lg">
-                                {projects?.map((project, index) => {                                   
+                                {projects?.map((project, index) => { 
+                                    let id = uuidv4();                                                                      
                                     let newIndex = index; 
                                     return(
-                                        <>
+                                        <div key={id}>
                                         {project.status === "published" &&
-                                            <AnimatedElement index={index} key={index}>
+                                            <AnimatedElement index={index}>
                                                 <Project 
                                                     layout={layout}
                                                     featured={project.featured}
@@ -58,7 +60,7 @@ export const Projects = ({
                                                 />
                                             </AnimatedElement>
                                             }
-                                        </>                                       
+                                        </div>                                       
                                     )}
                                 )}
                             </div>

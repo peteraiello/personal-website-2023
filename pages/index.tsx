@@ -63,7 +63,6 @@ export default function Home({
                             }
                         }
                         skillGroups={exampleProfile.skillGroups}
-                        // cards={exampleProfile.cards}
                     />
 
                     <Work
@@ -85,7 +84,6 @@ export default function Home({
                     <Articles
                         id={ArticlesData.id}
                         title={'Writing'}
-                        subtitle={'I write the occasional article on the Dusted Insights page.'}
                         articles={latestExternalPosts}
                     />
 

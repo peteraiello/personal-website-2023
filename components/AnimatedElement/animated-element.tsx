@@ -15,6 +15,7 @@ export const AnimatedElement = ({
     index,
 }:AnimatedElementProps) => {
 
+
     const ref = useRef(null);
 
     const isInView = useInView(ref, {
@@ -101,6 +102,33 @@ export const AnimatedElement = ({
                     return 'delay-[900ms]'
                 case(10): 
                     return 'delay-[1000ms]'
+                default:
+                    return 'delay-100'
+            }
+        } else {
+            switch(index) {
+                case(0):
+                    return 'delay-0';
+                case(1): 
+                    return 'delay-[150ms]'
+                case(2):
+                    return 'delay-[300ms]'
+                case(3): 
+                    return 'delay-[450ms]'
+                case(4): 
+                    return 'delay-[600ms]'
+                case(5): 
+                    return 'delay-[750ms]'
+                case(6): 
+                    return 'delay-[900ms]'
+                case(7): 
+                    return 'delay-[1050ms]'
+                case(8): 
+                    return 'delay-[1200ms]'
+                case(9): 
+                    return 'delay-[1350ms]'
+                case(10): 
+                    return 'delay-[1500ms]'
                 default:
                     return 'delay-100'
             }

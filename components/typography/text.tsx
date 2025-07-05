@@ -4,9 +4,9 @@ interface TextProps {
     /**
      * font size
      */
-    size?: 'lead' | 'strapline' | 'body' | 'award' | 'subtitle',
+    size?: 'project-title' | 'lead' | 'strapline' | 'body' | 'award' | 'subtitle',
     /**
-     * 
+     * Weight
      */
     weight?: 'bold' | 'medium' | 'normal' | 'semibold',
     /**
@@ -19,22 +19,25 @@ export const getTextClass = ({size}) => {
     let textClass;
     switch (size) {
         case 'award': 
-        textClass = 'text-body leading-body';
+            textClass = 'text-body leading-body';
         break;
         case 'body': 
-        textClass = 'text-large leading-body';
+            textClass = 'text-large leading-body';
         break;
         case 'lead': 
-        textClass = 'text-lead leading-body';
+            textClass = 'text-lead leading-body';
         break;
         case 'strapline':
-        textClass = 'text-strapline leading-body';
+            textClass = 'text-strapline leading-body';
         break;
         case 'subtitle': 
-        textClass = 'text-subtitle leading-subtitle';
+            textClass = 'text-subtitle leading-subtitle';
+        break;
+        case 'project-title': 
+            textClass = 'text-sm leading-body';
         break;
         default:
-        textClass = 'text-large leading-8';
+            textClass = 'text-large leading-8';
     }
     return textClass;
 }

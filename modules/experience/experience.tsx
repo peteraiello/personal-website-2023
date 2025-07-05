@@ -60,17 +60,17 @@ export const Experience = ({
                                     {experiences.map((experience, index) => {
                                         let id = uuidv4();
                                         return(
-                                            <AnimatedElement index={index} key={id}>
+                                            <AnimatedElement index={index} key={id} speed={"medium"}>
                                                 <div className="grid grid-cols-12">
-                                                    <div className="col-span-12 lg:col-span-4 flex flex-col gap-[10px]">
+                                                    <div className="col-span-12 lg:col-span-4 flex flex-col gap-[0px]">
                                                         {experience.company &&
-                                                            <Text weight={'bold'} size={'strapline'}>{experience.company}</Text>
+                                                            <Text weight={'bold'} size={'project-title'}>{experience.company}</Text>
                                                         }
                                                         {experience.position &&
-                                                            <Text weight={'bold'} size={'strapline'}>{experience.position}</Text>
+                                                            <Text weight={'bold'} size={'project-title'}>{experience.position}</Text>
                                                         }
                                                         {experience.date &&
-                                                            <Text weight={'bold'} size={'strapline'}>{experience.date}</Text>
+                                                            <Text weight={'bold'} size={'project-title'}>{experience.date}</Text>
                                                         }
                                                     </div>
                                                     <div className="col-span-12 lg:col-span-8">

@@ -13,7 +13,11 @@ interface headingProps {
     /**
      * Font size
      */
-    fontSize?: 'text-md' | 'text-md' | 'text-lg' | 'text-xl' | 'text-2xl' | 'text-3xl' | 'text-4xl' | 'text-5xl' | 'text-6xl',
+    fontSize?: 'text-sm' | 'text-md' | 'text-lg' | 'text-xl' | 'text-2xl' | 'text-3xl' | 'text-4xl' | 'text-5xl' | 'text-6xl',
+    /**
+     * Weight
+     */
+    weight?: 'bold' | 'medium' | 'normal' | 'semibold',
     /**
      * Classes (any additional classes you want to add)
      */
@@ -28,10 +32,33 @@ export const Heading = ({
     hTag, 
     fontStyle = "serif",
     fontSize,
+    weight,
     classes,
     children
 }: headingProps) => {
 
+
+     const getFontWeight = ({weight}) => {
+        let textClass;
+        switch (weight) {
+            case 'bold': 
+                textClass = 'font-bold';
+            break;
+            case 'semibold': 
+                textClass = 'font-semibold';
+            break;
+            case 'medium': 
+                textClass = 'font-medium';
+            break;
+            case 'normal':
+                textClass = 'font-normal';
+            break;
+            default:
+                textClass = 'font-normal';
+        }
+        return textClass;
+    }
+    
     const getHeadingClass = ({hTag}) => {
         let headingClass;
         switch (hTag) {
@@ -61,7 +88,7 @@ export const Heading = ({
 
     const htmlTag = React.createElement(`h${hTag}`, {
         dangerouslySetInnerHTML: { __html: children },
-            className: cx(fontClass, classes, fontSize ? fontSize : getHeadingClass({hTag}))
+            className: cx(fontClass, classes, fontSize ? fontSize : getHeadingClass({hTag}), weight && getFontWeight({weight}))
     });
 
     return (

@@ -4,6 +4,7 @@ import { Tags } from '../../components/tag/tags';
 import { Button } from '../../components/button';
 import { ArticleButton } from '../../components/button/articleButton';
 import { Text } from '../../components/typography/text';
+import { Heading} from "../../components/typography/heading";
 import { TextContent} from '../../components/typography/textContent';
 import { CustomImage, customImageProps } from '../../components/image/image';
 import { v4 as uuidv4} from 'uuid';
@@ -68,23 +69,25 @@ export const BlogArticle = ({
             <div className={articleImage ? `col-span-12 md:col-span-6 lg:col-span-8` : `col-span-12 lg:col-span-10` }>
                 <div className='flex flex-col gap-10'>
                     <div className='flex flex-col gap-5'>
-                        {title &&
-                            <div className='flex gap-x-5'>
-                                {featured &&
-                                    <StarIcon />
-                                }
-                                <Text size={'strapline'} weight={'bold'}>{title}</Text>
-                            </div>
-                        }
-                        {date &&
-                            <Text size={'strapline'} weight={'bold'}>{getTheDate(date)}</Text>
-                        }
+                        <div className='flex flex-col gap-0'>                            
+                            {title &&
+                                <div className='flex gap-x-5'>
+                                    {featured &&
+                                        <StarIcon />
+                                    }
+                                        <Heading hTag={"4"} fontSize={"text-xl"} fontStyle={"san-serif"} weight={"semibold"}>{title}</Heading>
+                                </div>
+                            }                           
+                            {date &&
+                                    <Heading hTag={"4"} fontSize={"text-xl"} fontStyle={"san-serif"} weight={"semibold"}>{getTheDate(date)}</Heading>
+                            }
+                        </div>
                         {excerpt &&
                             <div className='mr-0 md:mr-[25px] lg:mr-[50px]'>
-                                <TextContent >{excerpt}</TextContent>
+                                <TextContent isProject={true}>{excerpt}</TextContent>
                             </div>
                         }
-                        {tags &&
+                        {tags && Boolean(tags?.length > 0) &&
                             <Tags tags={tags} />
                         }
                     </div>
@@ -101,9 +104,7 @@ export const BlogArticle = ({
                                 label={'Read Article'} 
                                 href={buttonLink}
                             />
-                    }
-                        
-
+                    }                        
                 </div>
             </div>
             {articleImage &&

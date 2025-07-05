@@ -3,6 +3,7 @@ import { StarIcon } from '../../components/icons/star-icon';
 import { Tags } from '../../components/tag/tags';
 import { Button } from '../../components/button';
 import { Text } from '../../components/typography/text';
+import { Heading} from "../../components/typography/heading";
 import { TextContent} from '../../components/typography/textContent';
 import { CustomImage, customImageProps } from '../../components/image/image';
 import { layoutType } from './projects';
@@ -84,22 +85,26 @@ export const Project = ({
     return(
         <article className={`flex gap-y-10 md:gap-5 ${getLayout(layout, index)}`}>
             <div className='w-full md:w-1/2 lg:w-2/3'>
-                <div className={`flex flex-col gap-10`}>
+                <div className={`flex flex-col gap-5`}>
                     <div className='flex flex-col gap-3'>
-                        {client &&
-                            <div className='flex items-center gap-x-1'>
-                                {featured &&
-                                    <StarIcon />
-                                }
-                                <Text size={'strapline'} weight={'bold'}>{'Client: ' + client}</Text>
-                            </div>
-                        }
-                        {agency &&
-                            <Text size={'strapline'} weight={'bold'}>{'Agency: ' + agency}</Text>
-                        }
+                        <div className='flex flex-col gap-0'>
+                            {client &&
+                                <div className='flex items-center gap-x-1'>
+                                    {featured &&
+                                        <StarIcon />
+                                    }
+                                    <Heading hTag={"4"} fontSize={"text-xl"} fontStyle={"san-serif"} weight={"semibold"}>{'Client - ' + client}</Heading>
+                                </div>
+                            }
+                            {agency &&
+                                <Heading hTag={"4"} fontSize={"text-xl"} fontStyle={"san-serif"} weight={"semibold"}>{'Agency - Dusted'}</Heading>
+                            }
+                        </div>
                         {description &&
                             <div className='mr-0 md:mr-[25px] lg:mr-[50px]'>
-                                <TextContent >{description}</TextContent>
+                                <TextContent isProject={true}>
+                                    {description}
+                                </TextContent>
                             </div>
                         }
                         {tags &&
