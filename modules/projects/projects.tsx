@@ -44,7 +44,6 @@ export const Projects = ({
                                     return(
                                         <>
                                         {project.status === "published" &&
-
                                             <AnimatedElement index={index} key={index}>
                                                 <Project 
                                                     layout={layout}
@@ -59,8 +58,7 @@ export const Projects = ({
                                                 />
                                             </AnimatedElement>
                                             }
-                                        </>
-                                       
+                                        </>                                       
                                     )}
                                 )}
                             </div>

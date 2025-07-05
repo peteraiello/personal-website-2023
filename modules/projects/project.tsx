@@ -85,9 +85,9 @@ export const Project = ({
         <article className={`flex gap-y-10 md:gap-5 ${getLayout(layout, index)}`}>
             <div className='w-full md:w-1/2 lg:w-2/3'>
                 <div className={`flex flex-col gap-10`}>
-                    <div className='flex flex-col gap-5'>
+                    <div className='flex flex-col gap-3'>
                         {client &&
-                            <div className='flex gap-x-5'>
+                            <div className='flex items-center gap-x-1'>
                                 {featured &&
                                     <StarIcon />
                                 }

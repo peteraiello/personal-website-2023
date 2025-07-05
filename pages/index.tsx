@@ -122,6 +122,7 @@ export const getStaticProps = async () => {
     const allProjects = getAllProjects([
         'featured',
         'client',
+        'date',
         'agency',
         'tags',
         'projectImage',
