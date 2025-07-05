@@ -24,6 +24,7 @@
     "react-dom": "18.2.0",
     "react-in-viewport": "^1.0.0-alpha.30",
     "react-markdown": "^8.0.7",
+    "react-websitecarbon-badge": "^1.0.6",
     "remark": "^15.0.1",
     "remark-html": "^16.0.1",
     "tailwindcss": "^3.3.3",
