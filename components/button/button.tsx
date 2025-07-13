@@ -33,7 +33,7 @@ export const Button = ({
     
     const border = `ring-1 ring-brandBlue dark:ring-brandGold rounded-[10px]`;
 
-    const animationHover = `transition-all duration-150 ease-in-out hover:bg-brandBlue hover:text-white hover:dark:bg-brandGold hover:dark:text-darkGray`;
+    const animationHover = `transition-all duration-300 ease-in-out hover:bg-brandBlue hover:text-white hover:dark:bg-brandGold hover:dark:text-darkGray`;
     
     return (
         <div className="flex gap-3">

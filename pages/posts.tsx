@@ -18,7 +18,6 @@ interface IndexProps {
 
 export default function Home({
     allArticles,
-    allProjects
 }:IndexProps) {
 
   return (

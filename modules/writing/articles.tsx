@@ -6,7 +6,6 @@ import { Text } from "../../components/typography/text";
 import { Button, buttonProps } from "../../components/button";
 import { AnimatedElement } from "../../components/AnimatedElement/animated-element";
 import {v4 as uuidv4} from "uuid";
-import cx from "classnames";
 
 
 interface articlesProps {
@@ -53,7 +52,7 @@ export const Articles = ({
         );
     }
 
-    const publicPosts = articles?.filter((post) => {return !post?.draft && post });
+    const publicPosts = articles?.filter((post) => {return post?.draft !== true });
 
     return (
         <SectionWrapper id={id}>
@@ -73,8 +72,8 @@ export const Articles = ({
                     </div>
                 </div>
                 <div className="flex flex-col gap-lg">
-                    {Boolean(articles?.length > 0 && Boolean(publicPosts?.length > 0)) ?
-                        articles.map((blog, index) => {
+                    {Boolean(publicPosts?.length > 0 && Boolean(publicPosts?.length > 0)) ?
+                        publicPosts.map((blog, index) => {
                             let id = uuidv4();
                             return(
                                 <div key={id}>

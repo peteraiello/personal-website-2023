@@ -1,3 +1,4 @@
+import React, { useEffect, useState }  from "react";
 import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
 import { getPostBySlug, getAllArticles } from '../api/blog'
@@ -15,16 +16,27 @@ import { Button } from '../../components/button'
 
 type Props = {
   post: ArticleProps
-//   morePosts: PostType[]
   preview?: boolean
 }
 
+
+
 export default function Post({ post, preview }: Props) {
-  console.log('is draft');
+
+  const [postDate, setPostDate] = useState("");
+  
   const router = useRouter()
   const title = `${post?.title}`
+
   const isPublished = `${!post?.draft}`
-  console.log('is draft', isPublished);
+
+  useEffect(() => {
+    const d = new Date(post?.date);
+    const formattedDate = d?.toLocaleDateString();
+    formattedDate && setPostDate(formattedDate);
+  }, [post?.date]);
+
+
   if ((!router.isFallback && !post?.slug) || isPublished === "false") {
     return <ErrorPage statusCode={404} />
   } 
@@ -42,9 +54,10 @@ export default function Post({ post, preview }: Props) {
                   <Header items={navItems?.items} />
                   <article>
                     <SectionWrapper>
-                      <h1 className='text-5xl mb-5 font-semibold'>{title}</h1>
+                      {title && <h1 className='text-2xl lg:text-5xl mb-5 font-semibold'>{title}</h1>}
+                      {postDate && <span className='block font-bold'><time dateTime={postDate}>{postDate}</time></span>}
                       <div className='w-full lg:w-10/12'>
-                        <TextContent>
+                        <TextContent isArticle={true}>
                           {post.content}
                         </TextContent>
                       </div>

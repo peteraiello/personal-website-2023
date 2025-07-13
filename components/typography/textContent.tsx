@@ -11,14 +11,19 @@ interface TextContentProps {
      * Is the text used on project details
      */
     isProject?: boolean,
+    /**
+     * is article
+     */
+    isArticle?: boolean,
 }
 
 export const TextContent = ({
     children,
-    isProject
+    isProject,
+    isArticle
 }:TextContentProps) => {
     return(
-        <div className={classNames("markdown-text", isProject && "markdown-project")}>
+        <div className={classNames( isProject ? "markdown-project" : isArticle ? "markdown-article" : "markdown-text")}>
             <ReactMarkdown>{children}</ReactMarkdown>
         </div>        
     )

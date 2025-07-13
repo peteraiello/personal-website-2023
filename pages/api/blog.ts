@@ -77,7 +77,7 @@ export function getPersonalBlogPosts() {
 export function getLatestPersonalBlogPosts() {
   const posts = getAllArticles(articleFields)
   const personalBlogPosts = convertToPersonalBlog(posts);
-  const latestPosts = personalBlogPosts.slice(0,3); /* get the latest 3 articles */
+  const latestPosts = personalBlogPosts.slice(0,12); /* get the latest 12 articles */
   return latestPosts;
 }
 

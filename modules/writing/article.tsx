@@ -78,9 +78,6 @@ export const BlogArticle = ({
                                         <Heading hTag={"4"} fontSize={"text-xl"} fontStyle={"san-serif"} weight={"semibold"}>{title}</Heading>
                                 </div>
                             }                           
-                            {date &&
-                                    <Heading hTag={"4"} fontSize={"text-xl"} fontStyle={"san-serif"} weight={"semibold"}>{getTheDate(date)}</Heading>
-                            }
                         </div>
                         {excerpt &&
                             <div className='mr-0 md:mr-[25px] lg:mr-[50px]'>
@@ -91,19 +88,12 @@ export const BlogArticle = ({
                             <Tags tags={tags} />
                         }
                     </div>
-                    {external === true ? 
-                        buttonLink &&
-                            <Button 
-                                label={'Read Article'} 
-                                icon={external === true ? 'new-window' : 'none'}
-                                href={buttonLink}
-                            />
-                        :
-                        buttonLink &&
-                            <ArticleButton 
-                                label={'Read Article'} 
-                                href={buttonLink}
-                            />
+                    {buttonLink &&
+                        <Button 
+                            label={'Read Article'} 
+                            icon={external === true ? 'new-window' : 'none'}
+                            href={buttonLink}
+                        />
                     }                        
                 </div>
             </div>
