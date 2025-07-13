@@ -5,7 +5,7 @@ date: '2025-07-13T16:02:01'
 external: false
 draft: false
 tags: []
-excerpt: 'I asked Chat GPT to generate a generic list of questions on web development and answered one on semantic HTML'
+excerpt: 'I asked Chat GPT to generate a generic list of questions on web development and answered one on semantic HTML.'
 buttonLink: '/posts/using-chat-gpt-to-ask-me-some-questions-on-semantic-html'
 ---
 
