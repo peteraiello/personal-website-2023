@@ -13,7 +13,7 @@ and an essential government accreditor (UKAS). I see my role as looking for oppo
 to realise the designs in a way that puts the user first (performant, accessible). More 
 recently, I have been progressing my skills, from WordPress to working with Headless environments. 
 `,
-    clients: 'UKAS, Mahindra, PIDG, Intralinks',
+    clients: 'UKAS, Mahindra, PIDG, Intralinks, Prima IT, Keller Group, HTB Bank',
     awards: {
         title: 'Achievements',
         awards: [

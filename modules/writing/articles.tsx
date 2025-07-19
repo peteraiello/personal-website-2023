@@ -6,7 +6,7 @@ import { Text } from "../../components/typography/text";
 import { Button, buttonProps } from "../../components/button";
 import { AnimatedElement } from "../../components/AnimatedElement/animated-element";
 import {v4 as uuidv4} from "uuid";
-
+import { TextContent } from "../../components/typography/textContent";
 
 interface articlesProps {
     /**
@@ -66,7 +66,7 @@ export const Articles = ({
                         }
                         {subtitle &&
                             <div className="col-span-12 lg:col-span-10">
-                                <Text size={'subtitle'} weight={'semibold'}>{subtitle}</Text>
+                                <TextContent>{subtitle}</TextContent>
                             </div>
                         }
                     </div>

@@ -74,6 +74,14 @@ export default function Home({
                         awards={workData.awards}
                     />
 
+                    <Articles
+                        id={ArticlesData.id}
+                        title={'Blog'}
+                        subtitle={"I enjoy writing articles on web development to improve my skills and knowledge. I also like using AI to help formulate ideas. However, all content is written by me and is [GPT-free](https://app.gptzero.me)."} 
+                        articles={latestPersonalBlog}     
+                        noPublishedPostsMsg={'Coming soon'}                       
+                    />
+
                     <Projects 
                         id={exampleProjectData.id}
                         title={exampleProjectData.title}
@@ -86,14 +94,7 @@ export default function Home({
                         title={'Writing'}
                         articles={latestExternalPosts}
                     />
-
-                    <Articles
-                        id={ArticlesData.id}
-                        title={'Blog'}
-                        articles={latestPersonalBlog}     
-                        noPublishedPostsMsg={'Coming soon'}                       
-                    />
-
+                
                     <Experience 
                         id={ExperienceData.id}
                         title={ExperienceData.title}
