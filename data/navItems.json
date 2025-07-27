@@ -9,6 +9,10 @@
             "href": "/#work"
         },
         {
+            "label": "Blog",
+            "href": "/#blog"
+        },
+        {
             "label": "Projects",
             "href": "/#projects"
         },

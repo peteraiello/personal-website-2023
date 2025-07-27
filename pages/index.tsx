@@ -75,9 +75,9 @@ export default function Home({
                     />
 
                     <Articles
-                        id={ArticlesData.id}
+                        id={'blog'}
                         title={'Blog'}
-                        subtitle={"I enjoy writing articles on web development to improve my skills and knowledge. I also like using AI to help formulate ideas. However, all content is written by me and is [GPT-free](https://app.gptzero.me)."} 
+                        subtitle={"I enjoy writing articles on web development to improve my skills and knowledge. I use AI to help generate ideas research topics, and help me write, hopefully without losing my own voice."} 
                         articles={latestPersonalBlog}     
                         noPublishedPostsMsg={'Coming soon'}                       
                     />
