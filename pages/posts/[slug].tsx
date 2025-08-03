@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
 import { getPostBySlug, getAllArticles } from '../api/blog'
 import Head from 'next/head'
-import { TextContent } from '../../components/typography/textContent'
+import {TextContent}  from '../../components/typography/textContent'
 import type {ArticleProps} from '../../modules/writing/article';
 import { SectionWrapper } from '../../components/sectionWrapper'
 import { Footer } from '../../modules/footer/footer'
@@ -19,14 +19,14 @@ type Props = {
   preview?: boolean
 }
 
-
-
 export default function Post({ post, preview }: Props) {
 
   const [postDate, setPostDate] = useState("");
   
   const router = useRouter()
   const title = `${post?.title}`
+
+  const excerpt = `${post?.excerpt}`
 
   const isPublished = `${!post?.draft}`
 
@@ -35,6 +35,10 @@ export default function Post({ post, preview }: Props) {
     const formattedDate = d?.toLocaleDateString();
     formattedDate && setPostDate(formattedDate);
   }, [post?.date]);
+
+  useEffect(() => {
+    console.log("post excerpt", post);
+  }, [post])
 
 
   if ((!router.isFallback && !post?.slug) || isPublished === "false") {
@@ -49,7 +53,8 @@ export default function Post({ post, preview }: Props) {
             <ThemeProvider>
               <AppWrapper> 
                   <Head>
-                      <title>{title + '| Peter Aiello - Frontend developer'}</title>
+                      <title>{title + '| Peter Aiello - Frontend developer'}</title>                    
+                      <meta name="description" content={excerpt} />
                   </Head>
                   <Header items={navItems?.items} />
                   <article>
@@ -58,7 +63,7 @@ export default function Post({ post, preview }: Props) {
                       {postDate && <span className='block font-bold'><time dateTime={postDate}>{postDate}</time></span>}
                       <div className='w-full lg:w-10/12'>
                         <TextContent isArticle={true}>
-                          {post.content}
+                          {post.content} 
                         </TextContent>
                       </div>
                       <div className='py-lg'>
@@ -87,12 +92,13 @@ type Params = {
 export async function getStaticProps({ params }: Params) {
   const post = getPostBySlug(params.slug, [
     'title',
+    'excerpt',
     'date',
     'slug',
     'content',
+    'lastEdited',
     'draft'
   ])
-  // const content = await markdownToHtml(post.content || '')
 
   return {
     props: {

@@ -65,13 +65,41 @@
         transform-origin: center center;
     }
 
-    code {
-        @apply dark:text-white;
+    .markdown-article code {
+        @apply bg-brandBlue/10 text-darkGray font-semibold dark:bg-gray-800 dark:text-white p-1 rounded-sm text-sm;
+    }
+
+    .markdown-article code::after,
+    .markdown-article code::before {
+        content: "";
+    }
+
+    .markdown-article pre code {
+        @apply bg-transparent text-darkGray dark:bg-transparent dark:text-white font-normal;
+    }
+
+    .markdown-article pre {
+        @apply bg-brandBlue/10;
+    }
+
+    .markdown-article table {
+        @apply border dark:border-white border-darkGray text-base;
+    }
+
+    .markdown-article table tr {
+        @apply border-b border-b-darkGray dark:border-b-white;
+    }
+
+    .markdown-article table tr td {
+        @apply p-1;
     }
 
     .markdown-text {
-        @apply prose transition-all duration-300  
-        max-w-full dark:prose-blockquote:text-white 
+        @apply prose 
+        transition-all 
+        duration-300  
+        max-w-full 
+        dark:prose-blockquote:text-white 
         prose-blockquote:text-darkGray 
         dark:prose-headings:text-white
         prose-p:first-of-type:m-0
@@ -84,7 +112,7 @@
         prose-a:text-brandBlue 
         dark:prose-a:text-brandGold 
         prose-a:font-normal 
-        dark:prose-strong:text-white; 
+        dark:prose-strong:text-white
     }
 
     .markdown-article {
