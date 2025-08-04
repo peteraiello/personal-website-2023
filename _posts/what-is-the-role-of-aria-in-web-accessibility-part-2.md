@@ -2,6 +2,7 @@
 title: 'What is the role of ARIA in web accessibility? Part 2 - Properties'
 featured: false
 date: '2025-08-03T12:00:00'
+lastEdited: '2025-08-03T12:00:00'
 external: false
 draft: false
 tags: [HTML, Accessibility, ARIA]
@@ -66,8 +67,8 @@ Firstly, let's consider one of the most essential attributes of ARIA properties:
 ```
 <ul>
 <li><a href="www.facebook.com/profile123" target="_blank" aria-label="Click to view our Facebook profile"><span id="facebook-icon"></span></a></li>
-<li><a href="www.linkedin.com/profile123" target="_blank" aria-label="Click to view our LinkedIn profile"><span id="linkedin-icon"/></span></a></li>
-<li><a href="www.instagram.com/profile123" target="_blank" aria-label="Click to view our Instagram profile"><span id="instagram-icon" /></span></a></li>
+<li><a href="www.linkedin.com/profile123" target="_blank" aria-label="Click to view our LinkedIn profile"><span id="linkedin-icon"></span></a></li>
+<li><a href="www.instagram.com/profile123" target="_blank" aria-label="Click to view our Instagram profile"><span id="instagram-icon"></span></a></li>
 </ul>
 ```
 

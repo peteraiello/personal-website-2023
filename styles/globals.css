@@ -71,8 +71,8 @@
 
     .markdown-article code::after,
     .markdown-article code::before {
-        content: "";
-    }
+        display: none;
+    } 
 
     .markdown-article pre code {
         @apply bg-transparent text-darkGray dark:bg-transparent dark:text-white font-normal;

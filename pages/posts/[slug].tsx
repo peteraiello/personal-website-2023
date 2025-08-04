@@ -22,6 +22,9 @@ type Props = {
 export default function Post({ post, preview }: Props) {
 
   const [postDate, setPostDate] = useState("");
+
+  const [upDate, setUpDate] = useState("");
+
   
   const router = useRouter()
   const title = `${post?.title}`
@@ -34,11 +37,10 @@ export default function Post({ post, preview }: Props) {
     const d = new Date(post?.date);
     const formattedDate = d?.toLocaleDateString();
     formattedDate && setPostDate(formattedDate);
-  }, [post?.date]);
-
-  useEffect(() => {
-    console.log("post excerpt", post);
-  }, [post])
+    const d2 = new Date(post?.lastEdited);
+    const formattedDate2 = d2?.toLocaleDateString();
+    formattedDate2 && setUpDate(formattedDate2);
+  }, [post]);
 
 
   if ((!router.isFallback && !post?.slug) || isPublished === "false") {
@@ -60,12 +62,18 @@ export default function Post({ post, preview }: Props) {
                   <article>
                     <SectionWrapper>
                       {title && <h1 className='text-2xl lg:text-5xl mb-5 font-semibold'>{title}</h1>}
-                      {postDate && <span className='block font-bold'><time dateTime={postDate}>{postDate}</time></span>}
+                      {postDate && 
+                        <span className='block font-bold'>
+                          <time dateTime={postDate}>{postDate}</time>
+                        </span>
+                      }
                       <div className='w-full lg:w-10/12'>
                         <TextContent isArticle={true}>
                           {post.content} 
                         </TextContent>
                       </div>
+                      <hr className="my-lg" />
+                      {upDate && <p><strong>Last edited:</strong> <time dateTime={upDate}>{upDate}</time></p>}
                       <div className='py-lg'>
                         <Button label={'Back'} href={'/'} />
                       </div>
@@ -104,7 +112,6 @@ export async function getStaticProps({ params }: Params) {
     props: {
       post: {
         ...post,
-        // content,
       },
     },
   }

@@ -2,6 +2,7 @@
 title: 'What are semantic HTML elements, and why are they important?'
 featured: false
 date: '2025-07-13T16:02:01'
+lastEdited: '2025-07-13T16:02:01'
 external: false
 draft: false
 tags: [HTML, Accessibility]
@@ -36,7 +37,3 @@ Why is this additional layer of information useful? It's because semantic HTML i
 In summary, semantic HTML are like the underlying structure and basic building blocks of a web. Awareness of semantic HTML for web developers is essential, especially for projects with specific accessibility requirements.) My final point is that semantic HTML should be considered regardless of the framework.
 
 [Click here for a comprehensive list of HTML tags and their descriptions.](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements) 
-
----
-
-**Last edited: 19th of July, 2025**

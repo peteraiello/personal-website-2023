@@ -12,6 +12,7 @@ const articleFields = [
     'tags',
     'excerpt',
     'articleImage',
+    'lastEdited',
     'buttonLink',
     'draft'
 ]

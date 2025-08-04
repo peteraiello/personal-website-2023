@@ -2,6 +2,7 @@
 title: 'What is the role of ARIA in web accessibility?'
 featured: false
 date: '2025-07-27T17:47:00'
+lastEdited: '2025-08-04T09:00:00'
 external: false
 draft: false
 tags: [HTML, Accessibility, ARIA]
@@ -25,7 +26,7 @@ Along with knowing what ARIA means, it's also important to know that it comes in
 
 One of the best descriptions of why ARIA is so important to web accessibility can be found in Chapter Two of the book *Practical Web Inclusion and* Accessibility by Ashley Firth:
 
-> If you were to navigate around a site comprised solely of <div> tags, you'd simply hear a screen reader read out the content, without helpfully signposting what part of the page you're on.
+> If you were to navigate around a site comprised solely of `<div>` tags, you'd simply hear a screen reader read out the content, without helpfully signposting what part of the page you're on.
 
 Expanding on this idea, most of us are aware that the structure of a webpage is normally organised using visual design. However, if you were to turn off CSS, you would no longer see these styles applied, and you would gain insight into some of the challenges that visually impaired users face. In addition to semantic HTML, ARIA can also be applied to help solve this issue. 
 
@@ -96,6 +97,3 @@ The last note on using ARIA is a word of caution. When developers change the def
 In the example above, we're applying a role of "button" to a nav element, essentially overriding the ARIA role. Perhaps we intended for the nav to open a responsive burger menu? However, the effect on the user experiencing the website through a screen reader will be confusion. ARIA misuse of this kind should always be avoided. 
 
 In the next article, we'll dig deeper into those other ARIA attributes, properties and states, with practical examples of where to apply them. 
-
----
-**Last edited**: 27th of July 2025

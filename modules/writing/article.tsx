@@ -21,6 +21,10 @@ export interface ArticleProps {
      */
     date?: Date,
     /**
+     * Last edited
+     */
+    lastEdited?: Date,
+    /**
      * External (personal blog or external publication)
      */
     external?: boolean,
