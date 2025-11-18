@@ -1,10 +1,8 @@
 import React from "react";
-import {Project, projectProps} from './project';
+import { Card, CardProps } from "../../components/card/card";
 import { Heading } from "../../components/typography/heading";
 import { SectionWrapper } from "../../components/sectionWrapper";
-import { AnimatedElement } from "../../components/AnimatedElement/animated-element";
 import { v4 as uuidv4} from 'uuid';
-export type layoutType = 'normal' | 'reverse' | 'alternating';
 
 interface projectsProps {
     /**
@@ -14,11 +12,7 @@ interface projectsProps {
     /** 
      * Projects
      */
-    projects?: projectProps[],
-    /**
-     * Layout 
-     */
-    layout?: 'normal' | 'reverse' | 'alternating';
+    projects?: CardProps[],
     /**
      * Section Id
      */
@@ -28,7 +22,6 @@ interface projectsProps {
 export const Projects = ({
     title,
     projects,
-    layout,
     id
 }:projectsProps) => {
     return (
@@ -37,33 +30,29 @@ export const Projects = ({
                     {title &&
                         <Heading hTag={"3"}>{title}</Heading>
                     }
-                    {
-                        (projects && projects?.length  > 0 ) &&
-                            <div className="flex flex-col gap-[60px] lg:gap-lg">
-                                {projects?.map((project, index) => { 
-                                    let id = uuidv4();                                                                      
-                                    let newIndex = index; 
-                                    return(
-                                        <div key={id}>
-                                        {project.status === "published" &&
-                                            <AnimatedElement index={index}>
-                                                <Project 
-                                                    layout={layout}
-                                                    featured={project.featured}
-                                                    client={project.client}
-                                                    agency={project.agency}
-                                                    tags={project.tags}
-                                                    description={project.description}
-                                                    buttonLink={project.buttonLink}
-                                                    projectImage={project.projectImage}
+                    {(projects && projects?.length  > 0 ) &&
+                        <div className="flex flex-col md:grid md:grid-cols-12 gap-8">
+                            {projects?.map((project, index) => { 
+                                let id = uuidv4();                                                                      
+                                let newIndex = index; 
+                                return(
+                                    <div key={id} className="w-full md:col-span-6 lg:col-span-4">
+                                            {project.status === "published" &&
+                                                <Card 
+                                                    key={id}
                                                     index={newIndex}
+                                                    title={project?.title}                                                
+                                                    thumbnail={project?.thumbnail}
+                                                    tags={project?.tags}
+                                                    excerpt={project?.excerpt}
+                                                    content={project?.content}
+                                                    buttonLink={project?.buttonLink}                                            
                                                 />
-                                            </AnimatedElement>
                                             }
-                                        </div>                                       
-                                    )}
+                                    </div>                                       
                                 )}
-                            </div>
+                            )}
+                        </div>
                     }
                 </div>
         </SectionWrapper>

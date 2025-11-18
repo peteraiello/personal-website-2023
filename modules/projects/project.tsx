@@ -6,7 +6,6 @@ import { Text } from '../../components/typography/text';
 import { Heading} from "../../components/typography/heading";
 import { TextContent} from '../../components/typography/textContent';
 import { CustomImage, customImageProps } from '../../components/image/image';
-import { layoutType } from './projects';
 import { AnimatedElement } from '../../components/AnimatedElement/animated-element';
 
 export interface projectProps { 
@@ -38,10 +37,6 @@ export interface projectProps {
      * Button Link
      */
     buttonLink?: string,
-    /**
-     * Switch layout
-     */
-    layout?: layoutType,
     /**
      * The index number 
      */
@@ -79,11 +74,10 @@ export const Project = ({
     projectImage,
     description,
     buttonLink,
-    layout,
     index
 }:projectProps) => {
     return(
-        <article className={`flex gap-y-10 md:gap-5 ${getLayout(layout, index)}`}>
+        <article className={`flex gap-y-10 md:gap-5`}>
             <div className='w-full md:w-1/2 lg:w-2/3'>
                 <div className={`flex flex-col gap-5`}>
                     <div className='flex flex-col gap-3'>

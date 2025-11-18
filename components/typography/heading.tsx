@@ -88,7 +88,7 @@ export const Heading = ({
 
     const htmlTag = React.createElement(`h${hTag}`, {
         dangerouslySetInnerHTML: { __html: children },
-            className: cx(fontClass, classes, fontSize ? fontSize : getHeadingClass({hTag}), weight && getFontWeight({weight}))
+            className: cx("text-darkGray dark:text-white", fontClass, classes, fontSize ? fontSize : getHeadingClass({hTag}), weight && getFontWeight({weight}))
     });
 
     return (

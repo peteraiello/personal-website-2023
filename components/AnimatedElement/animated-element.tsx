@@ -1,20 +1,20 @@
 import React from "react";
 import { useRef } from "react";
 import {useInView} from 'framer-motion';
-
+import cx from "classnames";
 interface AnimatedElementProps {
     children?
     speed?: 'slow' | 'medium' | 'fast',
     index?: number
+    classNames?: string,
 }
-
 
 export const AnimatedElement = ({
     children,
     speed,
     index,
+    classNames
 }:AnimatedElementProps) => {
-
 
     const ref = useRef(null);
 
@@ -137,9 +137,11 @@ export const AnimatedElement = ({
 
     return (
         <div ref={ref} className={
-                `transition-opacity ease-in-out duration-500 
-                ${getTheDelay(index)} ${isInView ? 'opacity-100 translate-y-0' : 'translate-y-10 opacity-0'}`}
-            >
+                cx(`transition-opacity ease-in-out duration-500`, 
+                getTheDelay(index),
+                isInView ? `opacity-100 translate-y-0` : `translate-y-10 opacity-0`,
+                classNames ? classNames : ``
+            )}>
             {children}
         </div>
     )

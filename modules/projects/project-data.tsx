@@ -1,38 +1,117 @@
-import PIDGThumb from '../../public/images/projects/pidg.jpg';
-import WealthtimeThumb from '../../public/images/projects/wealthtime.jpg';
-import IntraThumb from '../../public/images/projects/intra-calc.jpg';
+import DustedThumbnail from "../../public/images/projects/dusted.jpg";
+import PIDGThumbnail from '../../public/images/projects/pidg.jpg';
+import WealthtimeThumbnail from '../../public/images/projects/wealthtime.jpg';
+import IntraThumbnail from '../../public/images/projects/intra-calc.jpg';
+import HTBThumbnail from "../../public/images/projects/htb.jpg";
+import Cap10Thumbnail from "../../public/images/projects/cap10.jpg";
+
+const DustedCard = {
+    status: "published",
+    thumbnail: {
+        src: DustedThumbnail?.src,
+        alt: "Dusted website"
+    },
+    title: `Dusted Site`,
+    tags: [`React`, `Next`, `TypeScript`, `Sanity CMS`, `Tailwind`],
+    excerpt: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec interdum leo non enim sollicitudin imperdiet.`,
+    content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget magna commodo, maximus quam ac, posuere neque. Fusce a vulputate risus. Quisque vel nisi magna. Praesent sodales ante eu massa maximus faucibus. Nunc rutrum interdum pellentesque. Suspendisse felis purus, pharetra sed tempus nec, tempor quis urna. Donec eget leo cursus.`,
+    buttonLink: {
+        label: "LEARN MORE",
+        href: "#"
+    }
+}
+
+const PIDGCard = {
+    status: "published",
+    thumbnail: {
+        src: PIDGThumbnail?.src,
+        alt: "PIDG website"
+    },
+    title: `PIDG (Private Infrastructure Development Group)`,
+    tags: [`React`, `Next`, `TypeScript`, `Sanity CMS`, `Tailwind`],
+    excerpt: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec interdum leo non enim sollicitudin imperdiet.`,
+    content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget magna commodo, maximus quam ac, posuere neque. Fusce a vulputate risus. Quisque vel nisi magna. Praesent sodales ante eu massa maximus faucibus. Nunc rutrum interdum pellentesque. Suspendisse felis purus, pharetra sed tempus nec, tempor quis urna. Donec eget leo cursus.`,
+    buttonLink: {
+        label: "LEARN MORE",
+        href: "#"
+    }
+}
+
+const IntralinksCard = {
+    status: "published",
+    thumbnail: {
+        src: IntraThumbnail?.src,
+        alt: "Intralinks calculator"
+    },
+    title: `Intralinks Calculator`,
+    tags: [`React`, `JavaScript`, `Gatsby`, `Tailwind`],
+    excerpt: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec interdum leo non enim sollicitudin imperdiet.`,
+    content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget magna commodo, maximus quam ac, posuere neque. Fusce a vulputate risus. Quisque vel nisi magna. Praesent sodales ante eu massa maximus faucibus. Nunc rutrum interdum pellentesque. Suspendisse felis purus, pharetra sed tempus nec, tempor quis urna. Donec eget leo cursus.`,
+    buttonLink: {
+        label: "LEARN MORE",
+        href: "#"
+    }
+}
+
+const HTBCard = {
+    status: "published",
+    thumbnail: {
+        src: HTBThumbnail?.src,
+        alt: "HTB website"
+    },
+    title: `HTB (Hampshire Trust Bank)`,
+    tags: [`React`, `JavaScript`, `GraphQL`],
+    excerpt: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec interdum leo non enim sollicitudin imperdiet.`,
+    content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget magna commodo, maximus quam ac, posuere neque. Fusce a vulputate risus. Quisque vel nisi magna. Praesent sodales ante eu massa maximus faucibus. Nunc rutrum interdum pellentesque. Suspendisse felis purus, pharetra sed tempus nec, tempor quis urna. Donec eget leo cursus.`,
+    buttonLink: {
+        label: "LEARN MORE",
+        href: "#"
+    }
+}
+
+const Cap10Card = {
+    status: "published",
+    thumbnail: {
+        src: Cap10Thumbnail?.src,
+        alt: "Cap10 website"
+    },
+    title: `Cap10`,
+    tags: [`WordPress`, `JavaScript`, `SASS`],
+    excerpt: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec interdum leo non enim sollicitudin imperdiet.`,
+    content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget magna commodo, maximus quam ac, posuere neque. Fusce a vulputate risus. Quisque vel nisi magna. Praesent sodales ante eu massa maximus faucibus. Nunc rutrum interdum pellentesque. Suspendisse felis purus, pharetra sed tempus nec, tempor quis urna. Donec eget leo cursus.`,
+    buttonLink: {
+        label: "LEARN MORE",
+        href: "#"
+    }
+}
+
+const WealthtimeCard = {
+    status: "published",
+    thumbnail: {
+        src: WealthtimeThumbnail?.src,
+        alt: "Wealthtime website"
+    },
+    title: `Wealthtime`,
+    tags: [`WordPress`, `Multisite`, `SASS`],
+    excerpt: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec interdum leo non enim sollicitudin imperdiet.`,
+    content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget magna commodo, maximus quam ac, posuere neque. Fusce a vulputate risus. Quisque vel nisi magna. Praesent sodales ante eu massa maximus faucibus. Nunc rutrum interdum pellentesque. Suspendisse felis purus, pharetra sed tempus nec, tempor quis urna. Donec eget leo cursus.`,
+    buttonLink: {
+        label: "LEARN MORE",
+        href: "#"
+    }
+}
+
 
 export const exampleProjectData = {
     id: 'projects',
     title: 'projects',
     layout: 'alternating',
     projects: [
-        {
-            featured: false,
-            client: 'PIDG',
-            agency: 'Dusted',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ac ex eu erat mollis sodales sed sit amet dui. Mauris quis tempus mi, non rutrum arcu. Sed vitae maximus eros. Proin dolor leo, rutrum aliquet lacus a, dictum sagittis enim. Nulla id lectus efficitur, pulvinar lorem sed, euismod enim. Cras risus ipsum, ultricies commodo nunc nec, semper auctor massa. Donec tempor dignissim fermentum. Curabitur in lectus id quam suscipit dictum.',
-            tags: ['React', 'Tailwind', 'Next'],
-            buttonLink: 'https://pidg.org',
-            projectImage: {src: PIDGThumb.src, alt: 'test'}
-        },
-        {
-            featured: false,
-            client: 'Wealthtime',
-            agency: 'Dusted',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ac ex eu erat mollis sodales sed sit amet dui. Mauris quis tempus mi, non rutrum arcu. Sed vitae maximus eros. Proin dolor leo, rutrum aliquet lacus a, dictum sagittis enim. Nulla id lectus efficitur, pulvinar lorem sed, euismod enim. Cras risus ipsum, ultricies commodo nunc nec, semper auctor massa. Donec tempor dignissim fermentum. Curabitur in lectus id quam suscipit dictum.',
-            tags: ['WordPress', 'Multisite', 'JavaScript'],
-            buttonLink: 'https://wealthtime.com',
-            projectImage: {src: WealthtimeThumb.src, alt: 'test'}
-        },
-        {
-            featured: false,
-            client: 'Intralinks',
-            agency: 'Dusted',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ac ex eu erat mollis sodales sed sit amet dui. Mauris quis tempus mi, non rutrum arcu. Sed vitae maximus eros. Proin dolor leo, rutrum aliquet lacus a, dictum sagittis enim. Nulla id lectus efficitur, pulvinar lorem sed, euismod enim. Cras risus ipsum, ultricies commodo nunc nec, semper auctor massa. Donec tempor dignissim fermentum. Curabitur in lectus id quam suscipit dictum.',
-            tags: ['React', 'Tailwind', 'JavaScript'],
-            buttonLink: '',
-            projectImage: {src: IntraThumb.src, alt: 'test'}
-        },
+        {...DustedCard}, 
+        {...PIDGCard},
+        {...IntralinksCard},
+        {...HTBCard},
+        {...Cap10Card},
+        {...WealthtimeCard}
     ]   
 };

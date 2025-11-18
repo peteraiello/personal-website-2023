@@ -9,7 +9,6 @@ import { exampleProfile } from '../content/overview-content';
 import { Work } from '../modules/work/work';
 import { workData } from '../content/work-content';
 import { Projects } from '../modules/projects/projects';
-import { layoutType } from '../modules/projects/projects';
 import { exampleProjectData } from '../modules/projects/project-data';
 import { Experience } from '../modules/experience/experience';
 import { ExperienceData } from '../content/experience-content';
@@ -84,9 +83,7 @@ export default function Home({
 
                     <Projects 
                         id={exampleProjectData.id}
-                        title={exampleProjectData.title}
-                        layout={exampleProjectData.layout as layoutType}
-                        projects={allProjects}
+                        title={exampleProjectData.title}                       
                     />
 
                     <Articles

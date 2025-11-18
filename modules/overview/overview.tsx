@@ -134,8 +134,7 @@ export const Overview = ({
                 <div className="flex flex-col gap-3 mt-sm md:mt-md">
                     {skillGroups?.map((group, index) => {   
                         return (                 
-                            <div key={index} className="flex flex-col gap-2">
-                               
+                            <div key={index} className="flex flex-col gap-2">                               
                                 {Boolean(group?.skills) &&
                                     <Tags title={group?.title}  tags={group?.skills} />
                                 }

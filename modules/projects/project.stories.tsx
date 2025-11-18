@@ -18,7 +18,7 @@ export const LightExample = () => {
             <Projects 
               id={'projects'}
               title='Projects'
-              projects={exampleProjectData.projects}
+              projects={exampleProjectData.projects as any}
             />
         </div>
     </div>
@@ -33,7 +33,7 @@ export const DarkExample = () => {
               <Projects 
                 id={'projects'}
                 title='Projects'
-                projects={exampleProjectData.projects}
+                projects={exampleProjectData.projects as any}
               />
             </div>
           </div>
@@ -49,8 +49,7 @@ export const DarkExample = () => {
               <Projects 
                 id={'projects'}
                 title='Projects'
-                layout={'reverse'}
-                projects={exampleProjectData.projects}
+                projects={exampleProjectData.projects as any}
               />
             </div>
           </div>
@@ -66,8 +65,7 @@ export const DarkExample = () => {
                 <Projects 
                   id={'projects'}
                   title='Projects'
-                  layout={'alternating'}
-                  projects={exampleProjectData.projects}
+                  projects={exampleProjectData.projects as any}
                 />
               </div>
           </div>
