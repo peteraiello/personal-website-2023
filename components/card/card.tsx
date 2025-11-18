@@ -39,7 +39,13 @@ export interface CardProps {
     /**
      * Index
      */
-    index?: number
+    index?: number,
+    /**
+     * On click
+     */
+    onClick?: (e) => void,
+    setActiveProject?: any,
+    setModalOpen?: any
 }
 
 export const Card = ({
@@ -50,7 +56,17 @@ export const Card = ({
     content,
     buttonLink,
     index,
+    setActiveProject,
+    setModalOpen,
+    onClick
 }:CardProps) => {
+
+    const clickHandler = (event) => {
+        event.preventDefault;
+        setActiveProject({title: title})
+        setModalOpen(true)
+    }
+
     return (
         <div className="w-full h-full">
             <AnimatedElement index={index} classNames="h-full">
@@ -98,6 +114,7 @@ export const Card = ({
                                         <Button 
                                             label={buttonLink?.label}
                                             href={buttonLink?.href}
+                                            onClick={(event) => clickHandler(event)}
                                         />
                                     </div>
                                 }

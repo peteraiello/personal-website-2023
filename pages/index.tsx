@@ -1,6 +1,6 @@
 import {Header} from '../modules/header';
 import Head from 'next/head'
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {Articles} from '../modules/writing/articles';
 import navItems from '../data/navItems.json';
 import { Overview } from '../modules/overview/overview';
@@ -21,6 +21,7 @@ import { ArticleProps } from '../modules/writing/article';
 import { AppWrapper } from '../components/AppWrapper/app-wrapper';
 import { ThemeProvider} from '../context/ThemeProvider';
 import { projectProps } from '../modules/projects/project';
+import { ProjectModal } from '../modals/projectModal/projectModal';
 
 interface IndexProps {
     latestPersonalBlog: ArticleProps[]
@@ -34,83 +35,104 @@ export default function Home({
     latestExternalPosts
 }:IndexProps) {
 
-  return (
-    <>
+    const [modalOpen, setModalOpen] = useState(false);
 
-        <Head>
-            <title>{'Peter Aiello | Frontend developer'}</title>
-        </Head>
+    const [activeCard, setActiveCard] = useState({
+        title: ''
+    });
 
-        <ThemeProvider>
-            
-            <AppWrapper>
+    const clickHandler = () => {
+        console.log("click handler!");
+    }
+
+    useEffect(() => {
+        console.log("active card", activeCard);
+    }, [activeCard])
+
+    return (
+        <>
+            <Head>
+                <title>{'Peter Aiello | Frontend developer'}</title>
+            </Head>
+
+            <ThemeProvider>
                 
-                <Header items={navItems?.items} />
+                <AppWrapper>
+                    
+                    <Header items={navItems?.items} />
 
-                <div className='patterns'>
+                    <div className='patterns'>
 
-                    <Overview
-                        id={exampleProfile.sectionId}
-                        name={exampleProfile.name}
-                        jobTitle={exampleProfile.jobTitle}
-                        profileDesc={exampleProfile.profileDesc}
-                        links={exampleProfile.links}
-                        profileImage={exampleProfile.profileImg}
-                        resumeLink={
-                            {
-                                label: exampleProfile.resumeLink.label,
-                                href: exampleProfile?.resumeLink.href,
-                                icon: exampleProfile.resumeLink.icon as buttonIconType
+                        <Overview
+                            id={exampleProfile.sectionId}
+                            name={exampleProfile.name}
+                            jobTitle={exampleProfile.jobTitle}
+                            profileDesc={exampleProfile.profileDesc}
+                            links={exampleProfile.links}
+                            profileImage={exampleProfile.profileImg}
+                            resumeLink={
+                                {
+                                    label: exampleProfile.resumeLink.label,
+                                    href: exampleProfile?.resumeLink.href,
+                                    icon: exampleProfile.resumeLink.icon as buttonIconType
+                                }
                             }
-                        }
-                        skillGroups={exampleProfile.skillGroups}
+                            skillGroups={exampleProfile.skillGroups}
+                        />
+
+                        <Work
+                            id={workData.sectionId}
+                            title={workData.title}
+                            subtitle={workData.subtitle}
+                            content={workData.content}
+                            clients={workData.clients}
+                            awards={workData.awards}
+                        />
+
+                        <Articles
+                            id={'blog'}
+                            title={'Blog'}
+                            subtitle={"I enjoy writing articles on web development to improve my skills and knowledge. I use AI to help generate ideas research topics, and help me write, hopefully without losing my own voice."} 
+                            articles={latestPersonalBlog}     
+                            noPublishedPostsMsg={'Coming soon'}                       
+                        />
+
+                        <Projects 
+                            id={exampleProjectData?.id}
+                            title={exampleProjectData?.title}    
+                            projects={exampleProjectData?.projects as any}
+                            setActiveProject={setActiveCard}
+                            setModalOpen={setModalOpen}
+                        />
+
+                        <Articles
+                            id={ArticlesData.id}
+                            title={'Writing'}
+                            articles={latestExternalPosts}
+                        />
+                    
+                        <Experience 
+                            id={ExperienceData.id}
+                            title={ExperienceData.title}
+                            experiences={ExperienceData.experience}
+                        />
+
+                    </div>
+
+                    <Footer 
+                        footerText={FooterData}
                     />
+                    
+                </AppWrapper>
+            </ThemeProvider> 
 
-                    <Work
-                        id={workData.sectionId}
-                        title={workData.title}
-                        subtitle={workData.subtitle}
-                        content={workData.content}
-                        clients={workData.clients}
-                        awards={workData.awards}
-                    />
-
-                    <Articles
-                        id={'blog'}
-                        title={'Blog'}
-                        subtitle={"I enjoy writing articles on web development to improve my skills and knowledge. I use AI to help generate ideas research topics, and help me write, hopefully without losing my own voice."} 
-                        articles={latestPersonalBlog}     
-                        noPublishedPostsMsg={'Coming soon'}                       
-                    />
-
-                    <Projects 
-                        id={exampleProjectData.id}
-                        title={exampleProjectData.title}                       
-                    />
-
-                    <Articles
-                        id={ArticlesData.id}
-                        title={'Writing'}
-                        articles={latestExternalPosts}
-                    />
-                
-                    <Experience 
-                        id={ExperienceData.id}
-                        title={ExperienceData.title}
-                        experiences={ExperienceData.experience}
-                    />
-
-                </div>
-
-                <Footer 
-                    footerText={FooterData}
-                />
-            </AppWrapper>
-
-
-        </ThemeProvider> 
-    </>
-  )
+            <ProjectModal             
+                title={activeCard?.title}
+                showModal={modalOpen}
+                setShowModal={setModalOpen}
+            />
+        </>
+    )
 }
 
 export const getStaticProps = async () => {

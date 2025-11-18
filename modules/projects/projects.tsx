@@ -17,11 +17,19 @@ interface projectsProps {
      * Section Id
      */
     id?: string,
+    /**
+     * Project clicked
+     */
+    onClick?: (e) => void
+    setActiveProject?: any,
+    setModalOpen?: any,
 }
 
 export const Projects = ({
     title,
     projects,
+    setActiveProject,
+    setModalOpen,
     id
 }:projectsProps) => {
     return (
@@ -46,7 +54,9 @@ export const Projects = ({
                                                     tags={project?.tags}
                                                     excerpt={project?.excerpt}
                                                     content={project?.content}
-                                                    buttonLink={project?.buttonLink}                                            
+                                                    buttonLink={project?.buttonLink}   
+                                                    setActiveProject={setActiveProject}
+                                                    setModalOpen={setModalOpen}
                                                 />
                                             }
                                     </div>                                       

@@ -50,7 +50,7 @@ export const Header = ({items}:HeaderProps) => {
 
 
     return (
-            <header ref={headerRef} className={`absolute md:fixed ${headerScrolled === true ? 'dark:bg-darkGray bg-white bg-opacity-90 ' : ' bg-transparent'} z-[9999]  w-full transition-all duration-300 text-darkGray dark:text-white`}>
+            <header ref={headerRef} className={`absolute md:fixed ${headerScrolled === true ? 'dark:bg-darkGray bg-white bg-opacity-90 ' : ' bg-transparent'} z-[100]  w-full transition-all duration-300 text-darkGray dark:text-white`}>
                 <div className="wrapper max-w-[1200px] px-5">
                     <div className="py-5 flex gap-10 items-center justify-between md:justify-normal">
                         <Link href={'/'} className={`focus:rounded-full transition-all duration-300 ${headerScrolled ? 'w-[50px] h-[50px]' : 'w-[88px] h-[88px]' }`}>
