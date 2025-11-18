@@ -36,13 +36,15 @@ export default function Home({
 
   return (
     <>
+
+        <Head>
+            <title>{'Peter Aiello | Frontend developer'}</title>
+        </Head>
+
         <ThemeProvider>
+            
             <AppWrapper>
-
-                <Head>
-                    <title>{'Peter Aiello | Frontend developer'}</title>
-                </Head>
-
+                
                 <Header items={navItems?.items} />
 
                 <div className='patterns'>
@@ -104,6 +106,8 @@ export default function Home({
                     footerText={FooterData}
                 />
             </AppWrapper>
+
+
         </ThemeProvider> 
     </>
   )

@@ -37,7 +37,6 @@ export const Heading = ({
     children
 }: headingProps) => {
 
-
      const getFontWeight = ({weight}) => {
         let textClass;
         switch (weight) {

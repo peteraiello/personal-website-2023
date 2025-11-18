@@ -26,13 +26,6 @@ export const TextContent = ({
     isProject,
     isArticle
 }:TextContentProps) => {
-
-    //  console.log("children", children);
-
-    /* Have a look at renderers
-    https://github.com/remarkjs/react-markdown#node-types
-    */
-
     return(
         <div className={classNames( isProject ? "markdown-project" : isArticle ? "markdown-article" : "markdown-text")}>
             <ReactMarkdown rehypePlugins={[rehypeRaw]}>{children}</ReactMarkdown>

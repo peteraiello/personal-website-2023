@@ -19,12 +19,17 @@ export interface buttonProps {
      * icon
      */
     icon?: buttonIconType,
+    /**
+     * On click 
+     */
+    onClick?: any,
 }
 
 export const Button = ({
     label,
     href,
     icon,
+    onClick
 }: buttonProps) => {
 
     const base = `drop-shadow-lg button group bg-transparent px-5 py-2`;
@@ -37,7 +42,7 @@ export const Button = ({
     
     return (
         <div className="flex gap-3">
-            <Link href={href}  className={cx(base, typography, border, animationHover)} target={icon === 'new-window' ? '_blank' : '_self'}>
+            <Link href={href} onClick={onClick} className={cx(base, typography, border, animationHover)} target={icon === 'new-window' ? '_blank' : '_self'}>
                 <div className="flex items-center gap-x-3">
                 {label}
                 {icon === 'download' &&

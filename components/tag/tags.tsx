@@ -28,8 +28,7 @@ export const Tags = ({
                             </Heading>                    
                         </div>
                 }
-                <div className='flex gap-inherit flex-wrap gap-3'>
-                                                       
+                <div className='flex gap-inherit flex-wrap gap-3'>                                                       
                     {tags.map((tag, index) => {
                         let id = uuidv4();
                         return(

@@ -8,6 +8,7 @@ module.exports = {
         './index/**/*.{js,jsx,ts,tsx}',
         './components/**/*.{js,jsx,ts,tsx}',
         './modules/**/*.{js,jsx,ts,tsx}',
+        './modals/**/*.{js,jsx,ts,tsx}',
     ],
     theme: {
       fontFamily: {

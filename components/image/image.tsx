@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import cx from 'classnames';
 
-export type imageSize = 'project' | 'square' | 'profile';
+export type imageSize = 'project' | 'square' | 'profile' | 'portrait';
 
 export interface customImageProps {
     /**
@@ -14,6 +14,10 @@ export interface customImageProps {
      */
     src?: string,
     /**
+     * Caption
+     */
+    caption?: string,
+    /**
      * Rounded
      */
     rounded?: 'full' | 'md',
@@ -24,7 +28,7 @@ export interface customImageProps {
     /**
      * Size
      */
-    size?: 'project' | 'square' | 'profile',
+    size?: 'project' | 'square' | 'profile' | 'portrait',
     /**
      * Object fit
      */
@@ -37,6 +41,7 @@ export const CustomImage = ({
     rounded,
     fit,
     size,
+    caption,
     border
 }:customImageProps) => {
 
@@ -60,6 +65,8 @@ export const CustomImage = ({
             customClass = 'aspect-square';
         } else if(size === 'profile') {
             customClass = 'aspect-square';
+        } else if(size === 'portrait') {
+            customClass = 'aspect-[356/428]';
         } else {
             customClass = 'w-full h-full';
         }
@@ -105,23 +112,42 @@ export const CustomImage = ({
     return(
         <div className={
             cx(
-                getBorder(border),
                 getIsRounded(rounded),
                 getAspectRatio(size),
                 getBaseClass
             )        
         }>
-            <Image 
-                src={src}
-                alt={alt}
-                fill
-                className={
-                    // 'border border-brandGold'
-
-                   getObjectFit(fit)
-                }
-                sizes={getImageSize(size)}
-            />
+            {caption ?
+                <figure>
+                    <Image 
+                        src={src}
+                        alt={alt}
+                        fill
+                        className={
+                            cx(                                
+                                getBorder(border),
+                                getObjectFit(fit)
+                            )
+                        }                        
+                        sizes={getImageSize(size)}
+                    />
+                    {caption &&
+                        <figcaption className="absolute bottom-[-30px]">
+                            <p>{caption}</p>
+                        </figcaption>
+                    }
+                </figure>
+                :
+                <Image 
+                    src={src}
+                    alt={alt}
+                    fill
+                    className={
+                        getObjectFit(fit)
+                    }
+                    sizes={getImageSize(size)}
+                />            
+            }        
         </div>
     )
 }
