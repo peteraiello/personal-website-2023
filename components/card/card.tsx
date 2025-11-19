@@ -100,6 +100,7 @@ export const Card = ({
             }
         )
         
+        
         setModalOpen(true)
 
     }

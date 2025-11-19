@@ -21,6 +21,7 @@ import { ThemeProvider} from '../context/ThemeProvider';
 import { projectProps } from '../modules/projects/project';
 import { ProjectModal } from '../modals/projectModal/projectModal';
 import { CardProps } from '../components/card/card';
+import { projectCardData } from '../components/card/project-card-data';
 
 interface IndexProps {
     latestPersonalBlog: ArticleProps[]
@@ -48,8 +49,33 @@ export default function Home({
     } as CardProps);
 
     useEffect(() => {
-        console.log("active card", activeCard);
-    }, [activeCard])
+        if(router.asPath.includes("#")) {
+            
+            const identifier = router.asPath.split("#")[1];
+
+            const projects = exampleProjectData.projects;
+
+            if(Boolean(projects && projects?.length > 0)) {
+                
+                const selectedProject = projects?.find((project) => {return (project?.id === identifier)});
+
+                setActiveCard({
+                    title: selectedProject?.title,
+                    tags: selectedProject?.tags,
+                    featuredImage: selectedProject?.featuredImage,
+                    content: selectedProject?.content,
+                    buttonLink: selectedProject?.buttonLink                    
+                })
+                setModalOpen(true);
+            }
+        }
+
+        console.log(exampleProjectData.projects);
+
+    }, []);
+
+
+
 
     return (
         <>
