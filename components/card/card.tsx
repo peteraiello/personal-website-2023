@@ -6,6 +6,7 @@ import { CustomImage, customImageProps } from "../../components/image/image";
 import { Tags } from "../tag/tags";
 import { Button, buttonProps } from "../button";
 import { Heading } from "../typography/heading";
+import { frameData } from "framer-motion";
 
 export interface CardProps {
     /**
@@ -21,6 +22,10 @@ export interface CardProps {
      */
     thumbnail?: customImageProps,
     /**
+     * Featured image (i.e. modal)
+     */
+    featuredImage?: customImageProps,
+    /**
      * Tags
      */
     tags?: string[],
@@ -29,7 +34,7 @@ export interface CardProps {
      */
     excerpt?: string,
     /**
-     * content
+     * Content
      */
     content?: string,
     /**
@@ -44,13 +49,20 @@ export interface CardProps {
      * On click
      */
     onClick?: (e) => void,
+    /**
+     * Is active
+     */
     setActiveProject?: any,
+    /**
+     * Modal open
+     */
     setModalOpen?: any
 }
 
 export const Card = ({
     title,
     thumbnail,
+    featuredImage,
     tags,
     excerpt,
     content,
@@ -63,7 +75,14 @@ export const Card = ({
 
     const clickHandler = (event) => {
         event.preventDefault;
-        setActiveProject({title: title})
+        setActiveProject(
+            {
+                title: title,
+                content: content,
+                featuredImage: featuredImage,
+                tags: tags,
+            }
+        )
         setModalOpen(true)
     }
 
@@ -85,7 +104,7 @@ export const Card = ({
                                 <Heading 
                                     fontSize={"text-2xl"} 
                                     fontStyle={"san-serif"} 
-                                    weight={"medium"}
+                                    weight={"bold"}
                                     hTag={"3"}
                                 >
                                     {title}

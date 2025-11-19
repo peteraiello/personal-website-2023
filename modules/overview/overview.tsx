@@ -111,6 +111,19 @@ export const Overview = ({
                             </div>
                         }
                     </div>
+                    {Boolean(skillGroups?.length > 0) &&
+                        <div className="flex flex-col gap-3 mt-sm md:mt-md">
+                            {skillGroups?.map((group, index) => {   
+                                return (                 
+                                    <div key={index} className="flex flex-col gap-2">                               
+                                        {Boolean(group?.skills) &&
+                                            <Tags title={group?.title}  tags={group?.skills} />
+                                        }
+                                    </div>      
+                                )                                                                 
+                            })}
+                        </div>
+                    }
                 </div>
                 <div className="col-span-12 md:col-span-6 lg:col-span-4">
                     <div className="flex justify-center md:justify-end w-full">
@@ -128,21 +141,7 @@ export const Overview = ({
                         </div>
                     </div>
                 </div>
-            </div>
-
-            {Boolean(skillGroups?.length > 0) &&
-                <div className="flex flex-col gap-3 mt-sm md:mt-md">
-                    {skillGroups?.map((group, index) => {   
-                        return (                 
-                            <div key={index} className="flex flex-col gap-2">                               
-                                {Boolean(group?.skills) &&
-                                    <Tags title={group?.title}  tags={group?.skills} />
-                                }
-                            </div>      
-                        )                                                                 
-                    })}
-                </div>
-            }
+            </div>           
 
             {(cards && cards.length > 0) && 
                 <div className="flex flex-col md:flex-row gap-5 mt-sm md:mt-md lg:mt-lg">

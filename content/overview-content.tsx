@@ -35,9 +35,13 @@ Midnight Sun Marathon in Norway in 2023.
     },
     skillGroups: [
         {
-            title: 'Skills',
+            title: 'Hard Skills',
             skills: ["JavaScript", "TypeScript", "React", "Next.JS", "Gatsby", "Storybook", "Jest", "Tailwind CSS", "WordPress", "PHP", "UI & UX Design"],
-        }
+        },
+        {
+            title: 'Soft Skills',
+            skills: ["Collaboration", "Problem Solving", "Attention to Detail", "Adaptability"],
+        },
     ],
     cards: 
         [   
