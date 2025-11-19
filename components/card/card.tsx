@@ -153,7 +153,6 @@ export const Card = ({
                                             href={"#"}
                                             label={buttonLink?.label}
                                             onClick={(event) => clickHandler(event)}
-
                                         />
                                     </div>
                                 }

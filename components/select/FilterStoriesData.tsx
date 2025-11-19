@@ -1,0 +1,1 @@
+export const filterStoriesData = ["Skill", "React", "PHP", "Next", "WordPress", "JavaScript", "TypeScript"];
