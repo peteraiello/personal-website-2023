@@ -49,8 +49,10 @@ export const Projects = ({
                                                 <Card 
                                                     key={id}
                                                     index={newIndex}
+                                                    id={project?.id}
                                                     title={project?.title}                                                
                                                     thumbnail={project?.thumbnail}
+                                                    featuredImage={project?.featuredImage}
                                                     tags={project?.tags}
                                                     excerpt={project?.excerpt}
                                                     content={project?.content}

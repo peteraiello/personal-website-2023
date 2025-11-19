@@ -1,5 +1,6 @@
 import {Header} from '../modules/header';
-import Head from 'next/head'
+import Head from 'next/head';
+import { useRouter } from 'next/router';
 import React, {useEffect, useState} from "react";
 import {Articles} from '../modules/writing/articles';
 import navItems from '../data/navItems.json';
@@ -28,10 +29,10 @@ interface IndexProps {
 }
 
 export default function Home({
-    allProjects,
     latestPersonalBlog,
-    latestExternalPosts
 }:IndexProps) {
+
+    const router = useRouter();
 
     const [modalOpen, setModalOpen] = useState(false);
 
@@ -103,13 +104,16 @@ export default function Home({
 
                     <Footer 
                         footerText={FooterData}
-                    />
-                    
+                    />                    
                 </AppWrapper>
             </ThemeProvider> 
 
             <ProjectModal             
                 title={activeCard?.title}
+                tags={activeCard?.tags}
+                image={activeCard?.featuredImage}
+                content={activeCard?.content}
+                buttonLink={activeCard?.buttonLink}
                 showModal={modalOpen}
                 setShowModal={setModalOpen}
             />

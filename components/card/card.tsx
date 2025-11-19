@@ -1,4 +1,5 @@
 import React from "react";
+import { useRouter } from "next/router";
 import { Text } from "../typography/text";
 import { TextContent } from "../typography/textContent";
 import { AnimatedElement } from "../AnimatedElement/animated-element";
@@ -13,6 +14,10 @@ export interface CardProps {
      * Status
      */
     status?: 'published' | 'draft',
+    /**
+     * ID
+     */
+    id?: string,
     /**
      * Project title 
      */
@@ -60,6 +65,7 @@ export interface CardProps {
 }
 
 export const Card = ({
+    id,
     title,
     thumbnail,
     featuredImage,
@@ -73,17 +79,29 @@ export const Card = ({
     onClick
 }:CardProps) => {
 
+    const router = useRouter();
+
     const clickHandler = (event) => {
-        event.preventDefault;
+        /* don't let the page jump by calling prevent default function */
+        event.preventDefault();
+        if(id) {
+            let routerPath = router.asPath.split("#")[0];
+            /* push identifier to url i.e. peteraiello.dev/#pidg */
+            router.push(routerPath + "#" + id, undefined, {shallow: true});
+        }
+
         setActiveProject(
             {
                 title: title,
                 content: content,
                 featuredImage: featuredImage,
                 tags: tags,
+                buttonLink: buttonLink
             }
         )
+        
         setModalOpen(true)
+
     }
 
     return (
@@ -131,9 +149,10 @@ export const Card = ({
                                 {buttonLink?.label &&
                                     <div className="lg:mt-5">
                                         <Button 
+                                            href={"#"}
                                             label={buttonLink?.label}
-                                            href={buttonLink?.href}
                                             onClick={(event) => clickHandler(event)}
+
                                         />
                                     </div>
                                 }

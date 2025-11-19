@@ -6,8 +6,13 @@ import HTBThumbnail from "../../public/images/projects/htb.jpg";
 import Cap10Thumbnail from "../../public/images/projects/cap10.jpg";
 
 const DustedCard = {
+    id: `dusted`,
     status: "published",
     thumbnail: {
+        src: DustedThumbnail?.src,
+        alt: "Dusted website"
+    },
+    featuredImage: {
         src: DustedThumbnail?.src,
         alt: "Dusted website"
     },
@@ -17,13 +22,18 @@ const DustedCard = {
     content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget magna commodo, maximus quam ac, posuere neque. Fusce a vulputate risus. Quisque vel nisi magna. Praesent sodales ante eu massa maximus faucibus. Nunc rutrum interdum pellentesque. Suspendisse felis purus, pharetra sed tempus nec, tempor quis urna. Donec eget leo cursus.`,
     buttonLink: {
         label: "LEARN MORE",
-        href: "#"
+        href: "https://www.dusted.com"
     }
 }
 
 const PIDGCard = {
+    id: 'pidg',
     status: "published",
     thumbnail: {
+        src: PIDGThumbnail?.src,
+        alt: "PIDG website"
+    },
+    featuredImage: {
         src: PIDGThumbnail?.src,
         alt: "PIDG website"
     },
@@ -38,8 +48,13 @@ const PIDGCard = {
 }
 
 const IntralinksCard = {
+    id: 'intralinks',
     status: "published",
     thumbnail: {
+        src: IntraThumbnail?.src,
+        alt: "Intralinks calculator"
+    },
+    featuredImage: {
         src: IntraThumbnail?.src,
         alt: "Intralinks calculator"
     },
@@ -54,8 +69,13 @@ const IntralinksCard = {
 }
 
 const HTBCard = {
+    id: 'htb',
     status: "published",
     thumbnail: {
+        src: HTBThumbnail?.src,
+        alt: "HTB website"
+    },
+    featuredImage: {
         src: HTBThumbnail?.src,
         alt: "HTB website"
     },
@@ -70,8 +90,13 @@ const HTBCard = {
 }
 
 const Cap10Card = {
+    id: 'cap10',
     status: "published",
     thumbnail: {
+        src: Cap10Thumbnail?.src,
+        alt: "Cap10 website"
+    },
+    featuredImage: {
         src: Cap10Thumbnail?.src,
         alt: "Cap10 website"
     },
@@ -86,8 +111,13 @@ const Cap10Card = {
 }
 
 const WealthtimeCard = {
+    id: 'wealthtime',
     status: "published",
     thumbnail: {
+        src: WealthtimeThumbnail?.src,
+        alt: "Wealthtime website"
+    },
+    featuredImage: {
         src: WealthtimeThumbnail?.src,
         alt: "Wealthtime website"
     },
@@ -100,7 +130,6 @@ const WealthtimeCard = {
         href: "#"
     }
 }
-
 
 export const exampleProjectData = {
     id: 'projects',

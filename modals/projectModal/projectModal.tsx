@@ -56,8 +56,8 @@ export const ProjectModal = ({
 }:ProjectModalProps) => {
 
     return (
-        <div className={cx(showModal ? "block" : "hidden", "modal project-modal bg-black/90 absolute p-5 top-0 h-full w-full flex justify-center z-[9999]")}>
-            <div className="project-modal__content overflow-y-scroll bg-white max-w-[800px] mx-auto p-5 rounded-lg">            
+        <div className={cx(showModal ? "block" : "hidden", "modal project-modal bg-black/90 fixed top-0 h-full p-5 md:pt-10 lg:pt-20 w-full flex justify-center z-[9999]")}>
+            <div className="project-modal__content overflow-auto bg-white w-full md:max-w-[800px] md:max-h-[700px] mx-auto p-5 rounded-lg">            
                 <div className="project-modal-close-button__wrapper w-full flex justify-end">
                     <span className="mt-2 mb-2">
                         <button className="project-modal__close" aria-label="Close modal" onClick={() => setShowModal(false)}>
@@ -82,7 +82,7 @@ export const ProjectModal = ({
                     </div>
                     <div className="project-modal-text__wrap flex flex-col gap-2 w-full md:w-1/2">
                         {title &&                        
-                            <Heading hTag={"2"} fontSize={"text-2xl"} weight={"medium"} fontStyle={"san-serif"}>
+                            <Heading hTag={"2"} fontSize={"text-2xl"} weight={"bold"} fontStyle={"san-serif"}>
                                 {title}
                             </Heading>
                         }
