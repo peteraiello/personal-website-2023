@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from "react";
+import { useRouter } from "next/router";
 import { Card, CardProps } from "../../components/card/card";
 import { Heading } from "../../components/typography/heading";
 import { SectionWrapper } from "../../components/sectionWrapper";
@@ -50,6 +51,8 @@ export const Projects = ({
     id
 }:projectsProps) => {
 
+    const router = useRouter();
+
     const [selectedSkillsFilter, setSelectedSkillsFilter] = useState("");
 
     const [selectedIndustryFilter, setSelectedIndustryFilter] = useState("");
@@ -83,6 +86,8 @@ export const Projects = ({
                 })
             }
 
+         
+
             /* Skill selected AND industry selected */
             if((selectedSkillsFilter !== "skills") && (selectedIndustryFilter !== "industry-sector")) {                
                 filteredByIndustry = filteredBySkills?.filter((project) => {return project?.industry?.toLowerCase() === selectedIndustryFilter});
@@ -95,13 +100,17 @@ export const Projects = ({
             /* Skill selected AND industry NOT selected */
             } else if((selectedSkillsFilter !== "skills") && (selectedIndustryFilter === "industry-sector")) {
                 const titles = filteredBySkills?.map((project => project?.title));
-                setFilteredProjects(projects?.filter((project) => {return titles?.includes(project?.title)}))
+                setFilteredProjects(projects?.filter((project) => {return titles?.includes(project?.title)}))            
             /* Skill NOT selected AND industry NOT selected */
             } else if (selectedSkillsFilter === "skills" && selectedIndustryFilter === "industry-sector") {
                 setFilteredProjects(projects);
             }
         }
+  
+
     }, [selectedSkillsFilter, selectedIndustryFilter]);
+
+  
 
     return (
         <SectionWrapper id={id}>
