@@ -16,8 +16,10 @@ const DustedCard = {
         src: DustedThumbnail?.src,
         alt: "Dusted website"
     },
-    title: `Dusted Site`,
-    tags: [`React`, `Next`, `TypeScript`, `Sanity CMS`, `Tailwind`],
+    title: `Dusted`,
+    industry: "Marketing",
+    featured: true,
+    tags: ["React", "Next", "TypeScript", "Sanity CMS", "Tailwind CSS"],
     excerpt: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec interdum leo non enim sollicitudin imperdiet.`,
     content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget magna commodo, maximus quam ac, posuere neque. Fusce a vulputate risus. Quisque vel nisi magna. Praesent sodales ante eu massa maximus faucibus. Nunc rutrum interdum pellentesque. Suspendisse felis purus, pharetra sed tempus nec, tempor quis urna. Donec eget leo cursus.`,
     buttonLink: {
@@ -37,9 +39,10 @@ const PIDGCard = {
         src: PIDGThumbnail?.src,
         alt: "PIDG website"
     },
-    title: `PIDG (Private Infrastructure Development Group)`,
-    tags: [`React`, `Next`, `TypeScript`, `Sanity CMS`, `Tailwind`],
-    excerpt: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec interdum leo non enim sollicitudin imperdiet.`,
+    title: `PIDG`,
+    tags: ["React", "Next", "GraphQL", "TypeScript", "Storybook", "Tailwind CSS"],
+    industry: "Investment",
+    excerpt: `PIDG (Private Investment Development Group) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec interdum leo non enim sollicitudin imperdiet.`,
     content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget magna commodo, maximus quam ac, posuere neque. Fusce a vulputate risus. Quisque vel nisi magna. Praesent sodales ante eu massa maximus faucibus. Nunc rutrum interdum pellentesque. Suspendisse felis purus, pharetra sed tempus nec, tempor quis urna. Donec eget leo cursus.`,
     buttonLink: {
         label: "LEARN MORE",
@@ -59,7 +62,8 @@ const IntralinksCard = {
         alt: "Intralinks calculator"
     },
     title: `Intralinks Calculator`,
-    tags: [`React`, `JavaScript`, `Gatsby`, `Tailwind`],
+    tags: ["React", "JavaScript", "Gatsby", "Tailwind CSS"],
+    industry: "FinTech",
     excerpt: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec interdum leo non enim sollicitudin imperdiet.`,
     content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget magna commodo, maximus quam ac, posuere neque. Fusce a vulputate risus. Quisque vel nisi magna. Praesent sodales ante eu massa maximus faucibus. Nunc rutrum interdum pellentesque. Suspendisse felis purus, pharetra sed tempus nec, tempor quis urna. Donec eget leo cursus.`,
     buttonLink: {
@@ -79,9 +83,10 @@ const HTBCard = {
         src: HTBThumbnail?.src,
         alt: "HTB website"
     },
-    title: `HTB (Hampshire Trust Bank)`,
-    tags: [`React`, `JavaScript`, `GraphQL`],
-    excerpt: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec interdum leo non enim sollicitudin imperdiet.`,
+    title: `HTB`,
+    industry: "Banking",
+    tags: ["React", "JavaScript", "Gatsby", "GraphQL"],
+    excerpt: `Hampshire Trust Bank lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec interdum leo non enim sollicitudin imperdiet.`,
     content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget magna commodo, maximus quam ac, posuere neque. Fusce a vulputate risus. Quisque vel nisi magna. Praesent sodales ante eu massa maximus faucibus. Nunc rutrum interdum pellentesque. Suspendisse felis purus, pharetra sed tempus nec, tempor quis urna. Donec eget leo cursus.`,
     buttonLink: {
         label: "LEARN MORE",
@@ -100,7 +105,8 @@ const Cap10Card = {
         src: Cap10Thumbnail?.src,
         alt: "Cap10 website"
     },
-    title: `Cap10`,
+    title: `Cap10 Partners`,
+    industry: "Investment",
     tags: [`WordPress`, `JavaScript`, `SASS`],
     excerpt: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec interdum leo non enim sollicitudin imperdiet.`,
     content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget magna commodo, maximus quam ac, posuere neque. Fusce a vulputate risus. Quisque vel nisi magna. Praesent sodales ante eu massa maximus faucibus. Nunc rutrum interdum pellentesque. Suspendisse felis purus, pharetra sed tempus nec, tempor quis urna. Donec eget leo cursus.`,
@@ -122,6 +128,7 @@ const WealthtimeCard = {
         alt: "Wealthtime website"
     },
     title: `Wealthtime`,
+    industry: "Investment",
     tags: [`WordPress`, `Multisite`, `SASS`],
     excerpt: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec interdum leo non enim sollicitudin imperdiet.`,
     content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget magna commodo, maximus quam ac, posuere neque. Fusce a vulputate risus. Quisque vel nisi magna. Praesent sodales ante eu massa maximus faucibus. Nunc rutrum interdum pellentesque. Suspendisse felis purus, pharetra sed tempus nec, tempor quis urna. Donec eget leo cursus.`,
@@ -135,6 +142,10 @@ export const exampleProjectData = {
     id: 'projects',
     title: 'projects',
     layout: 'alternating',
+    filters: {
+        skills: ["Skills", "React", "Next", "TypeScript", "Sanity CMS", "Tailwind CSS", "GraphQL", "WordPress", "JavaScript", "Gatsby", "Multisite", "SASS"],
+        industries: ["Industry / Sector", "Marketing", "Banking", "FinTech", "Investment"],
+    },
     projects: [
         {...DustedCard}, 
         {...PIDGCard},

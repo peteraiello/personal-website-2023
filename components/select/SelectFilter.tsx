@@ -16,6 +16,10 @@ interface SelectFilterProps {
      * An array of options
      */
     filterOptions?: string[],
+    /**
+     * Filter ID
+     */
+    filterId?: string,
     setSelectedFilter?: any,
     selectedFilter?: string,
 }
@@ -23,13 +27,14 @@ interface SelectFilterProps {
 export const SelectFilter = ({
     filterOptions,
     setSelectedFilter,
-    selectedFilter
+    selectedFilter,
+    filterId
 }:SelectFilterProps) => {
 
     const newOptions: selectFilterType[] = filterOptions?.map((option) => {
         return {
             label: option, 
-            value: option?.toLocaleLowerCase().replace(" ", "-"),
+            value: option?.toLowerCase().replace(/[^a-z0-9\s]/g, "").replace(/\s+/g, "-") 
         }
     })
 
@@ -39,19 +44,21 @@ export const SelectFilter = ({
     }
 
     return (
-        <select name={"skills"} id={"skills-select"} className="select-filter bg-transparent px-4 py-2 dark:text-white border dark:border-white w-full"
-            onChange={(event) => changeHandler(event)} 
-        >
-            {(Boolean(newOptions) && newOptions?.length > 0) &&
-                newOptions?.map((option) => {
-                    let id = uuidv4();                                                                      
-                    return (
-                        <option value={option?.value} key={id} selected={ selectedFilter === option?.value ? true : false}>
-                            {option?.label}
-                        </option>
-                    )
-                })
-            }
-        </select>
+        <div className="w-full md:w-1/5"> 
+            <select name={filterId} id={filterId} className="select-filter bg-transparent px-4 py-2 dark:text-white border border-darkGray dark:border-white w-full"
+                onChange={(event) => changeHandler(event)} 
+            >
+                {(Boolean(newOptions) && newOptions?.length > 0) &&
+                    newOptions?.map((option) => {
+                        let id = uuidv4();                                                                      
+                        return (
+                            <option value={option?.value} key={id} selected={ selectedFilter === option?.value ? true : false}>
+                                {option?.label}
+                            </option>
+                        )
+                    })
+                }
+            </select>
+        </div>
     )
 }

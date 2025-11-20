@@ -5,6 +5,17 @@ import { SectionWrapper } from "../../components/sectionWrapper";
 import { v4 as uuidv4} from 'uuid';
 import { SelectFilter } from "../../components/select/SelectFilter";
 
+interface filterProps {
+    /**
+     * Skills (i.e. React, TypeScript)
+     */
+    skills?: string[],
+    /**
+     * industries
+     */
+    industries?: string[],
+}
+
 interface projectsProps {
     /**
      * Title
@@ -21,7 +32,11 @@ interface projectsProps {
     /**
      * Project clicked
      */
-    onClick?: (e) => void
+    onClick?: (e) => void,
+    /**
+     * Filter props
+     */
+    filters?: filterProps,
     setActiveProject?: any,
     setModalOpen?: any,
 }
@@ -30,55 +45,87 @@ export const Projects = ({
     title,
     projects,
     setActiveProject,
+    filters,
     setModalOpen,
     id
 }:projectsProps) => {
 
-    const [selectedFilter, setSelectedFilter] = useState("");
+    const [selectedSkillsFilter, setSelectedSkillsFilter] = useState("");
+
+    const [selectedIndustryFilter, setSelectedIndustryFilter] = useState("");
 
     const [filteredProjects, setFilteredProjects] = useState(projects as CardProps[]);
 
     useEffect(() => {
 
-        console.log("selected filter", selectedFilter);
-
-        let newProjectsArr = [] as any;
-
         if(Boolean(projects?.length > 0)) {
-            projects?.map((project) => {
-                console.log("project tags", project?.tags);
-                const projectTagsLc = project.tags?.map((tag) => {return tag.toLocaleLowerCase()});
-                console.log("project tags lowercase", projectTagsLc);
-                if(projectTagsLc.includes(selectedFilter)) {
-                    newProjectsArr.push(project);
-                } else if(selectedFilter === "skills") {
-                    newProjectsArr = projects;
-                }
-            })
-        }
+            
+            let projectsDataLowercaseSkills = [] as any;
 
-        if(Boolean(newProjectsArr && newProjectsArr?.length > 0)) {
-            setFilteredProjects(newProjectsArr);
+            let filteredBySkills = [] as any;
+
+            let filteredByIndustry = [] as any;
+
+            if(Boolean(projects?.length > 0)) {
+                 projects?.map((project) => {            
+                    const newProjectTags = project?.tags?.map((tag) => {return tag?.toLowerCase()?.replace(" ", "-")});
+                    const newProject = {...project, tags: newProjectTags}
+                    projectsDataLowercaseSkills.push(newProject);
+                 })
+            }
+
+            if(Boolean(projectsDataLowercaseSkills?.length > 0)) {
+                projectsDataLowercaseSkills?.map((project) => {                
+                   // console.log("project", project);
+                    if(project?.tags?.includes(selectedSkillsFilter)) {
+                        filteredBySkills.push(project)
+                    }
+                })
+            }
+
+            /* Skill selected AND industry selected */
+            if((selectedSkillsFilter !== "skills") && (selectedIndustryFilter !== "industry-sector")) {                
+                filteredByIndustry = filteredBySkills?.filter((project) => {return project?.industry?.toLowerCase() === selectedIndustryFilter});
+                const titles = filteredByIndustry?.map((project => project?.title));
+                setFilteredProjects(projects?.filter((project) => {return titles?.includes(project?.title)}))
+            /* Skill NOT selected AND industry selected */
+            } else if((selectedSkillsFilter === "skills") && (selectedIndustryFilter !== "industry-sector")) {
+                filteredByIndustry = projects?.filter((project) => {return project?.industry?.toLowerCase() === selectedIndustryFilter})
+                setFilteredProjects(filteredByIndustry);
+            /* Skill selected AND industry NOT selected */
+            } else if((selectedSkillsFilter !== "skills") && (selectedIndustryFilter === "industry-sector")) {
+                const titles = filteredBySkills?.map((project => project?.title));
+                setFilteredProjects(projects?.filter((project) => {return titles?.includes(project?.title)}))
+            /* Skill NOT selected AND industry NOT selected */
+            } else if (selectedSkillsFilter === "skills" && selectedIndustryFilter === "industry-sector") {
+                setFilteredProjects(projects);
+            }
         }
-       
-    }, [selectedFilter])
+    }, [selectedSkillsFilter, selectedIndustryFilter]);
 
     return (
         <SectionWrapper id={id}>
+
                 <div className="flex flex-col gap-md">
                     {title &&
                         <Heading hTag={"3"}>{title}</Heading>
                     }
-
-                    <div className="w-full lg:w-1/5">
+                    <div className="flex flex-col md:flex-row gap-sm">
                         <SelectFilter 
-                            filterOptions={["Skills", "React", "WordPress", "JavaScript"]}
-                            selectedFilter={selectedFilter}
-                            setSelectedFilter={setSelectedFilter}
-                        />
+                            filterOptions={filters?.skills}
+                            filterId={"skills-filter"}
+                            selectedFilter={selectedSkillsFilter}
+                            setSelectedFilter={setSelectedSkillsFilter}
+                        />    
+                        <SelectFilter 
+                            filterOptions={filters?.industries}
+                            filterId={"industry-filter"}
+                            selectedFilter={selectedIndustryFilter}
+                            setSelectedFilter={setSelectedIndustryFilter}
+                        />                                            
                     </div>
 
-                    {(filteredProjects && filteredProjects?.length  > 0 ) &&
+                    {Boolean(filteredProjects && filteredProjects?.length  > 0 ) ?
                         <div className="flex flex-col md:grid md:grid-cols-12 gap-8">
                             {filteredProjects?.map((project, index) => { 
                                 let id = uuidv4();                                                                      
@@ -94,6 +141,7 @@ export const Projects = ({
                                                     thumbnail={project?.thumbnail}
                                                     featuredImage={project?.featuredImage}
                                                     tags={project?.tags}
+                                                    featured={project?.featured}
                                                     excerpt={project?.excerpt}
                                                     content={project?.content}
                                                     buttonLink={project?.buttonLink}   
@@ -105,6 +153,8 @@ export const Projects = ({
                                 )}
                             )}
                         </div>
+                        : 
+                            <p>Sorry! No results found!</p>
                     }
                 </div>
         </SectionWrapper>

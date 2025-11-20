@@ -21,7 +21,6 @@ import { ThemeProvider} from '../context/ThemeProvider';
 import { projectProps } from '../modules/projects/project';
 import { ProjectModal } from '../modals/projectModal/projectModal';
 import { CardProps } from '../components/card/card';
-import { projectCardData } from '../components/card/project-card-data';
 
 interface IndexProps {
     latestPersonalBlog: ArticleProps[]
@@ -110,6 +109,12 @@ export default function Home({
                         id={exampleProjectData?.id}
                         title={exampleProjectData?.title}    
                         projects={exampleProjectData?.projects as any}
+                        filters={
+                            {
+                                skills: exampleProjectData?.filters?.skills,
+                                industries: exampleProjectData?.filters?.industries
+                            }
+                        }
                         setActiveProject={setActiveCard}
                         setModalOpen={setModalOpen}
                     />                        

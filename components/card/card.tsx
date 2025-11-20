@@ -8,6 +8,7 @@ import { Tags } from "../tag/tags";
 import { Button, buttonProps } from "../button";
 import { Heading } from "../typography/heading";
 import { frameData } from "framer-motion";
+import { StarIcon } from "../icons/star-icon";
 
 export interface CardProps {
     /**
@@ -23,6 +24,10 @@ export interface CardProps {
      */
     title?: string,
     /**
+     * Featured
+     */
+    featured?: boolean,
+    /**
      * Thumbnail image
      */
     thumbnail?: customImageProps,
@@ -31,9 +36,13 @@ export interface CardProps {
      */
     featuredImage?: customImageProps,
     /**
-     * Tags
+     * Tags (i.e. skills)
      */
     tags?: string[],
+    /**
+     * Industry (i.e. Marketing, New Media)
+     */
+    industry?: string,
     /**
      * Excerpt
      */
@@ -67,9 +76,11 @@ export interface CardProps {
 export const Card = ({
     id,
     title,
+    featured,
     thumbnail,
     featuredImage,
     tags,
+    industry,
     excerpt,
     content,
     buttonLink,
@@ -119,16 +130,21 @@ export const Card = ({
                     }
                     <div className="flex flex-col h-full p-5">
                         <div className="flex flex-col gap-2">
-                            {title &&
-                                <Heading 
-                                    fontSize={"text-2xl"} 
-                                    fontStyle={"san-serif"} 
-                                    weight={"bold"}
-                                    hTag={"3"}
-                                >
-                                    {title}
-                                </Heading>
-                            }
+                            <div className="title-wrapper flex flex-row gap-2 items-center">
+                                {title &&
+                                    <Heading 
+                                        fontSize={"text-2xl"} 
+                                        fontStyle={"san-serif"} 
+                                        weight={"bold"}
+                                        hTag={"3"}
+                                    >
+                                        {title}
+                                    </Heading>
+                                }
+                                {featured &&
+                                    <StarIcon />
+                                }
+                            </div>
                             {Boolean(tags?.length > 0) && 
                                 <Tags tags={tags} />
                             }
