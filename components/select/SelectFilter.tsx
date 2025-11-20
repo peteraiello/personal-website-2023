@@ -1,5 +1,6 @@
 import React from "react";
 import { v4 as uuidv4} from 'uuid';
+import formatTag from "../../utils/formatTag";
 
 type selectFilterType = {label: string, value: string};
 
@@ -29,12 +30,12 @@ export const SelectFilter = ({
     setSelectedFilter,
     selectedFilter,
     filterId
-}:SelectFilterProps) => {
+}:SelectFilterProps) => {    
 
     const newOptions: selectFilterType[] = filterOptions?.map((option) => {
         return {
             label: option, 
-            value: option?.toLowerCase().replace(/[^a-z0-9\s]/g, "").replace(/\s+/g, "-") 
+            value: formatTag(option)
         }
     })
 
@@ -47,12 +48,14 @@ export const SelectFilter = ({
         <div className="w-full md:w-1/5"> 
             <select name={filterId} id={filterId} className="select-filter bg-transparent px-4 py-2 dark:text-white border border-darkGray dark:border-white w-full"
                 onChange={(event) => changeHandler(event)} 
+                value={selectedFilter }
+                // selected={option?.value === selectedFilter ? true : false}
             >
                 {(Boolean(newOptions) && newOptions?.length > 0) &&
                     newOptions?.map((option) => {
                         let id = uuidv4();                                                                      
                         return (
-                            <option value={option?.value} key={id} selected={ selectedFilter === option?.value ? true : false}>
+                            <option value={option?.value} key={id}>
                                 {option?.label}
                             </option>
                         )

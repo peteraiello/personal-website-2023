@@ -1,10 +1,12 @@
 import React, {useEffect, useState} from "react";
 import { useRouter } from "next/router";
-import { Card, CardProps } from "../../components/card/card";
+ import { Card, CardProps } from "../../components/card/card";
 import { Heading } from "../../components/typography/heading";
 import { SectionWrapper } from "../../components/sectionWrapper";
 import { v4 as uuidv4} from 'uuid';
 import { SelectFilter } from "../../components/select/SelectFilter";
+import formatTag from "../../utils/formatTag";
+import { format } from "date-fns";
 
 interface filterProps {
     /**
@@ -79,38 +81,46 @@ export const Projects = ({
 
             if(Boolean(projectsDataLowercaseSkills?.length > 0)) {
                 projectsDataLowercaseSkills?.map((project) => {                
-                   // console.log("project", project);
                     if(project?.tags?.includes(selectedSkillsFilter)) {
                         filteredBySkills.push(project)
                     }
                 })
             }
 
-         
+            console.log("skill select filter", selectedSkillsFilter, "industry filter", selectedIndustryFilter);
 
             /* Skill selected AND industry selected */
-            if((selectedSkillsFilter !== "skills") && (selectedIndustryFilter !== "industry-sector")) {                
+            if((selectedSkillsFilter !== "skills") && (selectedIndustryFilter !== "industry-sector")) {  
+                console.log("fee");              
                 filteredByIndustry = filteredBySkills?.filter((project) => {return project?.industry?.toLowerCase() === selectedIndustryFilter});
                 const titles = filteredByIndustry?.map((project => project?.title));
                 setFilteredProjects(projects?.filter((project) => {return titles?.includes(project?.title)}))
             /* Skill NOT selected AND industry selected */
             } else if((selectedSkillsFilter === "skills") && (selectedIndustryFilter !== "industry-sector")) {
+                console.log("fop");
                 filteredByIndustry = projects?.filter((project) => {return project?.industry?.toLowerCase() === selectedIndustryFilter})
                 setFilteredProjects(filteredByIndustry);
             /* Skill selected AND industry NOT selected */
             } else if((selectedSkillsFilter !== "skills") && (selectedIndustryFilter === "industry-sector")) {
+                console.log("foo");
                 const titles = filteredBySkills?.map((project => project?.title));
-                setFilteredProjects(projects?.filter((project) => {return titles?.includes(project?.title)}))            
+                setFilteredProjects(projects?.filter((project) => {return titles?.includes(project?.title)}))                        
             /* Skill NOT selected AND industry NOT selected */
             } else if (selectedSkillsFilter === "skills" && selectedIndustryFilter === "industry-sector") {
+                console.log("fob");
                 setFilteredProjects(projects);
             }
         }
-  
+ 
+        console.log("filtered projects", filteredProjects);
 
     }, [selectedSkillsFilter, selectedIndustryFilter]);
 
-  
+    useEffect(() => {
+        setSelectedSkillsFilter(formatTag(filters?.skills[0]));
+        setSelectedIndustryFilter(formatTag(filters?.industries[0]));
+        setFilteredProjects(projects);
+    }, [])
 
     return (
         <SectionWrapper id={id}>
@@ -134,7 +144,7 @@ export const Projects = ({
                         />                                            
                     </div>
 
-                    {Boolean(filteredProjects && filteredProjects?.length  > 0 ) ?
+                    {Boolean(filteredProjects?.length > 0 ) ?
                         <div className="flex flex-col md:grid md:grid-cols-12 gap-8">
                             {filteredProjects?.map((project, index) => { 
                                 let id = uuidv4();                                                                      
@@ -162,8 +172,8 @@ export const Projects = ({
                                 )}
                             )}
                         </div>
-                        : 
-                            <p>Sorry! No results found!</p>
+                    : 
+                        <p>Sorry! No results found!</p>
                     }
                 </div>
         </SectionWrapper>
