@@ -51,7 +51,6 @@ export const ProjectModal = ({
     content,
     tags,
     buttonLink,
-    onClick,
     setShowModal
 }:ProjectModalProps) => {
 

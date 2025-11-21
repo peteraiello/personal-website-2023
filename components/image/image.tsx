@@ -22,6 +22,10 @@ export interface customImageProps {
      */
     rounded?: 'full' | 'md',
     /**
+     * Drop shadow
+     */
+    dropShadow?: boolean,
+    /**
      * border
      */
     border?: boolean,
@@ -41,11 +45,10 @@ export const CustomImage = ({
     rounded,
     fit,
     size,
+    dropShadow,
     caption,
     border
 }:customImageProps) => {
-
-    const getBaseClass = `drop-shadow-lg relative`;
 
     const getBorder = (border) => {
         let customClass;
@@ -112,9 +115,10 @@ export const CustomImage = ({
     return(
         <div className={
             cx(
+                `relative`,              
                 getIsRounded(rounded),
                 getAspectRatio(size),
-                getBaseClass
+                dropShadow && `drop-shadow-lg`,
             )        
         }>
             {caption ?
@@ -124,9 +128,10 @@ export const CustomImage = ({
                         alt={alt}
                         fill
                         className={
-                            cx(                                
+                            cx( 
                                 getBorder(border),
                                 getObjectFit(fit)
+
                             )
                         }                        
                         sizes={getImageSize(size)}
@@ -143,7 +148,10 @@ export const CustomImage = ({
                     alt={alt}
                     fill
                     className={
-                        getObjectFit(fit)
+                        cx(
+                            getObjectFit(fit),
+                            getBorder(border)
+                        )
                     }
                     sizes={getImageSize(size)}
                 />            

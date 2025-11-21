@@ -30,6 +30,7 @@ interface IndexProps {
 
 export default function Home({
     latestPersonalBlog,
+    allProjects
 }:IndexProps) {
 
     const router = useRouter();
@@ -67,13 +68,8 @@ export default function Home({
                 })
                 setModalOpen(true);
             }
-        }
-
- 
+        } 
     }, []);
-
-
-
 
     return (
         <>
@@ -107,15 +103,15 @@ export default function Home({
                     <Projects 
                         id={exampleProjectData?.id}
                         title={exampleProjectData?.title}    
-                        projects={exampleProjectData?.projects as any}
+                        projects={allProjects as any}
+                        setActiveProject={setActiveCard}
+                        setModalOpen={setModalOpen}
                         filters={
                             {
                                 skills: exampleProjectData?.filters?.skills,
                                 industries: exampleProjectData?.filters?.industries
                             }
-                        }
-                        setActiveProject={setActiveCard}
-                        setModalOpen={setModalOpen}
+                        }                
                     />                        
 
                     <Articles
@@ -134,19 +130,19 @@ export default function Home({
 
                     <Footer 
                         footerText={FooterData}
-                    />                    
+                    />  
+                         
+                    <ProjectModal             
+                        title={activeCard?.title}
+                        tags={activeCard?.tags}
+                        image={activeCard?.featuredImage}
+                        content={activeCard?.content}
+                        buttonLink={activeCard?.buttonLink}
+                        showModal={modalOpen}
+                        setShowModal={setModalOpen}
+                    />             
                 </AppWrapper>
-            </ThemeProvider> 
-
-            <ProjectModal             
-                title={activeCard?.title}
-                tags={activeCard?.tags}
-                image={activeCard?.featuredImage}
-                content={activeCard?.content}
-                buttonLink={activeCard?.buttonLink}
-                showModal={modalOpen}
-                setShowModal={setModalOpen}
-            />
+            </ThemeProvider>         
         </>
     )
 }
@@ -158,16 +154,17 @@ export const getStaticProps = async () => {
     const latestExternalPosts = getLatestExternalBlogPosts()
 
     const allProjects = getAllProjects([
+        'id',
+        'status',
+        'thumbnail',
+        'featuredImage',
+        'title',
+        'industry',
         'featured',
-        'client',
-        'date',
-        'agency',
         'tags',
-        'projectImage',
-        'description',
+        'excerpt',
+        'content',
         'buttonLink',
-        'layout',
-        'status'
     ])
   
     return {

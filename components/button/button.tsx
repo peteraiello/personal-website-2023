@@ -32,7 +32,7 @@ export const Button = ({
     onClick
 }: buttonProps) => {
 
-    const base = `drop-shadow-lg button group bg-transparent px-5 py-2`;
+    const base = `drop-shadow-lg cursor button group bg-transparent px-5 py-2`;
 
     const typography = `text-brandBlue dark:text-brandGold text-sm tracking-wide uppercase font-bold`;
     

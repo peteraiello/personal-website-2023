@@ -87,33 +87,24 @@ export const Projects = ({
                 })
             }
 
-            console.log("skill select filter", selectedSkillsFilter, "industry filter", selectedIndustryFilter);
-
             /* Skill selected AND industry selected */
             if((selectedSkillsFilter !== "skills") && (selectedIndustryFilter !== "industry-sector")) {  
-                console.log("fee");              
                 filteredByIndustry = filteredBySkills?.filter((project) => {return project?.industry?.toLowerCase() === selectedIndustryFilter});
                 const titles = filteredByIndustry?.map((project => project?.title));
                 setFilteredProjects(projects?.filter((project) => {return titles?.includes(project?.title)}))
             /* Skill NOT selected AND industry selected */
             } else if((selectedSkillsFilter === "skills") && (selectedIndustryFilter !== "industry-sector")) {
-                console.log("fop");
                 filteredByIndustry = projects?.filter((project) => {return project?.industry?.toLowerCase() === selectedIndustryFilter})
                 setFilteredProjects(filteredByIndustry);
             /* Skill selected AND industry NOT selected */
             } else if((selectedSkillsFilter !== "skills") && (selectedIndustryFilter === "industry-sector")) {
-                console.log("foo");
                 const titles = filteredBySkills?.map((project => project?.title));
                 setFilteredProjects(projects?.filter((project) => {return titles?.includes(project?.title)}))                        
             /* Skill NOT selected AND industry NOT selected */
             } else if (selectedSkillsFilter === "skills" && selectedIndustryFilter === "industry-sector") {
-                console.log("fob");
                 setFilteredProjects(projects);
             }
         }
- 
-        console.log("filtered projects", filteredProjects);
-
     }, [selectedSkillsFilter, selectedIndustryFilter]);
 
     useEffect(() => {

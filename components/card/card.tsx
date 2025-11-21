@@ -80,14 +80,12 @@ export const Card = ({
     thumbnail,
     featuredImage,
     tags,
-    industry,
     excerpt,
     content,
     buttonLink,
     index,
     setActiveProject,
     setModalOpen,
-    onClick
 }:CardProps) => {
 
     const router = useRouter();
@@ -109,11 +107,8 @@ export const Card = ({
                 tags: tags,
                 buttonLink: buttonLink
             }
-        )
-        
-        
+        )            
         setModalOpen(true)
-
     }
 
     return (
@@ -124,6 +119,8 @@ export const Card = ({
                         <CustomImage 
                             src={thumbnail?.src}
                             alt={thumbnail?.alt}
+                            dropShadow={false}
+                            border={false}                        
                             size={"project"}
                             fit={"cover"}
                         />
@@ -167,8 +164,8 @@ export const Card = ({
                                     <div className="lg:mt-5">
                                         <Button 
                                             href={"#"}
-                                            label={buttonLink?.label}
-                                            onClick={(event) => clickHandler(event)}
+                                            label={buttonLink?.label}                                            
+                                            onClick={(event) => clickHandler(event)}                                            
                                         />
                                     </div>
                                 }
