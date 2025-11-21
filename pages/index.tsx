@@ -111,8 +111,8 @@ export default function Home({
                                 skills: exampleProjectData?.filters?.skills,
                                 industries: exampleProjectData?.filters?.industries
                             }
-                        }                
-                    />                        
+                        }
+                    />  
 
                     <Articles
                         id={'blog'}

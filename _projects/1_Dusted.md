@@ -21,7 +21,7 @@ content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget magna
 </blockquote>
 "
 buttonLink: {
-    label: "LEARN MORE",
+    label: "VIEW DUSTED WEBSITE",
     href: "https://www.dusted.com"
 }
 ---

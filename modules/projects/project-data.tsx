@@ -1,5 +1,5 @@
 import DustedThumbnail from "../../public/images/projects/dusted.jpg";
-import PIDGThumbnail from '../../public/images/projects/pidg.jpg';
+import PIDGThumbnail from '../../public/images/projects/PIDG.jpg';
 import WealthtimeThumbnail from '../../public/images/projects/wealthtime.jpg';
 import IntraThumbnail from '../../public/images/projects/intra-calc.jpg';
 import HTBThumbnail from "../../public/images/projects/htb.jpg";

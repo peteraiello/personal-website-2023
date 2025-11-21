@@ -1,6 +1,6 @@
 import React from 'react';
 import { CustomImage } from './image';
-import pidg from '../../public/images/projects/pidg.jpg';
+import pidg from '../../public/images/projects/PIDG.jpg';
 import Profile from '../../public/images/overview/profile.png';
 
 export default {

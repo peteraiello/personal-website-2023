@@ -120,7 +120,7 @@ export const Card = ({
                             src={thumbnail?.src}
                             alt={thumbnail?.alt}
                             dropShadow={false}
-                            border={false}                        
+                            border={false}                                                   
                             size={"project"}
                             fit={"cover"}
                         />
@@ -164,7 +164,7 @@ export const Card = ({
                                     <div className="lg:mt-5">
                                         <Button 
                                             href={"#"}
-                                            label={buttonLink?.label}                                            
+                                            label={"Learn More"}
                                             onClick={(event) => clickHandler(event)}                                            
                                         />
                                     </div>

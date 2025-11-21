@@ -12,6 +12,8 @@ import { TextContent } from "../../components/typography/textContent";
 
 import { Tags } from "../../components/tag/tags";
 
+import DustedImage from "../../public/images/projects/dusted.jpg";
+
 interface ProjectModalProps {
     /**
      * Show modal 
@@ -54,6 +56,11 @@ export const ProjectModal = ({
     setShowModal
 }:ProjectModalProps) => {
 
+    const placeholder = {
+        src: DustedImage.src,
+        alt: "Dusted Image"
+    }
+
     return (
         <div className={cx(showModal ? "block" : "hidden", "modal project-modal bg-black/90 fixed top-0 h-full p-5 md:pt-10 lg:pt-20 w-full flex justify-center z-[9999]")}>
             <div className="project-modal__content overflow-auto bg-white w-full md:max-w-[800px] md:max-h-[700px] mx-auto p-5 rounded-lg">            
@@ -70,12 +77,12 @@ export const ProjectModal = ({
                     <div className="project-modal__image w-full md:w-1/2">   
                         {image &&
                             <CustomImage 
-                                src={image?.src}
+                                src={image?.src ? image?.src : DustedImage?.src }
                                 alt={image?.alt}
                                 caption={image?.caption}
                                 border={true}
                                 size={image?.size ? image?.size : "project"}
-                                fit={"cover"}                                
+                                fit={"contain"}                                
                             />
                         }
                     </div>

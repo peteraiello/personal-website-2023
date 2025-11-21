@@ -63,7 +63,7 @@ export const CustomImage = ({
     const getAspectRatio = (size) => {
         let customClass;
         if(size === 'project') {
-            customClass = 'aspect-[800/452]';
+            customClass = 'aspect-[800/502]';
         } else if(size === 'square') {
             customClass = 'aspect-square';
         } else if(size === 'profile') {
