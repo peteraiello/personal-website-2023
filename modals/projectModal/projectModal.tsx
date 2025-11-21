@@ -102,7 +102,7 @@ export const ProjectModal = ({
                                 {content}
                             </TextContent>
                         }
-                        {buttonLink &&
+                        {buttonLink?.href !== "#" &&
                             <span className="mt-3">
                                 <Button 
                                     href={buttonLink?.href}
