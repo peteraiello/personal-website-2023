@@ -4,12 +4,8 @@ status: 'published'
 thumbnail:
   src: '/images/projects/wealthtime.jpg'
   alt: 'Wealthtime website'
-featuredImage: {
-  src: '/images/projects/wealthtime.jpg',
-  alt: 'Wealthtime website'
-}
 title: 'Wealthtime'
-industry: 'Investing'
+industry: 'Investment'
 featured: false
 tags: ["React", "Next", "TypeScript", "Sanity CMS", "Tailwind CSS"]
 excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec interdum leo non enim sollicitudin imperdiet."

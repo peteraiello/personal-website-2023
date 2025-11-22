@@ -103,6 +103,7 @@ export const Card = ({
             {
                 title: title,
                 content: content,
+                thumbnail: thumbnail,
                 featuredImage: featuredImage,
                 tags: tags,
                 buttonLink: buttonLink

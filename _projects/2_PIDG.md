@@ -1,11 +1,12 @@
 ---
 id: 'pidg'
 status: 'published'
-thumbnail:
-  src: '/images/projects/PIDG.jpg'
-  alt: 'PIDG homepage'
-featuredImage: {
+thumbnail: {
   src: '/images/projects/PIDG.jpg',
+  alt: 'PIDG homepage'
+}
+featuredImage: {
+  src: '/images/projects/PIDG_portrait.jpg',
   alt: 'PIDG homepage'
 }
 title: 'PIDG'

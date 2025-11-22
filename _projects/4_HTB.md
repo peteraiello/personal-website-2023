@@ -1,10 +1,7 @@
 ---
 id: 'dusted'
 status: 'published'
-thumbnail:
-  src: '/images/projects/htb.jpg'
-  alt: 'HTB Homepage'
-featuredImage: {
+thumbnail: {
   src: '/images/projects/htb.jpg',
   alt: 'HTB Homepage'
 }

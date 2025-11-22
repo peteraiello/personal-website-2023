@@ -1,11 +1,12 @@
 ---
 id: 'intralinks'
 status: 'published'
-thumbnail:
-  src: '/images/projects/intra-calc.jpg'
-  alt: 'Intralinks Calculator Homepage'
-featuredImage: {
+thumbnail: {
   src: '/images/projects/intra-calc.jpg',
+  alt: 'Intralinks Calculator Homepage'
+}
+featuredImage: {
+  src: '/images/projects/Intralinks_portrait.jpg',
   alt: 'Intralinks Calculator Homepage'
 }
 title: 'Intralinks Calculator'

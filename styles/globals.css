@@ -161,4 +161,8 @@
         @apply dark:text-darkGray !important;
     }
 
+    .project-modal a {
+        @apply dark:bg-brandGold dark:text-darkGray !important;
+    }
+
 } 

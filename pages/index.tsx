@@ -134,8 +134,9 @@ export default function Home({
                          
                     <ProjectModal             
                         title={activeCard?.title}
-                        tags={activeCard?.tags}
-                        image={activeCard?.featuredImage}
+                        tags={activeCard?.tags}                        
+                        thumbnailImage={activeCard?.thumbnail}
+                        featuredImage={activeCard?.featuredImage}
                         content={activeCard?.content}
                         buttonLink={activeCard?.buttonLink}
                         showModal={modalOpen}

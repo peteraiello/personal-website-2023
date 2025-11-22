@@ -20,9 +20,13 @@ interface ProjectModalProps {
      */
     showModal?: boolean,
     /**
-     * Image
+     * Thumbnail image
      */
-    image?: customImageProps,
+    thumbnailImage?: customImageProps,
+    /**
+     * Featured image
+     */
+    featuredImage?: customImageProps,
     /**
      * Project title
      */
@@ -47,8 +51,9 @@ interface ProjectModalProps {
 }
 
 export const ProjectModal = ({
-    showModal,
-    image,
+    showModal,    
+    thumbnailImage,
+    featuredImage,
     title,
     content,
     tags,
@@ -75,14 +80,14 @@ export const ProjectModal = ({
                 </div>
                 <div className="project-modal__body gap-12 md:gap-6 flex flex-col md:flex-row">
                     <div className="project-modal__image w-full md:w-1/2">   
-                        {image &&
+                        {(featuredImage || thumbnailImage) &&
                             <CustomImage 
-                                src={image?.src ? image?.src : DustedImage?.src }
-                                alt={image?.alt}
-                                caption={image?.caption}
-                                border={true}
-                                size={image?.size ? image?.size : "project"}
-                                fit={"contain"}                                
+                                src={featuredImage?.src ? featuredImage?.src : thumbnailImage?.src ? thumbnailImage?.src : DustedImage?.src }
+                                alt={featuredImage?.alt ? featuredImage?.alt : thumbnailImage?.alt }
+                                size={featuredImage?.src ? "portrait" : "project"}
+                                fit={featuredImage?.src ? "cover" : "contain"}  
+                                caption={featuredImage?.caption ? featuredImage?.caption : thumbnailImage?.caption }
+                                border={true}                                     
                             />
                         }
                     </div>
@@ -102,7 +107,7 @@ export const ProjectModal = ({
                                 {content}
                             </TextContent>
                         }
-                        {buttonLink?.href !== "#" &&
+                        {(buttonLink?.href !== "#" && buttonLink?.href !== undefined) &&
                             <span className="mt-3">
                                 <Button 
                                     href={buttonLink?.href}

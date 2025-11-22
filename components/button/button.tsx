@@ -51,7 +51,7 @@ export const Button = ({
                     </div>
                 }
                 {icon === 'new-window' &&
-                    <div className="h-[16px]">
+                    <div className="h-[16px] hidden">
                        <NewWindowIcon />
                     </div>
                 }

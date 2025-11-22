@@ -1,10 +1,7 @@
 ---
 id: 'dusted'
 status: 'published'
-thumbnail:
-  src: '/images/projects/dusted.jpg'
-  alt: 'Dusted'
-featuredImage: {
+thumbnail: {
   src: '/images/projects/dusted.jpg',
   alt: 'Dusted'
 }
