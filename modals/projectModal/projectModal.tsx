@@ -93,13 +93,13 @@ export const ProjectModal = ({
                                 {gallery?.map((image, index) => {
                                     let id = uuidv4();
                                     return (
-                                        <AnimatedElement index={index} speed={'fast'} key={id} classNames="project">
+                                        <AnimatedElement index={index} speed={'fast'} classNames="project" key={id}>
                                             <CustomImage 
                                                 src={image?.src}
                                                 alt={image?.alt}
+                                                caption={image?.caption}  
                                                 fit={"contain"}
                                                 size={"project"}
-                                                caption={image?.caption}
                                                 border={true}
                                             />
                                         </AnimatedElement>
@@ -108,20 +108,20 @@ export const ProjectModal = ({
                             </div>
                         :
                             <>
-                            {(featuredImage || thumbnailImage) &&
-                                <CustomImage 
-                                    src={featuredImage?.src ? featuredImage?.src : thumbnailImage?.src ? thumbnailImage?.src : placeholder?.src }
-                                    alt={featuredImage?.alt ? featuredImage?.alt : thumbnailImage?.alt  }
-                                    size={featuredImage?.src ? "portrait" : "project"}
-                                    fit={featuredImage?.src ? "cover" : "contain"}  
-                                    caption={featuredImage?.caption ? featuredImage?.caption : thumbnailImage?.caption }
-                                    border={true}                                     
-                                />
-                            }
+                                {(featuredImage || thumbnailImage) &&
+                                    <CustomImage 
+                                        src={featuredImage?.src ? featuredImage?.src : thumbnailImage?.src ? thumbnailImage?.src : placeholder?.src }
+                                        alt={featuredImage?.alt ? featuredImage?.alt : thumbnailImage?.alt ? thumbnailImage?.alt : placeholder?.alt }
+                                        fit={featuredImage?.src ? "cover" : "contain"}  
+                                        size={featuredImage?.src ? "portrait" : "project"}
+                                        caption={featuredImage?.caption ? featuredImage?.caption : thumbnailImage?.caption }
+                                        border={true}                                     
+                                    />
+                                }
                             </>                                                        
                         }                        
                     </div>
-                    <div className="project-modal-text__wrap flex flex-col gap-2 w-full md:w-1/2">
+                    <div className="project-modal-text__wrap flex flex-col gap-sm w-full md:w-1/2">
                         {title &&                        
                             <Heading hTag={"2"} fontSize={"text-2xl"} weight={"bold"} fontStyle={"san-serif"}>
                                 {title}

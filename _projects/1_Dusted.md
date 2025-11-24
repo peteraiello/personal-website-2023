@@ -8,22 +8,22 @@ thumbnail: {
 gallery: [
   {
     src: '/images/projects/dusted/dusted_homepage.jpg',
-    alt: 'animated video homepage',
+    alt: 'animated video homepage screenshot',
     caption: 'Homepage video section'
   },
   {
     src: '/images/projects/dusted/dusted_navigation.jpg',
-    alt: 'Dropdown navigation section',
+    alt: 'Dropdown navigation section screenshot',
     caption: 'Navigation'
   },  
   {
     src: '/images/projects/dusted/dusted_animated_cube.jpg',
-    alt: 'homepage animated cube screenshot',
+    alt: 'homepage animated cube screenshot screenshot',
     caption: 'Animated cube'
   }, 
   {
     src: '/images/projects/dusted/dusted_insights.jpg',
-    alt: 'Dusted insights section',
+    alt: 'Dusted insights section screenshot',
     caption: 'Insights post'
   },
 ]
@@ -35,9 +35,10 @@ tags: ["React", "Next", "TypeScript", "Sanity CMS", "Tailwind CSS"]
 excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec interdum leo non enim sollicitudin imperdiet."
 content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget magna commodo, maximus quam ac, posuere neque. Fusce a vulputate risus. Quisque vel nisi magna. Praesent sodales ante eu massa maximus faucibus. Nunc rutrum interdum pellentesque. Suspendisse felis purus, pharetra sed tempus nec, tempor quis urna. Donec eget leo cursus.
 <blockquote>
-  <p>Lorem ipsum</p>
-  <p>Some guy</p>
+  <p>Excellent work!</p>
+  <cite>Some guy</cite>
 </blockquote>
+
 "
 buttonLink: {
     label: "VIEW DUSTED WEBSITE",

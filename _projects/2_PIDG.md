@@ -9,6 +9,43 @@ featuredImage: {
   src: '/images/projects/PIDG_portrait.jpg',
   alt: 'PIDG homepage'
 }
+gallery: [
+  {
+    src: '/images/projects/pidg/PIDG_homepage.jpg',
+    alt: 'PIDG homepage',
+    caption: 'Homepage slider',
+  },
+  {
+    src: '/images/projects/pidg/PIDG_portfolio.jpg',
+    alt: 'PIDG portfolio page screenshot',
+    caption: 'Portfolio page'
+  },
+  {
+    src: '/images/projects/pidg/PIDG_stats_module.jpg',
+    alt: 'PIDG stats module screenshot',
+    caption: 'Stats module'
+  },
+  {
+    src: '/images/projects/pidg/PIDG_news.jpg',
+    alt: 'PIDG news page screenshot',
+    caption: 'News'
+  },
+  {
+    src: '/images/projects/pidg/PIDG_opportunities.jpg',
+    alt: 'PIDG career opportunities screenshot',
+    caption: 'Careers',
+  },
+  {
+    src: '/images/projects/pidg/PIDG_team.jpg',
+    alt: 'PIDG team screenshot',
+    caption: 'Team page'
+  },
+  {
+    src: '/images/projects/pidg/PIDG_team_modal_open.jpg',
+    alt: 'PIDG team modal',
+    caption: 'Team modal open'
+  }  
+]
 title: 'PIDG'
 industry: 'Marketing'
 featured: false

@@ -5,6 +5,11 @@ thumbnail: {
   src: '/images/projects/htb.jpg',
   alt: 'HTB Homepage'
 }
+featuredImage: {
+  src: '/images/projects/HTB_portrait.jpg',
+  alt: 'HTB Go For More landing page screenshot',
+  caption: 'HTB Go For More landing page'
+}
 title: 'HTB'
 industry: 'Banking'
 featured: false

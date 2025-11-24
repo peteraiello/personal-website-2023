@@ -7,7 +7,8 @@ thumbnail: {
 }
 featuredImage: {
   src: '/images/projects/Intralinks_portrait.jpg',
-  alt: 'Intralinks Calculator Homepage'
+  alt: 'Intralinks Calculator Homepage',
+  caption: 'Intralinks Calculator'
 }
 title: 'Intralinks Calculator'
 industry: 'FinTech'

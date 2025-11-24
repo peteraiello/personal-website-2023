@@ -4,6 +4,7 @@ status: 'published'
 thumbnail:
   src: '/images/projects/wealthtime.jpg'
   alt: 'Wealthtime website'
+  caption: 'Wealthtime portal'
 title: 'Wealthtime'
 industry: 'Investment'
 featured: false
