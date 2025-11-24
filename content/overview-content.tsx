@@ -1,4 +1,4 @@
-import ProfileImg from '../public/images/overview/profile.jpeg';
+import ProfileImg from '../public/images/overview/peter_aiello_fullstack_web_developer.jpg';
 
 export const profileImg = {
     src: ProfileImg.src,
@@ -8,19 +8,11 @@ export const profileImg = {
 export const exampleProfile = {
     sectionId: "overview",
     name: 'Peter Aiello',
-    jobTitle: 'Frontend Developer',
+    jobTitle: 'Full Stack Developer',
     profileImg: profileImg,
     profileDesc: 
-`
-My introduction to programming began during a project at University where I worked on a 
-bespoke text editor. I discovered multiple emerging disciplines, such as user research, 
-experience design and code. Since then, I have applied this strong foundation and love of 
-learning to the world of web development, picking up essential programming languages and 
-frameworks. I have worked in different integrated marketing companies and eventually joined
-Dusted, an award-winning design studio working as a Front-end developer. Outside of work,
-my main passion is running. I have completed three marathons, including the spectacular 
-Midnight Sun Marathon in Norway in 2023.
-`,
+        `Hi 👋. I'm Peter, an experienced web developer from the UK currently living in Canada 🇨🇦. I have over eight years of industry experience in web development, with five years specializing in frontend web development. I've worked with clients from a variety of industries (automotive, financial, and charity) in diverse sectors (EV, FinTech, and specialist banking). Whether I'm building extensive component libraries or using cutting-edge frameworks, complexity is prevalent, and my strength lies in using resilience to see projects through to completion. Outside of work, I love running and have completed over four marathons. 
+    `,
     links: 
         [
             {preLabel: 'WWW', label: 'peteraiello.dev', customLink: {href: 'https://peteraiello.dev', target: "_blank"}},

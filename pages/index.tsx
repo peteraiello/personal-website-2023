@@ -71,7 +71,7 @@ export default function Home({
     return (
         <>
             <Head>
-                <title>{'Peter Aiello | Frontend developer'}</title>
+                <title>{'Peter Aiello | Full stack developer in Canada'}</title>                
             </Head>
 
             <ThemeProvider>                

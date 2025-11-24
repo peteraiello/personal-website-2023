@@ -10,7 +10,7 @@ export const ExperienceData = {
                 `My most recent position is Frontend developer at Dusted. Thanks to the company's 
                 success in the world of branding, I have had the privilege of working with prestigious 
                 clients from a diverse range of industries (automotive, finance and IT) and sectors (EV, FinTech and banking). 
-                This includes a multinational car manufacturer (Mahindra), a government accreditor (UKAS) and a personal bank (HTB). 
+                This includes a multinational car manufacturer (Mahindra), a government accreditor (UKAS) and a specialist bank (HTB). 
                 I interpret complex design systems and transform them into functional user interfaces that put the user first. 
                 My skills have progressed from PHP and WordPress to a modern JavaScript stack.`
         },
