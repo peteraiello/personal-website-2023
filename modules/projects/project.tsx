@@ -2,17 +2,28 @@ import React from 'react';
 import { StarIcon } from '../../components/icons/star-icon';
 import { Tags } from '../../components/tag/tags';
 import { Button } from '../../components/button';
-import { Text } from '../../components/typography/text';
 import { Heading} from "../../components/typography/heading";
 import { TextContent} from '../../components/typography/textContent';
 import { CustomImage, customImageProps } from '../../components/image/image';
-import { AnimatedElement } from '../../components/AnimatedElement/animated-element';
 
 export interface projectProps { 
+    /**
+     * Id
+     */
+    id?: string,
+    /**
+     * Title
+     */
+    title?: string,
     /**
      * Featured
      */
     featured?: boolean,
+    /**
+     * Featured image
+     */
+    featuredImage?: customImageProps,
+    /*
     /**
      * Client
      */
@@ -33,6 +44,10 @@ export interface projectProps {
      * Image
      */
     projectImage?: customImageProps,
+    /**
+     * gallery
+     */
+    gallery?: customImageProps[],
     /**
      * Button Link
      */
@@ -73,6 +88,7 @@ export const Project = ({
     tags,
     projectImage,
     description,
+    gallery,
     buttonLink,
     index
 }:projectProps) => {

@@ -25,7 +25,7 @@ import { CardProps } from '../components/card/card';
 interface IndexProps {
     latestPersonalBlog: ArticleProps[]
     latestExternalPosts: ArticleProps[]
-    allProjects: projectProps[]
+    allProjects: CardProps[]
 }
 
 export default function Home({
@@ -45,25 +45,27 @@ export default function Home({
             alt: ""
         },
         tags: [],
+        gallery: [],
         content: "",
     } as CardProps);
 
     useEffect(() => {
+
         if(router.asPath.includes("#")) {
             
             const identifier = router.asPath.split("#")[1];
 
-            const projects = exampleProjectData.projects;
 
-            if(Boolean(projects && projects?.length > 0)) {
+            if(Boolean(allProjects && allProjects?.length > 0)) {
                 
-                const selectedProject = projects?.find((project) => {return (project?.id === identifier)});
+                const selectedProject = allProjects?.find((project) => {return (project?.id === identifier)});
 
                 setActiveCard({
                     title: selectedProject?.title,
                     tags: selectedProject?.tags,
                     featuredImage: selectedProject?.featuredImage,
                     content: selectedProject?.content,
+                    gallery: selectedProject?.gallery,
                     buttonLink: selectedProject?.buttonLink                    
                 })
                 setModalOpen(true);
@@ -139,9 +141,11 @@ export default function Home({
                         featuredImage={activeCard?.featuredImage}
                         content={activeCard?.content}
                         buttonLink={activeCard?.buttonLink}
+                        gallery={activeCard?.gallery}
                         showModal={modalOpen}
                         setShowModal={setModalOpen}
                     />             
+                    
                 </AppWrapper>
             </ThemeProvider>         
         </>
@@ -159,6 +163,7 @@ export const getStaticProps = async () => {
         'status',
         'thumbnail',
         'featuredImage',
+        'gallery',
         'title',
         'industry',
         'featured',

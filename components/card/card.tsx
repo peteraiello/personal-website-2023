@@ -36,6 +36,10 @@ export interface CardProps {
      */
     featuredImage?: customImageProps,
     /**
+     * Gallery images
+     */
+    gallery?: customImageProps[],
+    /**
      * Tags (i.e. skills)
      */
     tags?: string[],
@@ -79,6 +83,7 @@ export const Card = ({
     featured,
     thumbnail,
     featuredImage,
+    gallery,
     tags,
     excerpt,
     content,
@@ -106,7 +111,8 @@ export const Card = ({
                 thumbnail: thumbnail,
                 featuredImage: featuredImage,
                 tags: tags,
-                buttonLink: buttonLink
+                buttonLink: buttonLink,
+                gallery: gallery,
             }
         )            
         setModalOpen(true)

@@ -154,6 +154,7 @@ export const Projects = ({
                                                     featured={project?.featured}
                                                     excerpt={project?.excerpt}
                                                     content={project?.content}
+                                                    gallery={project?.gallery}
                                                     buttonLink={project?.buttonLink}   
                                                     setActiveProject={setActiveProject}
                                                     setModalOpen={setModalOpen}

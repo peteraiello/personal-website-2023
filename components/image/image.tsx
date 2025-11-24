@@ -138,7 +138,7 @@ export const CustomImage = ({
                     />
                     {caption &&
                         <figcaption className="absolute bottom-[-30px]">
-                            <p>{caption}</p>
+                            <p className="font-light"><i>{caption}</i></p>
                         </figcaption>
                     }
                 </figure>

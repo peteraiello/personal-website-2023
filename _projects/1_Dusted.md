@@ -5,6 +5,28 @@ thumbnail: {
   src: '/images/projects/dusted.jpg',
   alt: 'Dusted'
 }
+gallery: [
+  {
+    src: '/images/projects/dusted/dusted_homepage.jpg',
+    alt: 'animated video homepage',
+    caption: 'Homepage video section'
+  },
+  {
+    src: '/images/projects/dusted/dusted_navigation.jpg',
+    alt: 'Dropdown navigation section',
+    caption: 'Navigation'
+  },  
+  {
+    src: '/images/projects/dusted/dusted_animated_cube.jpg',
+    alt: 'homepage animated cube screenshot',
+    caption: 'Animated cube'
+  }, 
+  {
+    src: '/images/projects/dusted/dusted_insights.jpg',
+    alt: 'Dusted insights section',
+    caption: 'Insights post'
+  },
+]
 title: 'Dusted'
 industry: 'Marketing'
 featured: true
