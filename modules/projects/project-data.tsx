@@ -143,7 +143,7 @@ export const exampleProjectData = {
     title: 'projects',
     layout: 'alternating',
     filters: {
-        skills: ["Skills", "React", "Next", "TypeScript", "Sanity CMS", "Tailwind CSS", "GraphQL", "WordPress", "JavaScript", "Gatsby", "Multisite", "SASS"],
+        skills: ["Skills", "React", "Next", "TypeScript", "Sanity CMS", "Tailwind CSS", "GraphQL", "WordPress", "PHP", "JavaScript", "Gatsby", "Multisite", "SASS"],
         industries: ["Industry / Sector", "Marketing", "Banking", "FinTech", "Investment"],
     },
     projects: [

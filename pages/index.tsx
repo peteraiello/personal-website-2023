@@ -20,8 +20,6 @@ import { AppWrapper } from '../components/AppWrapper/app-wrapper';
 import { ThemeProvider} from '../context/ThemeProvider';
 import { ProjectModal } from '../modals/projectModal/projectModal';
 import { CardProps } from '../components/card/card';
-import { ThemeContext } from "../context/ThemeContext/ThemeContext";
-
 interface IndexProps {
     latestPersonalBlog: ArticleProps[]
     latestExternalPosts: ArticleProps[]
@@ -34,8 +32,6 @@ export default function Home({
 }:IndexProps) {
 
     const router = useRouter();
-
-    //    const [modalOpen, setModalOpen] = useState(false);
 
     const [activeCard, setActiveCard] = useState({
         status: "published",
@@ -63,14 +59,11 @@ export default function Home({
                     title: selectedProject?.title,
                     tags: selectedProject?.tags,
                     featuredImage: selectedProject?.featuredImage,
+                    thumbnail: selectedProject?.thumbnail,
                     content: selectedProject?.content,
                     gallery: selectedProject?.gallery,
                     buttonLink: selectedProject?.buttonLink                    
                 })
-
-                //    setModalOpen(true);
-
-
             }
         } 
     }, []);
@@ -83,7 +76,9 @@ export default function Home({
 
             <ThemeProvider>                
                 <AppWrapper>                
+                    
                     <Header items={navItems?.items} />
+
                     <Overview
                         id={exampleProfile.sectionId}
                         name={exampleProfile.name}

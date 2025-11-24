@@ -13,9 +13,9 @@ featuredImage: {
 title: 'Intralinks Calculator'
 industry: 'FinTech'
 featured: false
-tags: ["React", "Next", "TypeScript", "Sanity CMS", "Tailwind CSS"]
-excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec interdum leo non enim sollicitudin imperdiet."
-content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget magna commodo, maximus quam ac, posuere neque. Fusce a vulputate risus. Quisque vel nisi magna. Praesent sodales ante eu massa maximus faucibus. Nunc rutrum interdum pellentesque. Suspendisse felis purus, pharetra sed tempus nec, tempor quis urna. Donec eget leo cursus.
+tags: ["React", "Gatsby", "JavaScript", "Tailwind CSS"]
+excerpt: "A cost saving calculator for a FinTech giant."
+content: "SS&C Intralinks is a leading FinTech company with a long history. One of the key services that the company offers is the redaction and translation of documents. I built a calculator as a SPA (Single Page Application) app to show how much clients can save by using their service when submitting an enquiry. The app was promoted on social media to their 100,000 followers and became a key tool for lead generation. 
 "
 buttonLink: {
     label: "VIEW INTRALINKS CALCULATOR",

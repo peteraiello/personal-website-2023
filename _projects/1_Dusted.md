@@ -32,7 +32,7 @@ industry: 'Marketing'
 featured: true
 client: 'Dusted'
 tags: ["React", "Next", "TypeScript", "Sanity CMS", "Tailwind CSS"]
-excerpt: "A future ready rebuild for an award winning design agency"
+excerpt: "A future ready rebuild for an award winning design agency."
 content: "Whilst working at Dusted, I had the opportunity to rebuild their internal website as part of the company's exciting rebrand. The current website was over five years old, lacked visual consistency and suffered from content stagnation, making it in dire need of an upgrade.
 
 As an internal project, we had the opportunity to raise the bar in terms of our technology offering and made the bold decision to switch from WordPress to Headless architecture, with Sanity as our CMS of choice. Special attention was made to the animations, many of which are interactive and fully editable via the CMS.

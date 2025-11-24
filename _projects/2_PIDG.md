@@ -49,9 +49,9 @@ gallery: [
 title: 'PIDG'
 industry: 'Marketing'
 featured: false
-tags: ["React", "Next", "TypeScript", "Sanity CMS", "Tailwind CSS"]
-excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec interdum leo non enim sollicitudin imperdiet."
-content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget magna commodo, maximus quam ac, posuere neque. Fusce a vulputate risus. Quisque vel nisi magna. Praesent sodales ante eu massa maximus faucibus. Nunc rutrum interdum pellentesque. Suspendisse felis purus, pharetra sed tempus nec, tempor quis urna. Donec eget leo cursus."
+tags: ["React", "Next", "GraphQL", "Tailwind CSS", "Storybook", "WordPress"]
+excerpt: "Headless architecture for a leading investment group."
+content: "PIDG (The Private Infrastructure Development Group) is a leading investment group that helps generate investment across developing countries. The brief was to deliver a website that would leverage the advantages of headless architecture (performance and security) whilst still being easily editable using a familiar CMS (WordPress). A research phase included the design of wireframes, followed by the creation of an in-depth design system using Figma, which featured 30+ modules. The development phase consisted of interpreting the design system as fully customizable modules. Key pages included filterable news and case studies sections, team pages, and career listings. The project features a flexible page layout, with all of the queries crafted using GraphQL. The website achieves high scores (over 90%) in the different categories of Core Vitals, including Performance, Accessibility, and Best Practice. "
 buttonLink: {
     label: "VIEW PIDG WEBSITE",
     href: "https://www.pidg.org"
