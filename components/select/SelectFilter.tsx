@@ -46,10 +46,9 @@ export const SelectFilter = ({
 
     return (
         <div className="w-full md:w-1/5"> 
-            <select name={filterId} id={filterId} className="select-filter bg-transparent px-4 py-2 dark:text-white border border-darkGray dark:border-white w-full"
+            <select name={filterId} id={filterId} className="select-filter bg-transparent px-4 py-2 dark:text-white border border-darkGray dark:border-white w-full outline-none focus:dark:outline-brandGold focus:outline-brandBlue"
                 onChange={(event) => changeHandler(event)} 
                 value={selectedFilter }
-                // selected={option?.value === selectedFilter ? true : false}
             >
                 {(Boolean(newOptions) && newOptions?.length > 0) &&
                     newOptions?.map((option) => {
