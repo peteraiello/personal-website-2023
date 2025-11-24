@@ -9,7 +9,13 @@ type Props = {
 
 export const ThemeProvider: FC<Props> = ({ children }) => { 
 
+  const [modalOpen, setModalOpen] = useState(defaultState.modalOpen);
+
   const [darkThemeActive, setDarkThemeActive] = useState(defaultState.darkThemeActive);
+
+  const toggleModal = () => {
+    setModalOpen(!modalOpen);
+  }
 
   const toggleDarkTheme = () => {
     setDarkThemeActive(!darkThemeActive);
@@ -17,7 +23,9 @@ export const ThemeProvider: FC<Props> = ({ children }) => {
 
   return(
    <ThemeContext.Provider
-      value={{
+      value={{        
+        modalOpen,
+        toggleModal,
         darkThemeActive,
         toggleDarkTheme,
       }}

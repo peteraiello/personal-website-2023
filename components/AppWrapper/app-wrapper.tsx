@@ -5,7 +5,7 @@ import { GradientWrapper } from "../gradients/gradientWrapper";
 
 export const AppWrapper = ({children}) => {
 
-    const {darkThemeActive, toggleDarkTheme} = useContext(ThemeContext);
+    const {darkThemeActive, toggleDarkTheme, toggleModal} = useContext(ThemeContext);
 
     useEffect(() => {
         if(localStorage.getItem('darkTheme') === 'true') {
@@ -13,8 +13,15 @@ export const AppWrapper = ({children}) => {
         } 
     }, [])
 
+    const onKeyPressed = (e) => {
+        e.preventDefault();
+        if(e.code === "Escape" || e.key === "Escape" || e.keyCode === 27) {
+            toggleModal();
+        }
+    }
+
     return (
-        <div className={darkThemeActive === true ? 'dark bg-darkerGray' : '' }>
+        <div className={darkThemeActive === true ? 'dark bg-darkerGray' : '' } onKeyDown={(e) => onKeyPressed(e)} tabIndex={0}>
 
             <GradientWrapper>
                 {darkThemeActive === true &&

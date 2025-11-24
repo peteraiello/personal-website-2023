@@ -1,14 +1,14 @@
-import React from "react";
+import React, {useContext} from "react";
+import { ThemeContext } from "../../context/ThemeContext/ThemeContext";
 import { useRouter } from "next/router";
-import { Text } from "../typography/text";
 import { TextContent } from "../typography/textContent";
 import { AnimatedElement } from "../AnimatedElement/animated-element";
 import { CustomImage, customImageProps } from "../../components/image/image";
 import { Tags } from "../tag/tags";
 import { Button, buttonProps } from "../button";
 import { Heading } from "../typography/heading";
-import { frameData } from "framer-motion";
 import { StarIcon } from "../icons/star-icon";
+
 
 export interface CardProps {
     /**
@@ -90,12 +90,15 @@ export const Card = ({
     buttonLink,
     index,
     setActiveProject,
-    setModalOpen,
+    // setModalOpen,
 }:CardProps) => {
+
+    const {toggleModal} = useContext(ThemeContext);
 
     const router = useRouter();
 
     const clickHandler = (event) => {
+
         /* don't let the page jump by calling prevent default function */
         event.preventDefault();
         if(id) {
@@ -115,7 +118,7 @@ export const Card = ({
                 gallery: gallery,
             }
         )            
-        setModalOpen(true)
+        toggleModal()
     }
 
     return (

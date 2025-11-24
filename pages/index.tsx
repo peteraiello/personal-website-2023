@@ -1,7 +1,7 @@
 import {Header} from '../modules/header';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useState, useContext} from "react";
 import {Articles} from '../modules/writing/articles';
 import navItems from '../data/navItems.json';
 import { Overview } from '../modules/overview/overview';
@@ -18,9 +18,9 @@ import { getAllProjects } from './api/projects';
 import { ArticleProps } from '../modules/writing/article';
 import { AppWrapper } from '../components/AppWrapper/app-wrapper';
 import { ThemeProvider} from '../context/ThemeProvider';
-import { projectProps } from '../modules/projects/project';
 import { ProjectModal } from '../modals/projectModal/projectModal';
 import { CardProps } from '../components/card/card';
+import { ThemeContext } from "../context/ThemeContext/ThemeContext";
 
 interface IndexProps {
     latestPersonalBlog: ArticleProps[]
@@ -35,7 +35,7 @@ export default function Home({
 
     const router = useRouter();
 
-    const [modalOpen, setModalOpen] = useState(false);
+    //    const [modalOpen, setModalOpen] = useState(false);
 
     const [activeCard, setActiveCard] = useState({
         status: "published",
@@ -55,7 +55,6 @@ export default function Home({
             
             const identifier = router.asPath.split("#")[1];
 
-
             if(Boolean(allProjects && allProjects?.length > 0)) {
                 
                 const selectedProject = allProjects?.find((project) => {return (project?.id === identifier)});
@@ -68,7 +67,10 @@ export default function Home({
                     gallery: selectedProject?.gallery,
                     buttonLink: selectedProject?.buttonLink                    
                 })
-                setModalOpen(true);
+
+                //    setModalOpen(true);
+
+
             }
         } 
     }, []);
@@ -79,12 +81,9 @@ export default function Home({
                 <title>{'Peter Aiello | Frontend developer'}</title>
             </Head>
 
-            <ThemeProvider>
-                
-                <AppWrapper>
-                    
+            <ThemeProvider>                
+                <AppWrapper>                
                     <Header items={navItems?.items} />
-
                     <Overview
                         id={exampleProfile.sectionId}
                         name={exampleProfile.name}
@@ -101,13 +100,11 @@ export default function Home({
                         }
                         skillGroups={exampleProfile.skillGroups}
                     />                      
-
                     <Projects 
                         id={exampleProjectData?.id}
                         title={exampleProjectData?.title}    
                         projects={allProjects as any}
                         setActiveProject={setActiveCard}
-                        setModalOpen={setModalOpen}
                         filters={
                             {
                                 skills: exampleProjectData?.filters?.skills,
@@ -115,25 +112,21 @@ export default function Home({
                             }
                         }
                     />  
-
                     <Articles
                         id={'blog'}
                         title={'Blog'}
                         subtitle={"I enjoy writing articles on web development to improve my skills and knowledge. I use AI to help generate ideas research topics, and help me write, hopefully without losing my own voice."} 
                         articles={latestPersonalBlog}     
                         noPublishedPostsMsg={'Coming soon'}                       
-                    />
-                    
+                    />                    
                     <Experience 
                         id={ExperienceData.id}
                         title={ExperienceData.title}
                         experiences={ExperienceData.experience}
                     />
-
                     <Footer 
                         footerText={FooterData}
-                    />  
-                         
+                    />                           
                     <ProjectModal             
                         title={activeCard?.title}
                         tags={activeCard?.tags}                        
@@ -141,11 +134,8 @@ export default function Home({
                         featuredImage={activeCard?.featuredImage}
                         content={activeCard?.content}
                         buttonLink={activeCard?.buttonLink}
-                        gallery={activeCard?.gallery}
-                        showModal={modalOpen}
-                        setShowModal={setModalOpen}
-                    />             
-                    
+                        gallery={activeCard?.gallery}                
+                    />                                 
                 </AppWrapper>
             </ThemeProvider>         
         </>

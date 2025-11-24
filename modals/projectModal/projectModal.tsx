@@ -1,21 +1,15 @@
-import React from "react";
-
+import React, {useContext, useEffect} from "react";
+import { useRouter } from 'next/router';
 import cx from "classnames";
-
 import { customImageProps, CustomImage } from "../../components/image/image";
-
 import { Button, buttonProps } from "../../components/button";
-
 import { Heading } from "../../components/typography/heading";
-
 import { TextContent } from "../../components/typography/textContent";
-
 import { Tags } from "../../components/tag/tags";
-
 import DustedImage from "../../public/images/projects/dusted.jpg";
-
 import {v4 as uuidv4} from 'uuid';
 import { AnimatedElement } from "../../components/AnimatedElement/animated-element";
+import { ThemeContext } from "../../context/ThemeContext/ThemeContext";
 
 interface ProjectModalProps {
     /**
@@ -58,7 +52,6 @@ interface ProjectModalProps {
 }
 
 export const ProjectModal = ({
-    showModal,    
     thumbnailImage,
     featuredImage,
     gallery,
@@ -66,20 +59,43 @@ export const ProjectModal = ({
     content,
     tags,
     buttonLink,
-    setShowModal
 }:ProjectModalProps) => {
 
+    const router = useRouter();
+
+    const {modalOpen, toggleModal} = useContext(ThemeContext);
+
+    useEffect(() => {
+        if(router.asPath.includes("#")) {
+            toggleModal();
+        }
+    }, [])
+
+    const areaClicked = (e) => {
+        e.preventDefault();
+
+        let eventTarget = e?.target; 
+
+        let targetClasses = eventTarget?.classList; 
+
+        if(Boolean(targetClasses?.length > 0)) {
+            if([...targetClasses].includes("project-modal")) {
+                toggleModal();
+            }
+        }
+    }
+    
     const placeholder = {
         src: DustedImage.src,
         alt: "Dusted Image"
     }
 
     return (
-        <div className={cx(showModal ? "block" : "hidden", "modal project-modal bg-black/90 fixed top-0 h-full p-5 md:pt-10 lg:pt-20 w-full flex justify-center z-[9999]")}>
+        <div className={cx(modalOpen ? "block" : "hidden", "modal project-modal bg-black/90 fixed top-0 h-full p-5 md:pt-10 lg:pt-20 w-full flex justify-center z-[9999]")} onClick={(e) => areaClicked(e)}>
             <div className="project-modal__content overflow-auto bg-white w-full md:max-w-[800px] md:max-h-[700px] mx-auto px-5 pt-5 pb-20 rounded-lg">            
                 <div className="project-modal-close-button__wrapper w-full flex justify-end">
                     <span className="mt-2 mb-2">
-                        <button className="project-modal__close" aria-label="Close modal" onClick={() => setShowModal(false)}>
+                        <button className="project-modal__close" aria-label="Close modal" onClick={() => toggleModal()}>
                             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
                                 <path d="M2.6 21.5L0.5 19.4L8.9 11L0.5 2.6L2.6 0.5L11 8.9L19.4 0.5L21.5 2.6L13.1 11L21.5 19.4L19.4 21.5L11 13.1L2.6 21.5Z" fill="currentColor"></path>
                             </svg>

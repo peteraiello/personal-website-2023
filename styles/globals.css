@@ -162,7 +162,7 @@
     }
 
     .project-modal a {
-        @apply dark:bg-brandGold dark:text-darkGray !important;
+        @apply dark:text-darkGray !important;
     }
 
 } 
