@@ -28,7 +28,7 @@ export const Example = () => {
                 title={data?.projectOne?.title}
                 tags={data?.projectOne?.tags}
                 content={data?.projectOne?.content}
-                image={data?.projectOne?.thumbnail}
+                thumbnailImage={data?.projectOne?.thumbnail}
                 buttonLink={data?.projectOne?.buttonLink}
             />
         </>
@@ -44,7 +44,7 @@ export const Portrait = () => {
                 title={data?.projectTwo?.title}
                 tags={data?.projectTwo?.tags}
                 content={data?.projectTwo?.content}
-                image={data?.projectTwo?.thumbnail}
+                thumbnailImage={data?.projectTwo?.thumbnail}
                 buttonLink={data?.projectTwo?.buttonLink}
             />
         </>
