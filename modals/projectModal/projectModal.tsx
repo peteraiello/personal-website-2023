@@ -72,18 +72,25 @@ export const ProjectModal = ({
     }, [])
 
     const areaClicked = (e) => {
-        e.preventDefault();
-
         let eventTarget = e?.target; 
-
         let targetClasses = eventTarget?.classList; 
-
         if(Boolean(targetClasses?.length > 0)) {
             if([...targetClasses].includes("project-modal")) {
+                e.preventDefault();
                 toggleModal();
             }
         }
     }
+
+    const onKeyPressed = (e) => {
+        e.preventDefault();
+        console.log(e,  " event");
+        if(e.code === "Escape" || e.key === "Escape" || e.keyCode === 27) {
+            toggleModal();
+        }
+    }
+
+
     
     const placeholder = {
         src: DustedImage.src,
@@ -91,7 +98,10 @@ export const ProjectModal = ({
     }
 
     return (
-        <div className={cx(modalOpen ? "block" : "hidden", "modal project-modal bg-black/90 fixed top-0 h-full p-5 md:pt-10 lg:pt-20 w-full flex justify-center z-[9999]")} onClick={(e) => areaClicked(e)}>
+        <div tabIndex={-1} className={cx(modalOpen ? "block" : "hidden", "modal project-modal bg-black/90 fixed top-0 h-full p-5 md:pt-10 lg:pt-20 w-full flex justify-center z-[9999]")}
+            onClick={(e) => areaClicked(e)}
+            onKeyDown={(e) => onKeyPressed(e)}
+        >
             <div className="project-modal__content overflow-auto bg-white w-full md:max-w-[800px] md:max-h-[700px] mx-auto px-5 pt-5 pb-20 rounded-lg">            
                 <div className="project-modal-close-button__wrapper w-full flex justify-end">
                     <span className="mt-2 mb-2">
