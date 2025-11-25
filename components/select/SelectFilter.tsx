@@ -48,7 +48,7 @@ export const SelectFilter = ({
         <div className="w-full md:w-1/5"> 
             <select 
                 aria-label={filterId + "-select"}
-                name={filterId} id={filterId} className="select-filter bg-transparent px-4 py-2 dark:text-white border border-darkGray dark:border-white w-full outline-none focus:dark:outline-brandGold focus:outline-brandBlue"
+                name={filterId} id={filterId} className="select-filter bg-transparent px-4 py-2 dark:text-white border border-darkGray dark:border-white w-full outline-none focus:ring-2 focus:ring-brandBlue focus:ring-opacity-50 dark:focus:ring-brandGold"
                 onChange={(event) => changeHandler(event)} 
                 value={selectedFilter }
             >
