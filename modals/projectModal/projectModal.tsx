@@ -10,6 +10,7 @@ import DustedImage from "../../public/images/projects/dusted.jpg";
 import {v4 as uuidv4} from 'uuid';
 import { AnimatedElement } from "../../components/AnimatedElement/animated-element";
 import { ThemeContext } from "../../context/ThemeContext/ThemeContext";
+import { idProps } from "../../types";
 
 interface ProjectModalProps {
     /**
@@ -41,6 +42,10 @@ interface ProjectModalProps {
      */
     tags?: string[],
     /**
+     * Project Ids
+     */
+    projectIDs?: idProps[],
+    /**
      * Button
      */
     buttonLink?: buttonProps,
@@ -56,20 +61,29 @@ export const ProjectModal = ({
     featuredImage,
     gallery,
     title,
+    projectIDs,
     content,
     tags,
     buttonLink,
 }:ProjectModalProps) => {
+
+    const placeholder = {
+        src: DustedImage.src,
+        alt: "Dusted Image"
+    }
 
     const router = useRouter();
 
     const {modalOpen, toggleModal} = useContext(ThemeContext);
 
     useEffect(() => {
-        if(router.asPath.includes("#")) {
+        let projectsArr = [];
+        Boolean(projectIDs && projectIDs?.length > 0) && projectIDs.forEach((project) => {return (projectsArr?.push(project?.id))});
+        const identifier = router.asPath.split("#")[1];
+        if(identifier && projectsArr.includes(identifier)) {
             toggleModal();
         }
-    }, [])
+    }, []);
 
     const areaClicked = (e) => {
         let eventTarget = e?.target; 
@@ -80,12 +94,6 @@ export const ProjectModal = ({
                 toggleModal();
             }
         }
-    }
-
-    
-    const placeholder = {
-        src: DustedImage.src,
-        alt: "Dusted Image"
     }
 
     return (

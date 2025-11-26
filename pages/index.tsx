@@ -20,14 +20,18 @@ import { AppWrapper } from '../components/AppWrapper/app-wrapper';
 import { ThemeProvider} from '../context/ThemeProvider';
 import { ProjectModal } from '../modals/projectModal/projectModal';
 import { CardProps } from '../components/card/card';
+import { idProps } from '../types';
+
 interface IndexProps {
     latestPersonalBlog: ArticleProps[]
     latestExternalPosts: ArticleProps[]
     allProjects: CardProps[]
+    projectIds: idProps[]
 }
 
 export default function Home({
     latestPersonalBlog,
+    projectIds,
     allProjects
 }:IndexProps) {
 
@@ -44,6 +48,16 @@ export default function Home({
         gallery: [],
         content: "",
     } as CardProps);
+
+    useEffect(() => {
+
+        let projectsArr = [];
+
+        Boolean(projectIds && projectIds?.length > 0) && projectIds.forEach((project) => {return (projectsArr?.push(project?.id))});
+    
+    }, []);
+
+
 
     useEffect(() => {
 
@@ -94,8 +108,9 @@ export default function Home({
                             }
                         }
                         skillGroups={exampleProfile.skillGroups}
-                    />                      
-                    <Projects 
+                    />            
+
+                    <Projects                         
                         id={exampleProjectData?.id}
                         title={exampleProjectData?.title}    
                         projects={allProjects as any}
@@ -107,13 +122,15 @@ export default function Home({
                             }
                         }
                     />  
+
                     <Articles
                         id={'blog'}
                         title={'Blog'}
                         subtitle={"I enjoy writing articles on web development to improve my skills and knowledge. I use AI to help generate ideas research topics, and help me write, hopefully without losing my own voice."} 
                         articles={latestPersonalBlog}     
                         noPublishedPostsMsg={'Coming soon'}                       
-                    />                    
+                    />    
+
                     <Experience 
                         id={ExperienceData.id}
                         title={ExperienceData.title}
@@ -124,7 +141,8 @@ export default function Home({
                     />                           
                     <ProjectModal             
                         title={activeCard?.title}
-                        tags={activeCard?.tags}                        
+                        tags={activeCard?.tags}     
+                        projectIDs={projectIds}             
                         thumbnailImage={activeCard?.thumbnail}
                         featuredImage={activeCard?.featuredImage}
                         content={activeCard?.content}
@@ -157,12 +175,15 @@ export const getStaticProps = async () => {
         'content',
         'buttonLink',
     ])
+
+    const projectIds = getAllProjects(['id']);
   
     return {
         props: { 
             allProjects,
             latestPersonalBlog,            
             latestExternalPosts,
+            projectIds
         },
     }
   }
