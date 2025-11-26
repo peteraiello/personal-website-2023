@@ -1,6 +1,7 @@
 import React, {useRef} from "react";
 import ReactMarkdown from 'react-markdown';
 import classNames from "classnames";
+import rehypeRaw from "rehype-raw";
 
 interface TextContentProps {
     /**
@@ -29,6 +30,7 @@ export const TextContent = ({
     return(
         <div className={classNames( isProject ? "markdown-project" : isArticle ? "markdown-article" : "markdown-text")}>
             <ReactMarkdown
+                rehypePlugins={[rehypeRaw]}
                 components={{
                     a: ({ node, children, ...props}) => {
                         if(props?.href?.includes("https")) {
