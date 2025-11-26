@@ -7,7 +7,7 @@ export default {
 };
 
 const FooterTextExample = `
-Site designed in Figma. Developed with Next and Tailwind CSS using Visual Studio Code. Deployed on Vercel. Just like everyone else. 
+Site designed in Figma. Developed with Next and Tailwind CSS using Visual Studio Code. Deployed on Vercel. 
 `
 
 export const FooterExample = () => {
