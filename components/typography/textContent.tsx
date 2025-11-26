@@ -1,10 +1,6 @@
-import React from "react";
+import React, {useRef} from "react";
 import ReactMarkdown from 'react-markdown';
 import classNames from "classnames";
-import rehypeRaw from 'rehype-raw';
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
-
 
 interface TextContentProps {
     /**
@@ -26,9 +22,23 @@ export const TextContent = ({
     isProject,
     isArticle
 }:TextContentProps) => {
+    /**
+     * React Markdown links not opening in new tab
+     * Url: https://github.com/remarkjs/react-markdown/issues/12
+     */
     return(
         <div className={classNames( isProject ? "markdown-project" : isArticle ? "markdown-article" : "markdown-text")}>
-            <ReactMarkdown rehypePlugins={[rehypeRaw]}>{children}</ReactMarkdown>
+            <ReactMarkdown
+                components={{
+                    a: ({ node, children, ...props}) => {
+                        if(props?.href?.includes("https")) {
+                            props.target = "_blank"
+                            props.rel = "noopener noreferrer"
+                        }
+                        return <a {...props}>{children}</a>
+                    }
+                }}                
+            >{children}</ReactMarkdown>
         </div>        
     )
 }

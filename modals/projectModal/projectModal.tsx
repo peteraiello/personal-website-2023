@@ -96,6 +96,10 @@ export const ProjectModal = ({
         }
     }
 
+    useEffect(() => {
+        console.log("content", content);
+    }, [content])
+
     return (
         <div tabIndex={-1} className={cx(modalOpen ? "block" : "hidden", "modal project-modal bg-black/90 fixed top-0 h-full p-5 md:pt-10 lg:pt-20 w-full flex justify-center z-[9999]")}
             onClick={(e) => areaClicked(e)}
