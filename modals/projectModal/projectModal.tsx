@@ -84,7 +84,6 @@ export const ProjectModal = ({
             toggleModal();
         }
         const handleKeyDown = (event: KeyboardEvent) => {
-            console.log("event", event?.key, modalOpen);
             if(event?.key === "Escape" && modalOpen === true) {
                 toggleModal();
             }
