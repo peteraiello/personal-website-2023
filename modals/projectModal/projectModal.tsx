@@ -83,6 +83,13 @@ export const ProjectModal = ({
         if(identifier && projectsArr.includes(identifier)) {
             toggleModal();
         }
+        const handleKeyDown = (event: KeyboardEvent) => {
+            console.log("event", event?.key, modalOpen);
+            if(event?.key === "Escape" && modalOpen === true) {
+                toggleModal();
+            }
+        }
+        window.addEventListener("keydown", handleKeyDown);
     }, []);
 
     const areaClicked = (e) => {
@@ -96,18 +103,21 @@ export const ProjectModal = ({
         }
     }
 
-    useEffect(() => {
-        console.log("content", content);
-    }, [content])
+    const keyPressed = (e) => {
+        e.preventDefault();
+        if(e.keyCode === 13) {
+            toggleModal();
+        }
+    }
 
     return (
-        <div tabIndex={-1} className={cx(modalOpen ? "block" : "hidden", "modal project-modal bg-black/90 fixed top-0 h-full p-5 md:pt-10 lg:pt-20 w-full flex justify-center z-[9999]")}
+        <div className={cx(modalOpen ? "block" : "hidden", "modal project-modal bg-black/90 fixed top-0 h-full md:pt-10 lg:pt-20 w-full flex justify-center z-[9999]")}
             onClick={(e) => areaClicked(e)}
         >
-            <div className="project-modal__content overflow-auto bg-white w-full md:max-w-[800px] md:max-h-[700px] mx-auto px-5 pt-5 pb-20 rounded-lg">            
+            <div className="project-modal__content overflow-auto bg-white w-full md:max-w-[800px] md:max-h-[700px] mx-auto px-5 pt-5 pb-20 rounded-0 md:rounded-lg" role="dialog" aria-modal="true">
                 <div className="project-modal-close-button__wrapper w-full flex justify-end">
                     <span className="mt-2 mb-2">
-                        <button className="project-modal__close" aria-label="Close modal" onClick={() => toggleModal()}>
+                        <button className="project-modal__close" aria-label="Close modal" onKeyDown={(e) => keyPressed(e)} onClick={() => toggleModal()}>
                             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
                                 <path d="M2.6 21.5L0.5 19.4L8.9 11L0.5 2.6L2.6 0.5L11 8.9L19.4 0.5L21.5 2.6L13.1 11L21.5 19.4L19.4 21.5L11 13.1L2.6 21.5Z" fill="currentColor"></path>
                             </svg>

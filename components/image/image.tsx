@@ -112,6 +112,10 @@ export const CustomImage = ({
         return customSize;
     }
 
+    const imageLoader = () => {
+       return console.log("image loader");
+    }
+
     return(
         <div className={
             cx(
@@ -133,7 +137,8 @@ export const CustomImage = ({
                                 getObjectFit(fit)
 
                             )
-                        }                        
+                        }    
+                        loading={"lazy"}
                         sizes={getImageSize(size)}
                     />
                     {caption &&

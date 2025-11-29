@@ -9,7 +9,6 @@ import { Button, buttonProps } from "../button";
 import { Heading } from "../typography/heading";
 import { StarIcon } from "../icons/star-icon";
 
-
 export interface CardProps {
     /**
      * Status
@@ -156,17 +155,12 @@ export const Card = ({
                                 <Tags tags={tags} />
                             }
                             {excerpt &&
-                                <TextContent>
-                                    {excerpt}
-                                </TextContent>
-                            }                    
-                            {content &&
-                                <div className="hidden">
+                                <div className="pb-5 md:pb-0">
                                     <TextContent>
-                                        {content}
+                                        {excerpt}
                                     </TextContent>
                                 </div>
-                            }
+                            }                                              
                         </div>
                         {buttonLink &&
                             <div className="mt-auto">

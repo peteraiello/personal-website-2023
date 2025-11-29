@@ -2,7 +2,7 @@
 id: 'intralinks'
 status: 'published'
 thumbnail: {
-  src: '/images/projects/intra-calc.jpg',
+  src: '/images/projects/intralinks.jpg',
   alt: 'Intralinks Calculator Homepage'
 }
 featuredImage: {
