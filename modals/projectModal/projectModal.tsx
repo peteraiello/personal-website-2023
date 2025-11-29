@@ -89,7 +89,7 @@ export const ProjectModal = ({
             }
         }
         window.addEventListener("keydown", handleKeyDown);
-    }, []);
+    }, []); 
 
     const areaClicked = (e) => {
         let eventTarget = e?.target; 
