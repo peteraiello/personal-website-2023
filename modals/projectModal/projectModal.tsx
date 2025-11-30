@@ -113,7 +113,7 @@ export const ProjectModal = ({
         <div className={cx(modalOpen ? "block" : "hidden", "modal project-modal bg-black/90 fixed top-0 h-full md:pt-10 lg:pt-20 w-full flex justify-center z-[9999]")}
             onClick={(e) => areaClicked(e)}
         >
-            <div className="project-modal__content overflow-auto bg-white w-full md:max-w-[800px] md:max-h-[700px] mx-auto px-5 pt-5 pb-20 rounded-0 md:rounded-lg" role="dialog" aria-modal="true">
+            <div className="project-modal__content overflow-auto bg-white w-full md:max-w-[800px] md:max-h-[700px] mx-auto px-5 pt-5 pb-20 rounded-0 md:rounded-lg" role="dialog" aria-modal="true" aria-label="Project modal">
                 <div className="project-modal-close-button__wrapper w-full flex justify-end">
                     <span className="mt-2 mb-2">
                         <button className="project-modal__close" aria-label="Close modal" onKeyDown={(e) => keyPressed(e)} onClick={() => toggleModal()}>
