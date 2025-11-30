@@ -165,4 +165,13 @@
         @apply dark:text-darkGray !important;
     }
 
+    .grid-open {
+        grid-template-rows: 1;
+    }
+
+    .grid-close {
+        grid-template-rows: 0;
+    }
+  
+
 } 
