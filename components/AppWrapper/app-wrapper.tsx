@@ -5,13 +5,7 @@ import { GradientWrapper } from "../gradients/gradientWrapper";
 
 export const AppWrapper = ({children}) => {
 
-    const {darkThemeActive, toggleDarkTheme, toggleModal} = useContext(ThemeContext);
-
-    useEffect(() => {
-        if(localStorage.getItem('darkTheme') === 'true') {
-            toggleDarkTheme()
-        } 
-    }, [])
+    const {darkThemeActive, toggleModal} = useContext(ThemeContext);
 
     const onKeyPressed = (e) => {
         e.preventDefault();

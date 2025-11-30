@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React, {useContext, useEffect} from "react";
 import { ThemeContext } from "../../context/ThemeContext/ThemeContext";
 import { MoonIcon } from "../icons/moon-icon";
 import { SunIcon } from "../icons/sun-icon";
@@ -10,7 +10,6 @@ export const ThemeToggleButton = () => {
     const clickHandler = (e) => {
         e.preventDefault();
         toggleDarkTheme();
-        localStorage.setItem("darkTheme", darkThemeActive === false ? 'true' : 'false');
     }
 
     return (
