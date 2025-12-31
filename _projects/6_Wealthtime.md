@@ -10,7 +10,7 @@ industry: 'Investment'
 featured: false
 tags: ["WordPress", "Multisite", "PHP", "JavaScript", "SASS", "Multsite"]
 excerpt: "A multisite for a leading FinTech platform."
-content: "A WordPress multisite for a financial technology platform. The client wanted a multisite architecture for its different audiences (advisors, investors, and employees). Additionally, the development phase occurred during a merger with another company, Novia Financial. We responded to these challenges by building a WordPress multisite, complete with a reusable, flexible page layout. The website achieves high performance scores in Lighthouse, and the client recognized our long-term efforts. One of the key learning points from this project is that the basics should always take priority over complex features."
+content: "The challenge of this project included developing a multisite for its different audiences, including Advisors, Investors and Employees, and the timeline overlapped with a company merger. I built the Website as a WordPress multisite and developed 30+ modules of varying complexity, including a filterable media section. The website achieved high performance scores as measured using Core Web Vitals, and the client recognized our long-term efforts. One of the key learning outcomes from this project is that I should always tackle the basics first."
 buttonLink: {
     label: "VIEW WEALTHTIME",
     href: "https://www.wealthtime.com"

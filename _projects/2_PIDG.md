@@ -51,9 +51,9 @@ industry: 'Investment'
 featured: false
 tags: ["React", "TypeScript", "Next", "GraphQL", "Tailwind CSS", "Storybook"]
 excerpt: "Headless architecture for a leading investment group."
-content: "PIDG (The Private Infrastructure Development Group) is a leading investment group that helps generate investment across developing countries. The brief was to deliver a website that would leverage the advantages of headless architecture (performance and security) whilst still being easily editable using a familiar CMS (WordPress). A research phase included the design of wireframes, followed by the creation of an in-depth design system using Figma, which featured 30+ modules. The development phase consisted of interpreting the design system as fully customizable modules. Key pages included filterable news and case studies sections, team pages, and career listings. The project features a flexible page layout, with all of the queries crafted using GraphQL. The website achieves high scores (over 90%) in the different categories of Core Vitals, including Performance, Accessibility, and Best Practice. "
+content: "I built the headless frontend for PIDG, an investment group delivering financial aid to developing countries. I collaborated with UX researchers and designers to translate elegant design systems from Figma into 30+ reusable modules using Storybook, React, TypeScript, and Next.js. I developed flexible layout patterns pulling data from WordPress via GraphQL queries, creating filterable case study pages, careers sections, and team directories. I optimized site performance to achieve scores of over 90% in Core Web Vitals, whilst making content editing easy for the marketing team."
 buttonLink: {
-    label: "VIEW PIDG WEBSITE",
+    label: "VIEW WEBSITE",
     href: "https://www.pidg.org"
 }
 ---

@@ -33,19 +33,9 @@ featured: true
 client: 'Dusted'
 tags: ["React", "Next", "TypeScript", "Sanity CMS", "Tailwind CSS"]
 excerpt: "A future ready rebuild for an award winning design agency."
-content: "Whilst working at Dusted, I had the opportunity to rebuild their internal website as part of the company's exciting rebrand. The current website was over five years old, lacked visual consistency and suffered from content stagnation, making it in dire need of an upgrade.
-
-As an internal project, we had the opportunity to raise the bar in terms of our technology offering and made the bold decision to switch from WordPress to Headless architecture, with Sanity as our CMS of choice. Special attention was made to the animations, many of which are interactive and fully editable via the CMS.
-
-The results speak for themselves: within the month of launch, the website featured in the newsletter for DesignWeek, followed by a feature [article](https://www.designweek.co.uk/why-are-so-many-design-agencies-rebranding-right-now/). One of the sector pages contributed to an enterprise-level client conversion. The cherry on top was the agency's first-ever Honourable Mention on [Awwwards.com](https://www.awwwards.com/sites/dusted). One of the key things I learned working on this project was that the technology behind the website is equally important to the design.
-
-> Peter’s work has dramatically improved how we manage content: it’s now more intuitive, scalable and efficient  
-
-
-Dave Wall, Managing Director
-"
+content: "Whilst working as a frontend developer at Dusted, an award-winning design and branding studio, I had the privilege of building their new website as part of their exciting rebrand. The previous website suffered from major content stagnation, and the future build needed increased scalability. I built the new site using a modern headless architecture including Next.js, TypeScript, React and Sanity CMS. I developed over 25 customizable modules, including 5 interactive, bespoke animations (coded and not exported from After Effects). I integrated the forms with HubSpot's API for unified marketing. As a result, one of the sector pages contributed to an enterprise-level client conversion within a couple of weeks of launch. The website was also featured in an article for [Design Week](https://www.designweek.co.uk/why-are-so-many-design-agencies-rebranding-right-now/) and contributed to the agency's first-ever Honourable Mention in [Awwwards.com](https://www.awwwards.com/sites/dusted)."
 buttonLink: {
-    label: "VIEW DUSTED WEBSITE",
+    label: "VIEW WEBSITE",
     href: "https://www.dusted.com"
 }
 ---

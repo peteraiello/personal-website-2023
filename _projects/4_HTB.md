@@ -14,10 +14,10 @@ title: 'HTB'
 industry: 'Banking'
 featured: false
 tags: ["React", "Gatsby", "GraphQL", "SASS"]
-excerpt: "High performance website for a specialist bank."
-content: "HTB (Hampshire Trust Bank) is a specialist bank offering a range of financial services, including savings accounts through to mortgages. As one of the earlier instances of headless development, we maintained both a WordPress site to see the changes and a headless frontend built using Gatsby. I was responsible for everything from general snagging to in-depth UI updates, including landing pages and navigation overhauls. The work contributed to long-term client retention. The “Go For More” landing page is a good example of work completed for this client, with the web page being promoted to their 19,000+ followers on LinkedIn."
+excerpt: "High-performance website for a specialist bank."
+content: "I maintained the headless frontend for HTB, a UK specialist bank built using Gatsby, React and GraphQL. I used t-shirt sizing to accurately scope new features, including landing pages and UI enhancements. I developed new landing pages, including the Go For More pages, and promoted them to 19,000+ LinkedIn followers. My work supported long-term client retention and brand consistency across their digital presence."
 buttonLink: {
-    label: "VIEW HTB WEBSITE",
+    label: "VIEW WEBSITE",
     href: "https://www.htb.co.uk/go-for-more"
 }
 ---
